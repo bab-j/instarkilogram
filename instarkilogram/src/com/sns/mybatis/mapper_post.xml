@@ -5,7 +5,7 @@
 <mapper namespace="post">
 	<insert id="insert" parameterType="com.sns.feed.db.FeedVO">
 		INSERT INTO FEED (F_IDX, REGDATE, CONTENT, U_IDX, U_LIKE, F_PIC)
-            VALUES(FEED_SEQ.nextval, SYSDATE, #{}, #{},NULL, #{}
+            	VALUES(FEED_SEQ.nextval, SYSDATE, #{content}, #{u_idx},0, #{f_pic}
 	</insert>
 	
 

@@ -17,15 +17,7 @@ public class FeedFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		doPost(request, response);
-		
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(">> FrontController.doPost() 실행");
-
-		request.setCharacterEncoding("utf-8");
+		System.out.println(">> FrontController.doGet() 실행");
 		
 		String type = request.getParameter("type");
 		
@@ -35,6 +27,12 @@ public class FeedFrontController extends HttpServlet {
 		} 
 		String path = command.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		doPost(request, response);
 	}
 
 	
