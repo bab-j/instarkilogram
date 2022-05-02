@@ -84,6 +84,8 @@
 <script>
 	$().ready(function(){
 		$("#button1").click(function(){
+			location.href="usercontroller?type=UserSignUp";
+
 		});
 	});
 </script>
@@ -97,7 +99,7 @@
 </div>
 <div class="sign">
 			<h1><i>instarkilogram</i></h1>
-			<form action="controller" method="post">
+			<form action="usercontroller" method="post">
 			<table>
 			<tr>
 				<th >아이디</th> 

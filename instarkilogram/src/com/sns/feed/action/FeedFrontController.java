@@ -18,6 +18,14 @@ public class FeedFrontController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		doPost(request, response);
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println(">> FrontController.doPost() 실행");
+
+		request.setCharacterEncoding("utf-8");
 		
 		String type = request.getParameter("type");
 		
@@ -27,13 +35,6 @@ public class FeedFrontController extends HttpServlet {
 		} 
 		String path = command.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
-		
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(">> FrontController.doPost() 실행");
-		request.setCharacterEncoding("utf-8");
-		doGet(request, response);
 	}
 
 	
