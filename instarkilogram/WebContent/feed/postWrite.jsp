@@ -46,6 +46,7 @@
 </style>
 <script>
 	function sendPost() {
+		console.log("sendPost() 실행~~");
 		let firstForm = document.forms[0];
 		for (let i = 0; i < firstForm.elements.length; i++){
 			if(firstForm.elements[0].value.trim() == 0 ){
@@ -56,6 +57,7 @@
 		}
 		firstForm.submit();
 	}
+
 </script>
 </head>
 <body>
