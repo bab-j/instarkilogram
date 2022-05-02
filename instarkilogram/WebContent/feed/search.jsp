@@ -1,8 +1,10 @@
+<%@page import="com.sns.common.Paging"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -61,7 +63,7 @@
 	}
 </script>
 
-
+<%-- Paging  p = new List --%>
 
 
 
@@ -107,7 +109,7 @@
 			<tbody class="grid-body">
 
 				<%
-					int i;
+				int i;
 				for (int j = 1; j <= 20; j += 3) {
 				%>
 
