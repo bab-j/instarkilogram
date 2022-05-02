@@ -1,9 +1,8 @@
-package com.sns.common;
+package com.sns.feed.db;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.sns.mybatis.DBService;
-import com.sns.feed.db.FeedVO;
 
 public class FeedDAO {
 

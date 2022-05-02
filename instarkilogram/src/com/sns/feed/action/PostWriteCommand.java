@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.sns.common.FeedDAO;
+import com.sns.feed.db.FeedDAO;
 import com.sns.feed.db.FeedVO;
 
 // 작성자, 사진, 내용 등록
