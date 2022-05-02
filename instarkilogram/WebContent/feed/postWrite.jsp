@@ -70,7 +70,7 @@
 
 <div class="write">
 	<h1>새 게시물</h1><br>
-	<form action="controller?type=postWrite" method="post" enctype="multipart/form-data">
+	<form action="feedcontroller?type=postWrite" method="post" enctype="multipart/form-data">
 		<input type="file" name="f_name" id="f_input" title="사진" ><br>
 		<textarea rows="9" cols="100" placeholder="내용을 입력해주세요."
 		onfocus="this.placeholder=''" onblur="this.placeholder='내용을 입력해주세요.'"></textarea><br>

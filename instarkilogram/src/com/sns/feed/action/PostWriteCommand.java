@@ -39,7 +39,7 @@ public class PostWriteCommand  implements Command {
 		
 		FeedDAO.insert(fvo);
 		
-		return "postWrite.jsp";
+		return "main_feed.jsp";
 	}
 
 	
