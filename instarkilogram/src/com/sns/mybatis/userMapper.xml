@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">
+	
+	<select id="exist" resultType="int" parameterType="String">
+		SELECT COUNT(U_ID)
+		FROM USER_INFO
+		WHERE U_ID = #{uid}
+	</select>
+	
+	<insert id="signUp" parameterType="UserVO">
+		INSERT INTO USER_INFO (U_IDX, U_ID, PWD, PHONE, EMAIL, BIRTH, BIO, NAME, U_PIC)
+					   VALUES (USER_INFO_SEQ.NEXTVAL, #{uid}, #{pwd}, #{phone}, #{email}, #{birth}, #{bio}, #{name}, #{u_pic})
+	</insert>
+
+
+</mapper>
