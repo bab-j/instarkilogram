@@ -16,7 +16,11 @@ public class PostWriteCommand implements Command_1 {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOExcept`CXest(
+			throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		String path = "c:/upload/temp";
+		
+		MultipartRequest mr = new MultipartRequest(
 						request, 
 						path, 
 						(10*1024*1024),
@@ -27,7 +31,7 @@ public class PostWriteCommand implements Command_1 {
 		FeedVO fvo = new FeedVO();
 		fvo.setContent(mr.getParameter("content"));
 		//fvo.setU_idx(session.getAttribute("u_idx"));
-		fvo.setU_idx("23");A
+		fvo.setU_idx("23");
 		
 		if(mr.getFile("f_name") != null) {
 			fvo.setF_pic(mr.getFilesystemName("f_name"));
