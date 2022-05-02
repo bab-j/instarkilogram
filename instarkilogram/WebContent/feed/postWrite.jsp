@@ -47,15 +47,19 @@
 <script>
 	function sendPost() {
 		console.log("sendPost() 실행~~");
+		
 		let firstForm = document.forms[0];
+		console.log("firstForm[0] : " + firstForm);
 		for (let i = 0; i < firstForm.elements.length; i++){
-			if(firstForm.elements[0].value.trim() == 0 ){
+			if(firstForm.elements[i].value.trim() == ""){
 				alert(firstForm.elements[i].title + "을 입력하세요");
-				firstForm.elements[0].focus();
-				return;
+				firstForm.elements[i].focus();
+				return;  // --------없으면 제출함
 			}
 		}
 		firstForm.submit();
+		console.log("sendPost() 완!!");
+		
 	}
 
 </script>

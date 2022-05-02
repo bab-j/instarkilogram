@@ -3,7 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="post">
-	
+	<insert id="insert" parameterType="com.sns.feed.db.FeedVO">
+		INSERT INTO FEED (F_IDX, REGDATE, CONTENT, U_IDX, U_LIKE, F_PIC)
+            VALUES(FEED_SEQ.nextval, SYSDATE, #{}, #{},NULL, #{}
+	</insert>
 	
 
 </mapper>
