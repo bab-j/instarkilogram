@@ -12,7 +12,7 @@ import com.sns.dao.FeedDAO;
 import com.sns.vo.FeedVO;
 
 // 작성자, 사진, 내용 등록
-public class PostWriteCommand implements Command_1 {
+public class PostWriteCommand  implements Command_1 {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) 
