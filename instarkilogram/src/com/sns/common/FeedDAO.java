@@ -3,7 +3,7 @@ package com.sns.common;
 import org.apache.ibatis.session.SqlSession;
 
 import com.sns.mybatis.DBService;
-import com.sns.vo.FeedVO;
+import com.sns.feed.db.FeedVO;
 
 public class FeedDAO {
 
