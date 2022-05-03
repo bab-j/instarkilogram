@@ -82,12 +82,16 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-	$().ready(function(){
+/* 	$().ready(function(){
 		$("#button1").click(function(){
 			location.href="usercontroller?type=UserSignUp";
 
 		});
-	});
+	}); */
+	function sign_up() {
+		location.href="usercontroller?type=UserSignUp";
+		
+	};
 </script>
 </head>
 
@@ -96,7 +100,7 @@
 	<div class="home">
 		<h3>instarkilogram</h3>
 	</div>
-</div>
+	</div>
 <div class="sign">
 			<h1><i>instarkilogram</i></h1>
 			<form action="usercontroller" method="post">
@@ -105,7 +109,7 @@
 				<th >아이디</th> 
 				<td>
 					<input type="text" name=uid id="uid" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
-					<input type="button" id="button1" value="중복확인">
+					<input type="button" id="button1" value="중복확인" onclick="sign_up()">
 				</td>
 			</tr>
 			<tr>
@@ -131,8 +135,8 @@
 					<input type="submit" id="submit" value="가입">
 					<input type="hidden" name="type" value="UserSignUp">
 			</form>
-		</div>
-		</body>
+</div>
+</body>
 </html>
 
 

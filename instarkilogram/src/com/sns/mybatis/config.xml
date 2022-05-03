@@ -8,7 +8,7 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.sns.model.vo.UserVO" alias="UserVO"/>
+		<typeAlias type="com.sns.user.db.UserVO" alias="UserVO"/>
 	</typeAliases>
 
   <environments default="development">
@@ -24,7 +24,6 @@
   </environments>
   
   <mappers>
-    <mapper resource="com/sns/mybatis/mapper.xml"/>
     <mapper resource="com/sns/mybatis/mapper_post.xml"/>
     <mapper resource="com/sns/mybatis/userMapper.xml"/>
   </mappers>

@@ -66,11 +66,9 @@
 </head>
 
 <body>
-	<thead>
 		<div class="top">
 			<h3>instarkilogram</h3>
 		</div>
-	</thead>
 	
 		<div class="sign">
 			<h1><i>instarkilogram</i></h1>
