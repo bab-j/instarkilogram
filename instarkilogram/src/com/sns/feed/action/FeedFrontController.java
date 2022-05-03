@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sns.feed.action.Command;
 import com.sns.feed.action.PostWriteCommand;
 
-@WebServlet("/feedcontroller")
+@WebServlet("/feed/feedcontroller")
 public class FeedFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,8 +31,9 @@ public class FeedFrontController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println(">> FrontController.doPost() 실행");
 		request.setCharacterEncoding("utf-8");
-		doPost(request, response);
+		doGet(request, response);
 	}
 
 	

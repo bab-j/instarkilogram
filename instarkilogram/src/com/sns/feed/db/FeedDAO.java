@@ -6,10 +6,11 @@ import com.sns.mybatis.DBService;
 
 public class FeedDAO {
 
-	public static void insert(FeedVO fvo) {
+	public static int insert(FeedVO fvo) {
 		SqlSession ss = DBService.getFactory().openSession(true);
-		ss.insert("post.insert", fvo);
+		int result = ss.insert("post.insert", fvo);
 		ss.close();
+		return result;
 	}
 }
 
