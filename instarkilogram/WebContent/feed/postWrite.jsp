@@ -21,8 +21,8 @@
 	function sendPost() {
 		console.log("sendPost() 실행~~");
 
-		let firstForm = document.forms[0];
-		console.log("firstForm[0] : " + firstForm);
+		let firstForm = document.forms[1];
+		console.log("firstForm[1] : " + firstForm);
 		for (let i = 0; i < firstForm.elements.length; i++) {
 			if (firstForm.elements[i].value.trim() == "") {
 				alert(firstForm.elements[i].title + "을 입력하세요");
@@ -43,7 +43,7 @@
 			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
 		</div>
 		<div class="container">
-				<form action="search.jsp" method="get" enctype="multipart/form-data">
+			<form action="search.jsp" method="get" enctype="multipart/form-data">
 			<span>
 					<input class="total_search"type="text" id= "search" name="keyword"> 
 					<input class="search_btn" type="submit" value="검색" >
