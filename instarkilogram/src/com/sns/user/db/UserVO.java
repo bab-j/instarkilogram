@@ -58,5 +58,11 @@ public class UserVO {
 	public void setU_pic(String u_pic) {
 		this.u_pic = u_pic;
 	}
-
+	@Override
+	public String toString() {
+		return "UserVO [u_idx=" + u_idx + ", u_id=" + u_id + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email
+				+ ", bio=" + bio + ", name=" + name + ", u_pic=" + u_pic + "]";
+	}
+	
+	
 }

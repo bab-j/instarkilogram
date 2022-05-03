@@ -23,6 +23,7 @@ public class EunSongController2 extends HttpServlet {
 		String type = request.getParameter("type");
 		
 		Command command = null;
+		
 		if("UserLogIn".equals(type)) {
 			command = new UserLogInCommand();
 		}

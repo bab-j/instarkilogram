@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,19 +41,19 @@
 		color: gray;
 		padding-left: 10px;
 	}
-	#submit { 
+	#logBtn { 
 		border:none;
 		margin-bottom: 4%;
 	}
-	#submit:hover {
+	#logBtn:hover {
 		background-color: #a7aaad;
 	}
-	#button {
+	#signBtn {
 		border:none;
 		background-color: #50575e;
 		color: white;
 	}
-	#button:hover {
+	#signBtn:hover {
 		background-color: #2c3338;
 	}
 	a {
@@ -64,23 +65,36 @@
 
 </style>
 </head>
-
+<script>
+	function logIn() {
+		console.log("logIn 실행~");
+		let loginFrm = document.forms[0];
+		loginFrm.submit();
+		console.log("logIn 실행~");
+	}
+</script>
 <body>
 		<div class="top">
 			<h3>instarkilogram</h3>
 		</div>
+	
+	<c:if test="${logChk == 0 }">
+		<c:set var="n1" />
+	</c:if>
 	
 		<div class="sign">
 			<h1><i>instarkilogram</i></h1>
 			<form action="eunsongcontroller?type=UserLogIn" method="post">
 				<input type="text" name="uid" id="name" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'"><br>
 				<input type="password" name="upwd" id="pwd" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"><br><br><br>
-				<input type="submit" id="submit" value="로그인"><br>
-				<input type="button" id="button" value="회원가입" onclick="Sign_up()"><br><br>
+				<input type="button" id="logBtn" value="로그인" onclick="logIn()"><br>
+				<input type="button" id="signBtn" value="회원가입" onclick="SignUp()"><br><br>
 			</form>
 			<a href="#">ID 찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 			<a href="#">비밀번호 찾기</a>
 		</div>
+		
+		
 		
 </body>
 </html>
