@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="com.sns.common.Paging"%>
 
 
 <!DOCTYPE html>
@@ -55,7 +56,7 @@
 </style>
 <script>
 	function searching() {
-		document.getElementById("#search").onclick = function () {
+		document.getElementById("search").onclick = function () {
 			location.href = "search.jsp"
 			
 		}
@@ -63,7 +64,13 @@
 	}
 </script>
 
-<%-- Paging  p = new List --%>
+<%  
+ Paging  p = new Paging();
+
+
+
+%>
+
 
 
 
@@ -77,7 +84,7 @@
 		<div class="container">
 			<span>
 				<form action="search.jsp" method="get" enctype="multipart/form-data">
-					<input type="text" key= "search" name="keyword" placeholder="통합검색">&nbsp;
+					<input type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;
 					<input type="submit" value="검색">
 			</span>
 			</form>
@@ -109,6 +116,12 @@
 			<tbody class="grid-body">
 
 				<%
+				
+				
+				
+				
+				
+				
 				int i;
 				for (int j = 1; j <= 20; j += 3) {
 				%>
