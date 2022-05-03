@@ -29,8 +29,8 @@ public class PostWriteCommand  implements Command {
 		FeedVO fvo = new FeedVO();
 		//fvo.setContent(mr.getParameter("content"));
 		//fvo.setU_idx(session.getAttribute("u_idx"));
-		fvo.setU_idx(23);
-		fvo.setContent("content");
+		fvo.setU_idx(1);
+		fvo.setContent(request.getParameter("content"));
 		fvo.setF_pic("popopo");
 		
 		/*

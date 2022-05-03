@@ -16,7 +16,7 @@
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="driver" value="oracle.jdbc.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@DB202203031403_medium?TNS_ADMIN=C:\MyStudy\SNS_DB\Wallet_DB202203031403"/>
+        <property name="url" value="jdbc:oracle:thin:@DB202203031403_medium?TNS_ADMIN=C:/MyStudy/SNS_DB/Wallet_DB202203031403"/>
         <property name="username" value="instar"/>
         <property name="password" value="Apfhdapfhd11!"/>
       </dataSource>
