@@ -52,7 +52,8 @@
 		</div>
 		<div class="nav-icon">
 			<ul>
-				<li class="material-icons">keyboard_backspace</li>
+			
+				<li> <input type="button" onclick="back" class="material-icons">keyboard_backspace</li>
 				<li class="material-icons-outlined">explore</li>
 				<li class="material-icons-outlined">favorite_border</li>
 			</ul>
