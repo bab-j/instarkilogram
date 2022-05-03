@@ -13,6 +13,15 @@
 	rel="stylesheet">
 
 
+<script>
+
+document.getElementById('back').addEventListener("click", history.back());
+
+	
+
+
+</script>
+
 <style>
 
 
@@ -40,7 +49,7 @@
 
 	<div class="bar">
 		<div class="home">
-			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
+			<h1><em> <a class="linkLine" href="main_feed.jsp" > instarkilogram </a></em></h1>
 		</div>
 		<div class="container">
 			<form action="search.jsp" method="get" enctype="multipart/form-data">
@@ -53,7 +62,7 @@
 		<div class="nav-icon">
 			<ul>
 			
-				<li> <input type="button" onclick="back" class="material-icons">keyboard_backspace</li>
+		<li  class="material-icons"><a href="javascript:window.history.back();">keyboard_backspace</a></li> 
 				<li class="material-icons-outlined">explore</li>
 				<li class="material-icons-outlined">favorite_border</li>
 			</ul>
@@ -62,7 +71,7 @@
 
 
 	<div class="write">
-		<h1 class="newFeed">새 게시물</h1>
+		<h1 class="feed">새 게시물</h1>
 
 		<form action="feedcontroller?type=postWrite" method="post"
 			enctype="multipart/form-data">
