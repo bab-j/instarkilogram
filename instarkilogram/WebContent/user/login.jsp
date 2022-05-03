@@ -72,9 +72,9 @@
 	
 		<div class="sign">
 			<h1><i>instarkilogram</i></h1>
-			<form>
-				<input type="text" name=uid id="name" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'"><br>
-				<input type="password" name=upwd id="pwd" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"><br><br><br>
+			<form action="eunsongcontroller?type=UserLogIn" method="post">
+				<input type="text" name="uid" id="name" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'"><br>
+				<input type="password" name="upwd" id="pwd" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"><br><br><br>
 				<input type="submit" id="submit" value="로그인"><br>
 				<input type="button" id="button" value="회원가입" onclick="Sign_up()"><br><br>
 			</form>
