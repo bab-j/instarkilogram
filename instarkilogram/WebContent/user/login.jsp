@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,11 +67,21 @@
 </style>
 </head>
 <script>
+
+	window.onload = function() {
+		console.log("온로드 되나요");
+		let com = '<%=(String)session.getAttribute("logChk")%>';
+		console.log("com 초기화 정상");
+		console.log("com : " + com);
+		if(com == "fail"){
+			alert("아이디와 암호를 확인하세요.");
+		}
+		
+	}
+
 	function logIn() {
-		console.log("logIn 실행~");
 		let loginFrm = document.forms[0];
 		loginFrm.submit();
-		console.log("logIn 실행~");
 	}
 </script>
 <body>
@@ -78,9 +89,6 @@
 			<h3>instarkilogram</h3>
 		</div>
 	
-	<c:if test="${logChk == 0 }">
-		<c:set var="n1" />
-	</c:if>
 	
 		<div class="sign">
 			<h1><i>instarkilogram</i></h1>
