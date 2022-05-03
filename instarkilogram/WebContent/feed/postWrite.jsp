@@ -1,88 +1,77 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>post_write.jsp</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="style.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+	rel="stylesheet">
+
+
 <style>
-	
-	.bar {
-		display:flex;
-		justify-content : space-between;
-		align-items : center;
-	}
-	
-	.write {
-		width: 800px; height: 400px;
-		margin: auto;
-		margin-top: 120px;
-	}
-	input, textarea, #sbm {
-		width: 500px;
-		margin: auto;
-		display: block;
-		border-radius: 4px;
-	}
-	h1 {
-		width: 500px;
-		margin: auto;
-		display: block;
-		margin-top: 50px;
-	}
-	#sbm {
-		margin-top:2px;
-		height: 40px;
-		background-color: #1E82FF;
-		color: white;
-		font-size: 20px;
-		border: none;
-	}
-	#f_input {height: 30px;}
-	h3 {float: left; background-color: yellow;}
-	span {float: right; background-color: aqua;}
-	
+
+
 </style>
 <script>
 	function sendPost() {
 		console.log("sendPost() 실행~~");
-		
+
 		let firstForm = document.forms[0];
 		console.log("firstForm[0] : " + firstForm);
-		for (let i = 0; i < firstForm.elements.length; i++){
-			if(firstForm.elements[i].value.trim() == ""){
+		for (let i = 0; i < firstForm.elements.length; i++) {
+			if (firstForm.elements[i].value.trim() == "") {
 				alert(firstForm.elements[i].title + "을 입력하세요");
 				firstForm.elements[i].focus();
-				return;  // --------없으면 제출함
+				return; // --------없으면 제출함
 			}
 		}
 		firstForm.submit();
 		console.log("sendPost() 완!!");
 	}
-
 </script>
 </head>
 <body>
-<div class="bar">
-	<div class="home">
-		<h3>instarkilogram</h3>
-	</div>
-	<div class="back">
-		<span class="material-icons">keyboard_backspace</span>
-	</div>
-</div>
+<body>
 
-<div class="write">
-	<h1>새 게시물</h1><br>
-	
-	<form action="feedcontroller?type=postWrite" method="post" enctype="multipart/form-data">
-	<!-- <form action="feedcontroller?type=postWrite" method="post"> -->
-		<input type="file" name="f_pic" id="f_input" title="사진"><br>
-		<textarea name="content" rows="9" cols="100" placeholder="내용을 입력해주세요."
-		onfocus="this.placeholder=''" onblur="this.placeholder='내용을 입력해주세요.'"></textarea><br>
-		<input type="button" value="등록" id="sbm" onclick="sendPost()">
-	</form>
-</div>
+	<div class="bar">
+		<div class="home">
+			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
+		</div>
+		<div class="container">
+				<form action="search.jsp" method="get" enctype="multipart/form-data">
+			<span>
+					<input class="total_search"type="text" id= "search" name="keyword"> 
+					<input class="search_btn" type="submit" value="검색" >
+			</span>
+			</form>
+		</div>
+		<div class="nav-icon">
+			<ul>
+				<li class="material-icons">keyboard_backspace</li>
+				<li class="material-icons-outlined">explore</li>
+				<li class="material-icons-outlined">favorite_border</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="write">
+		<h1 class="newFeed">새 게시물</h1>
+
+		<form action="feedcontroller?type=postWrite" method="post"
+			enctype="multipart/form-data">
+			<!-- <form action="feedcontroller?type=postWrite" method="post"> -->
+			<input class ="file" type="file" name="f_pic" id="f_input" title="사진"><br>
+			<textarea class="post_content" name="content" rows="9" cols="100"
+				placeholder="내용을 입력해주세요." onfocus="this.placeholder=''"
+				onblur="this.placeholder='내용을 입력해주세요.'"></textarea>
+			<br> <input type="button" value="등록" id="sbm" onclick="sendPost()">
+		</form>
+	</div>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 <%@page import="com.sns.common.Paging"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
@@ -6,11 +7,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="com.sns.common.Paging"%>
 
-<link rel="stylesheet" href="style.css">
+
 
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <title>검색결과 페이지</title>
 <link
@@ -20,20 +22,6 @@
 
 <style>
 
-.grid-head {
-	float: inherit;
-}
-
-.grid-body {
-	
-}
-
-.grid_table {
-	margin-left: auto;
-	margin-right: auto;
-	width: 293px;
-	height: 293px;
-}
 </style>
 <script>
 	function searching() {
@@ -54,7 +42,6 @@
 </head>
 <body>
 
-<link rel="stylesheet" href="style.css">
 
 	<div class="bar">
 		<div class="home">
@@ -63,8 +50,7 @@
 		<div class="container">
 				<form action="search.jsp" method="get" enctype="multipart/form-data">
 			<span>
-					<input type="text" id= "search" name="keyword" placeholder="통합검색" style=" width:200px;height:25px;font-size:12px; margin-bottom: 8px">
-					<input type="submit" value="검색" style="width:80px; height:25px; font-size: 12px ">
+					<input class="total_search"type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;</a><input class="search_btn" type="submit" value="검색" >
 			</span>
 			</form>
 		</div>
@@ -77,7 +63,7 @@
 		</div>
 	</div>
 	
-	
+	<br>
 	<h1 class="search_result">'${search }' 검색 결과</h1>
 	<div class="search_grid">
 		<table class="grid_table">
@@ -89,7 +75,7 @@
 				%>
 				<tr>
 					<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
-						<td><a href="../img/${i }.jpg"><img src="../img/${i }.jpg" width="293px" height="293px"></img></a></td>
+						<td><a href="../img/${i }.jpg"><img src="../img/${i }.jpg" width="293px" height="293px"  alt="${i }.jpg"></img></a></td>
 					</c:forEach>
 				</tr>
 				<%

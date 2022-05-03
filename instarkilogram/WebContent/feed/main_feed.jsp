@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="style.css">
 <!--브라우저 적당량  -->
 <title>main</title>
 <link
@@ -21,7 +22,6 @@
 <!--이클립스wtp지원ㄴignore로 설정-->
 
 <style>
-
 .left_body {
 	background-color: gainsboro;
 	margin-right: 100px;
@@ -52,7 +52,6 @@
 	height: 3000px;
 }
 
-
 .feed_img {
 	width: 100%;
 	height: 60%;
@@ -69,8 +68,8 @@
 
 .feed_feply {
 	padding: 0px 10px;
-	display: flex;   
-fiex-direction:column;
+	display: flex;
+	fiex-direction: column;
 }
 
 .profile_img {
@@ -121,17 +120,15 @@ fiex-direction:column;
 </head>
 <body>
 
-<link rel="stylesheet" href="style.css">
 
-	<div class="bar">
+		<div class="bar">
 		<div class="home">
 			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
 		</div>
 		<div class="container">
 				<form action="search.jsp" method="get" enctype="multipart/form-data">
 			<span>
-					<input type="text" id= "search" name="keyword" placeholder="통합검색" style=" width:200px;height:25px;font-size:12px; margin-bottom: 8px">
-					<input type="submit" value="검색" style="width:80px; height:25px; font-size: 12px ">
+					<input class="total_search"type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;</a><input class="search_btn" type="submit" value="검색" >
 			</span>
 			</form>
 		</div>
@@ -143,8 +140,8 @@ fiex-direction:column;
 			</ul>
 		</div>
 	</div>
-	
 
+<br> <br>
 	<div class="main_body">
 		<!-- 메인 박스 -->
 		<div class="left_body ">
