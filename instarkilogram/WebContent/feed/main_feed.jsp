@@ -120,6 +120,7 @@ fiex-direction:column;
 </style>
 </head>
 <body>
+
 <link rel="stylesheet" href="style.css">
 
 	<div class="bar">
@@ -127,10 +128,10 @@ fiex-direction:column;
 			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
 		</div>
 		<div class="container">
-			<span>
 				<form action="search.jsp" method="get" enctype="multipart/form-data">
-					<input type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;
-					<input type="submit" value="검색">
+			<span>
+					<input type="text" id= "search" name="keyword" placeholder="통합검색" style=" width:200px;height:25px;font-size:12px; margin-bottom: 8px">
+					<input type="submit" value="검색" style="width:80px; height:25px; font-size: 12px ">
 			</span>
 			</form>
 		</div>
@@ -142,7 +143,6 @@ fiex-direction:column;
 			</ul>
 		</div>
 	</div>
-	<hr style="margin-top: 5px;">
 	
 
 	<div class="main_body">

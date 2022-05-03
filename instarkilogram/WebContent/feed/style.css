@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-  padding-top: 50px;
+  padding-top: 75px;
 }
 
 .bar {
@@ -10,13 +10,15 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 50px;
-	padding: 1rem;
+	height: 40px;
+	padding: 0.5rem;
 	display: flex;
 	left: 0;
 	right: 0;
-	background-color: white;
-	border-bottom: 5px;
+	background-color:white;
+	border-bottom: 1px solid #dbdbdb;
+	border-top: highlight;
+	border-color: grey;
 }
 
 .linkLine {
@@ -25,7 +27,8 @@ body {
 }
 
 .home {
-	margin-left: 100px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .container {
@@ -33,10 +36,23 @@ body {
 	margin-top: auto;
 	margin-bottom: auto;
 	width: 600px;
-	margin-left: 400px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .nav-icon {
 	justify-content: space-between;
-	margin-left: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	font-size: 50px
+	align-items: center;
+	
+	
+}
+
+
+.search_result {
+	margin-left: 500px;
+	
 }

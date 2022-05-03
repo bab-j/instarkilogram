@@ -63,8 +63,8 @@
 		<div class="container">
 				<form action="search.jsp" method="get" enctype="multipart/form-data">
 			<span>
-					<input type="text" id= "search" name="keyword" placeholder="통합검색" style=" width:200px;height:35px;font-size:20px; margin-bottom: 8px">
-					<input type="submit" value="검색" style="width:80px; height:35px; font-size: 15px ">
+					<input type="text" id= "search" name="keyword" placeholder="통합검색" style=" width:200px;height:25px;font-size:12px; margin-bottom: 8px">
+					<input type="submit" value="검색" style="width:80px; height:25px; font-size: 12px ">
 			</span>
 			</form>
 		</div>
@@ -76,9 +76,9 @@
 			</ul>
 		</div>
 	</div>
-	<hr style="margin-top: 5px;">
 	
-	<h1>"${search }" 검색 결과</h1>
+	
+	<h1 class="search_result">'${search }' 검색 결과</h1>
 	<div class="search_grid">
 		<table class="grid_table">
 			<tbody class="grid-body">
