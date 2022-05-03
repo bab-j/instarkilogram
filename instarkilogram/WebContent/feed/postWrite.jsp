@@ -50,13 +50,13 @@
 		
 		let firstForm = document.forms[0];
 		console.log("firstForm[0] : " + firstForm);
-		/* for (let i = 0; i < firstForm.elements.length; i++){
+		for (let i = 0; i < firstForm.elements.length; i++){
 			if(firstForm.elements[i].value.trim() == ""){
 				alert(firstForm.elements[i].title + "을 입력하세요");
 				firstForm.elements[i].focus();
 				return;  // --------없으면 제출함
 			}
-		} */
+		}
 		firstForm.submit();
 		console.log("sendPost() 완!!");
 	}
@@ -76,9 +76,9 @@
 <div class="write">
 	<h1>새 게시물</h1><br>
 	
-	<!-- <form action="feedcontroller?type=postWrite" method="post" enctype="multipart/form-data"> -->
-	<form action="feedcontroller?type=postWrite" method="post">
-		<!-- <input type="file" name="f_pic" id="f_input" title="사진"><br> -->
+	<form action="feedcontroller?type=postWrite" method="post" enctype="multipart/form-data">
+	<!-- <form action="feedcontroller?type=postWrite" method="post"> -->
+		<input type="file" name="f_pic" id="f_input" title="사진"><br>
 		<textarea name="content" rows="9" cols="100" placeholder="내용을 입력해주세요."
 		onfocus="this.placeholder=''" onblur="this.placeholder='내용을 입력해주세요.'"></textarea><br>
 		<input type="button" value="등록" id="sbm" onclick="sendPost()">
