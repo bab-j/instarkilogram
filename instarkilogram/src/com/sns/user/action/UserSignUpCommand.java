@@ -14,11 +14,17 @@ public class UserSignUpCommand implements Command{
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String uid = request.getParameter("uid");
+		int login = 43;
 		if(udao.checkId(uid)) {
-			System.out.println("아이디가 존재합니다");
+			//System.out.println("아이디가 존재합니다");
+			login = 1;
 		} else {
-			System.out.println("사용 가능한 아이디입니다");
+			//System.out.println("사용 가능한 아이디입니다");
+			login = 0;
 		}
+		request.setAttribute("login", login);
+		request.setAttribute("checkID", udao.checkId(uid));
+		request.setAttribute("uid", uid);
 		return "signUp.jsp";
 	}
 

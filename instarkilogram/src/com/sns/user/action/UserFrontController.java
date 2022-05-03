@@ -20,6 +20,7 @@ public class UserFrontController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		System.out.println(">> FrontController.doGet() 실행");
 		String type = request.getParameter("type");
+		request.setAttribute("uid", request.getParameter("uid"));
 		System.out.println(type);
 		Command command = null;
 		if("UserSignUp".equals(type)) {
@@ -29,10 +30,10 @@ public class UserFrontController extends HttpServlet {
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		System.out.println(">> FrontController.doPost() 실행");
-//		doGet(request, response);
-//	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println(">> FrontController.doPost() 실행");
+		doGet(request, response);
+	}
 
 	
 
