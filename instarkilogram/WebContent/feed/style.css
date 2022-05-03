@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+body {
+  padding-top: 50px;
+}
+
+.bar {
+	position: fixed;
+	top: 0; left : 0; right : 0; bottom : 10;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	padding: 1rem;
+	display: flex;
+	left: 0;
+	right: 0;
+	background-color: white;
+	border-bottom: 5px;
+}
+
+.linkLine {
+	text-decoration: none;
+	color: inherit;
+}
+
+.home {
+	margin-left: 100px;
+}
+
+.container {
+	padding-top : 1px;
+	margin-top: auto;
+	margin-bottom: auto;
+	width: 600px;
+	margin-left: 400px;
+}
+
+.nav-icon {
+	justify-content: space-between;
+	margin-left: 300px;
+}

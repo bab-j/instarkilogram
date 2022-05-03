@@ -6,6 +6,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="com.sns.common.Paging"%>
 
+<link rel="stylesheet" href="style.css">
 
 <!DOCTYPE html>
 <html>
@@ -16,28 +17,8 @@
 	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
 	rel="stylesheet">
 
+
 <style>
-.bar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.home {
-	margin-left: 50px;
-	margin-top: 10px;
-}
-
-.container {
-	display: flex;
-	width: 500px;
-	margin-left: 400px;
-}
-
-.nav-icon {
-	display: flex;
-	margin-left: 300px;
-}
 
 .grid-head {
 	float: inherit;
@@ -62,91 +43,61 @@
 		}
 
 	}
+	
+	
 </script>
 
 <%  
  Paging  p = new Paging();
 
-
-
 %>
-
-
-
-
 </head>
 <body>
 
+<link rel="stylesheet" href="style.css">
+
 	<div class="bar">
 		<div class="home">
-			<h3>instarkilogram</h3>
+			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
 		</div>
 		<div class="container">
-			<span>
 				<form action="search.jsp" method="get" enctype="multipart/form-data">
-					<input type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;
-					<input type="submit" value="검색">
+			<span>
+					<input type="text" id= "search" name="keyword" placeholder="통합검색" style=" width:200px;height:35px;font-size:20px; margin-bottom: 8px">
+					<input type="submit" value="검색" style="width:80px; height:35px; font-size: 15px ">
 			</span>
 			</form>
-
-
 		</div>
-
-
-
 		<div class="nav-icon">
-
 			<ul>
 				<li class="material-icons">home</li>
 				<li class="material-icons-outlined">explore</li>
 				<li class="material-icons-outlined">favorite_border</li>
-
 			</ul>
-
 		</div>
 	</div>
-	<hr>
+	<hr style="margin-top: 5px;">
+	
 	<h1>"${search }" 검색 결과</h1>
-
 	<div class="search_grid">
-
 		<table class="grid_table">
-
-
 			<tbody class="grid-body">
 
 				<%
-				
-				
-				
-				
-				
-				
 				int i;
 				for (int j = 1; j <= 20; j += 3) {
 				%>
-
 				<tr>
 					<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
-
 						<td><a href="../img/${i }.jpg"><img src="../img/${i }.jpg" width="293px" height="293px"></img></a></td>
 					</c:forEach>
 				</tr>
-
 				<%
 					}
 				%>
 			</tbody>
-
-
 		</table>
-
-
 	</div>
-
-
-
-
 
 </body>
 </html>

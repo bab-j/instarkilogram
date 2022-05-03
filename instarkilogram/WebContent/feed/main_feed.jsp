@@ -17,27 +17,10 @@
 	crossorigin="anonymous">
 	
 </script>
+<link rel="stylesheet" href="style.css">
 <!--이클립스wtp지원ㄴignore로 설정-->
 
 <style>
-.bar {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.home {
-	margin-left: 50px;
-	margin-top: 10px;
-}
-
-
-
-.container {
-	display: flex;
-	width: 500px;
-	margin-left:400px;
-}
 
 .left_body {
 	background-color: gainsboro;
@@ -62,12 +45,6 @@
 	padding-top: 50px;
 }
 
-.navbar {
-	width: 100%;
-	height: 60px;
-	position: contain;
-}
-
 .feed_box {
 	background-color: white;
 	width: 480px;
@@ -75,11 +52,6 @@
 	height: 3000px;
 }
 
-.nav-icon {
-	display: flex;
-
-	margin-left: 300px;
-}
 
 .feed_img {
 	width: 100%;
@@ -148,27 +120,30 @@ fiex-direction:column;
 </style>
 </head>
 <body>
+<link rel="stylesheet" href="style.css">
 
-		<div class="bar">
-			<div class="home">
-				<h3>instarkilogram</h3>
-			</div>
-			<div class="container">
-			<span> <input class="seach1" type="text"
-					placeholder="Search" aria-label="Search">&nbsp;</span>
-					
-					<span> <input type="button" value="검색" ></span>
-			
-			</div>
-			<div class="nav-icon">
-				<span class="material-icons">home&nbsp;</span>
-				<span class="material-icons-outlined">explore&nbsp;</span> <span
-					class="material-icons-outlined">favorite_border</span>
-				<!-- 하나세트 -->
-			</div>
+	<div class="bar">
+		<div class="home">
+			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
 		</div>
-
-
+		<div class="container">
+			<span>
+				<form action="search.jsp" method="get" enctype="multipart/form-data">
+					<input type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;
+					<input type="submit" value="검색">
+			</span>
+			</form>
+		</div>
+		<div class="nav-icon">
+			<ul>
+				<li class="material-icons">home</li>
+				<li class="material-icons-outlined">explore</li>
+				<li class="material-icons-outlined">favorite_border</li>
+			</ul>
+		</div>
+	</div>
+	<hr style="margin-top: 5px;">
+	
 
 	<div class="main_body">
 		<!-- 메인 박스 -->
