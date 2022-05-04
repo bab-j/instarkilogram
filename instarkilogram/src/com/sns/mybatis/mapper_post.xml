@@ -7,22 +7,24 @@
 	<!-- 게시글 등록 -->
 	<insert id="insert" parameterType="com.sns.feed.db.FeedVO">
 		INSERT INTO FEED (F_IDX, REGDATE, CONTENT, U_IDX, U_LIKE, F_PIC)
-            	VALUES(FEED_SEQ.nextval, SYSDATE, #{content}, #{uIdx},0, #{fPic})
+            	VALUES(FEED_SEQ.nextval, SYSDATE, #{content}, #{u_idx},0, #{f_pic})
 	</insert>
 	
 	<!-- 메인 피드 -->
 	<select id="mainFeed" parameterType="int" resultType="com.sns.feed.db.FeedVO">
-		SELECT DISTINCT FD.F_IDX, FD.REGDATE, FD.CONTENT, FD.U_IDX, FD.U_LIKE, FD.F_PIC
-		FROM FEED FD, (SELECT * FROM FOLLOW WHERE FROM_IDX = #{uIdx}) FW
-		WHERE FD.U_IDX = FW.TO_IDX
-		OR FD.U_IDX = #{uIdx}
+		SELECT *
+		FROM (SELECT DISTINCT FD.F_IDX, FD.REGDATE, FD.CONTENT, FD.U_IDX, FD.U_LIKE, FD.F_PIC
+				FROM FEED FD, (SELECT * FROM FOLLOW WHERE FROM_IDX = #{u_idx}) FW
+				WHERE FD.U_IDX = FW.TO_IDX
+				OR FD.U_IDX = #{u_idx})
+        ORDER BY REGDATE DESC
 	</select>
 	
 	<!-- 로그인 -->
 	<select id="login" parameterType="map" resultType="com.sns.user.db.UserVO">
 		SELECT * 
 		FROM USER_INFO
-		WHERE U_ID = #{uId} AND PWD = #{pwd}
+		WHERE U_ID = #{u_id} AND PWD = #{pwd}
 	</select>
 
 </mapper>

@@ -26,15 +26,16 @@ public class PostWriteCommand implements Command {
 
 		FeedVO fvo = new FeedVO();
 		fvo.setContent(mr.getParameter("content"));
-		fvo.setuIdx((int)session.getAttribute("uIdx"));
-		System.out.println("uIdx 당장 나와 : " + (int)session.getAttribute("uIdx"));
+		fvo.setU_idx((int)session.getAttribute("u_idx"));
+		System.out.println("u_idx : " + (int)session.getAttribute("u_idx"));
+		
 		if(mr.getFile("fPic") != null) {
-			fvo.setfPic(mr.getFilesystemName("fPic")); 
+			fvo.setF_pic(mr.getFilesystemName("fPic")); 
 		}
-		 
+		 System.out.println("파일 존재 확인");
 		int result = FeedDAO.insert(fvo);
 
-		return "main_feed.jsp";
+		return "mainFeed.jsp";
 	}
 
 }
