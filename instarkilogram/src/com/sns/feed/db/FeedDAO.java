@@ -1,5 +1,6 @@
 package com.sns.feed.db;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,15 @@ public class FeedDAO {
 		ss.close();
 		return result;
 	}
+	
+	// 메인 피드 불러오기
+	public static List<FeedVO> selectMain(int u_idx){
+		SqlSession ss = DBService.getFactory().openSession();
+		ss.selectList("post.mainFeed")
+		
+		return
+	}
+	
 	
 	//user로 옮겨~~~~~~~~~
 	// id와 pwd가 매칭되는 데이터 갯수~~
