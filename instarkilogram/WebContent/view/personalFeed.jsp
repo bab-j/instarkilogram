@@ -21,7 +21,7 @@
 
 <style>
 	.bigProfile_img {
-		width: 150px;
+		width: 151px;
 		height: 150px;
 		border-radius: 50%;
 		margin-left: 10px;

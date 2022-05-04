@@ -44,7 +44,7 @@
 		border-radius: 5px;
 		margin: 5px;
 		width: 230px;
-		height: 40px;
+		height: 41px;
 		font-size: 1em;
 		color: gray;
 		padding-left: 10px;
@@ -94,7 +94,7 @@
 					<td><input type="text" name="phone" placeholder="010-0000-0000" onfocus="this.placeholder=''" onblur="this.placeholder='010-0000-0000'"></td>
 				</tr>
 				<tr>
-					<th>생년월일</th> 
+					<th>생년월일</th>
 					<td><input type="text" name="birth" placeholder="생년월일 6자리" onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"></td>
 				</tr>
 			</table>
