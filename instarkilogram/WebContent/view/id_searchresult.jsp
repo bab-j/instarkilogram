@@ -27,7 +27,7 @@
          
          
          </div><!--container-->
-         
+            
     </div>
           <div class="feed_name">
 							<div class="profile_box">
