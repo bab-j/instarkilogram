@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sns.user.db.UserDAO;
 
-public class UserSignUpCommand implements Command{
+public class UserIdChkCommand implements Command{
 	UserDAO udao = new UserDAO();
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

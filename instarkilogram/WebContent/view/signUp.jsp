@@ -101,6 +101,9 @@
 	function signUp() {
 	
 	}
+	function goLogIn() {
+		location.href = "login.jsp";
+	}
 	
 	window.onload = function () {
 		let asd = document.getElementById("uid");
@@ -122,7 +125,7 @@
 	</div>
 <div class="sign">
 			<h1><i>instarkilogram</i></h1>
-			<form action="usercontroller?type=UserSignUp" method="post">
+			<form action="usercontroller?type=UserIdChk" method="post">
 			<table>
 			<tr>
 				<th>아이디</th> 
@@ -143,7 +146,7 @@
 				</c:when>
 				</c:choose>
 			</form>
-			<form>
+			<form action="usercontroller?type=UserSignUp">
 			<table>
 			<tr>
 				<th>비밀번호</th> <td><input type="password" name=upwd id="pwd" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"></td>
@@ -164,9 +167,9 @@
 				<th>생년월일</th> <td><input type="text" name="birth" placeholder="생년월일 6자리" onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"></td>
 			</tr>
 			</table>
-					<input type="button" id="butt" value="취소" onclick="history.back()">
+					<input type="button" id="butt" value="취소" onclick="goLogIn()">
 					<input type="submit" id="subm" value="가입" onclick="signUp()">
-					<input type="hidden" name="type" value="UserSignUp">
+					<input type="hidden" id="uID" value="${uid }">
 			</form>
 </div>
 </body>

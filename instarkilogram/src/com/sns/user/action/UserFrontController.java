@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sns.user.action.Command;
-import com.sns.user.action.UserSignUpCommand;
+import com.sns.user.action.UserIdChkCommand;
 
 @WebServlet("/view/usercontroller")
 public class UserFrontController extends HttpServlet {
@@ -23,8 +23,8 @@ public class UserFrontController extends HttpServlet {
 		request.setAttribute("uid", request.getParameter("uid"));
 		System.out.println(type);
 		Command command = null;
-		if("UserSignUp".equals(type)) {
-			command = new UserSignUpCommand();
+		if("UserIdChk".equals(type)) {
+			command = new UserIdChkCommand();
 		}
 		String path = command.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);

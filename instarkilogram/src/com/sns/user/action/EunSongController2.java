@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sns.user.action.Command;
-import com.sns.user.action.UserSignUpCommand;
+import com.sns.user.action.UserIdChkCommand;
 
 @WebServlet("/user/eunsongcontroller")
 public class EunSongController2 extends HttpServlet {
