@@ -14,17 +14,10 @@
 
 
 <script>
-
-document.getElementById('back').addEventListener("click", history.back());
-
-	
-
-
+	document.getElementById('back').addEventListener("click", history.back());
 </script>
 
 <style>
-
-
 </style>
 <script>
 	function sendPost() {
@@ -49,20 +42,24 @@ document.getElementById('back').addEventListener("click", history.back());
 
 	<div class="bar">
 		<div class="home">
-			<h1><em> <a class="linkLine" href="main_feed.jsp" > instarkilogram </a></em></h1>
+			<h1>
+				<em> <a class="linkLine" href="main_feed.jsp">
+						instarkilogram </a></em>
+			</h1>
 		</div>
 		<div class="container">
 			<form action="search.jsp" method="get" enctype="multipart/form-data">
-			<span>
-					<input class="total_search"type="text" id= "search" name="keyword"> 
-					<input class="search_btn" type="submit" value="검색" >
-			</span>
+				<span> <input class="total_search" type="text" id="search"
+					name="keyword"> <input class="search_btn" type="submit"
+					value="검색">
+				</span>
 			</form>
 		</div>
 		<div class="nav-icon">
 			<ul>
-			
-		<li  class="material-icons"><a href="javascript:window.history.back();">keyboard_backspace</a></li> 
+
+				<li class="material-icons"><a
+					href="javascript:window.history.back();">keyboard_backspace</a></li>
 				<li class="material-icons-outlined">explore</li>
 				<li class="material-icons-outlined">favorite_border</li>
 			</ul>
@@ -72,15 +69,24 @@ document.getElementById('back').addEventListener("click", history.back());
 
 	<div class="write">
 		<h1 class="feed">새 게시물</h1>
+		<div>
+			<div >
+				<div class="img_box"> <a href=""> <img src="../img/1.jpg"> </a> </div>
+			</div>
+		</div>
 
+		<br>
+		<br>
 		<form action="feedcontroller?type=postWrite" method="post"
 			enctype="multipart/form-data">
-			<input class ="file" type="file" name="f_pic" id="f_input" title="사진"><br>
+			<input class="file" type="file" name="f_pic" id="f_input" title="사진"><br>
 			<textarea class="post_content" name="content" rows="9" cols="100"
 				placeholder="내용을 입력해주세요." onfocus="this.placeholder=''"
 				onblur="this.placeholder='내용을 입력해주세요.'"></textarea>
-			<br> <input type="button" value="등록" id="sbm" onclick="sendPost()">
+			<br> <input type="button" value="등록" id="sbm"
+				onclick="sendPost()">
 		</form>
+		<br> <br>
 	</div>
 </body>
 </html>
