@@ -108,6 +108,9 @@
 
 .comment_textbox {
 	height: 32px;
+	border-radius: 4px;
+	border-style: solid;
+	
 }
 </style>
 </head>
