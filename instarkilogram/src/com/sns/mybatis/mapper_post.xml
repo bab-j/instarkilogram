@@ -7,14 +7,14 @@
 	<!-- 게시글 등록 -->
 	<insert id="insert" parameterType="com.sns.feed.db.FeedVO">
 		INSERT INTO FEED (F_IDX, REGDATE, CONTENT, U_IDX, U_LIKE, F_PIC)
-            	VALUES(FEED_SEQ.nextval, SYSDATE, #{content}, #{u_idx},0, #{f_pic})
+            	VALUES(FEED_SEQ.nextval, SYSDATE, #{content}, #{uIdx},0, #{fPic})
 	</insert>
 	
 	<!-- 로그인 -->
 	<select id="login" parameterType="map" resultType="com.sns.user.db.UserVO">
 		SELECT * 
 		FROM USER_INFO
-		WHERE U_ID = #{u_id} AND PWD = #{pwd}
+		WHERE U_ID = #{uId} AND PWD = #{pwd}
 	</select>
 
 </mapper>
