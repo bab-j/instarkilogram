@@ -6,6 +6,15 @@
 <meta charset="UTF-8">
 <title>Find ID</title>
 <style>
+	table th {
+		font-size: 1em;
+		font-family: monospace;
+		
+	}
+	table {
+		margin-bottom: 20px;
+		margin-left: 20px;
+	}
 	body {
 		background-color: #f6f7f7;
 	}
@@ -21,7 +30,7 @@
 		padding-top: 1%;
 		margin-left: 38%;
 		margin-top: 5%;
-		width: 310px;
+		width: 350px;
 		height: 450px;
 		text-align: center;
 	}
@@ -65,17 +74,26 @@
 </style>
 </head>
 <body>
-<thead>
 		<div class="top">
 			<h3>instarkilogram</h3>
 		</div>
-	</thead>
 <div class="sign">
 			<h1><i>instarkilogram</i></h1>
 			<form>
-				<span>이메일</span> <input type="email" name="email" placeholder="abc123@abc.com" onfocus="this.placeholder=''" onblur="this.placeholder='abc123@abc.com'"><br>
-				<span>전화번호</span><input type="text" name="phone" placeholder="010-0000-0000" onfocus="this.placeholder=''" onblur="this.placeholder='010-0000-0000'"><br>
-				<span>생년월일</span><input type="text" name="birth" placeholder="생년월일 6자리" onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"><br>
+			<table>
+				<tr>
+					<th>이메일</th> 
+					<td><input type="email" name="email" placeholder="abc123@abc.com" onfocus="this.placeholder=''" onblur="this.placeholder='abc123@abc.com'"></td>
+				</tr>
+				<tr>
+					<th>전화번호</th> 
+					<td><input type="text" name="phone" placeholder="010-0000-0000" onfocus="this.placeholder=''" onblur="this.placeholder='010-0000-0000'"></td>
+				</tr>
+				<tr>
+					<th>생년월일</th> 
+					<td><input type="text" name="birth" placeholder="생년월일 6자리" onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"></td>
+				</tr>
+			</table>
 				<input type="button" id="button" value="취소" onclick="history.back()">
 				<input type="submit" id="submit" value="가입">
 			</form>

@@ -94,6 +94,11 @@
 			bio@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 		</div>
 	</div>
+	
+	<div style="float:left; margin-left: 70px;">
+		아이디
+	</div>
+	
 	<div class="search_grid">
 		<table class="grid_table">
 			<tbody class="grid-body">
