@@ -10,6 +10,14 @@
             	VALUES(FEED_SEQ.nextval, SYSDATE, #{content}, #{uIdx},0, #{fPic})
 	</insert>
 	
+	<!-- 메인 피드 -->
+	<select id="mainFeed" parameterType="int" resultType="com.sns.feed.db.FeedVO">
+		SELECT DISTINCT FD.F_IDX, FD.REGDATE, FD.CONTENT, FD.U_IDX, FD.U_LIKE, FD.F_PIC
+		FROM FEED FD, (SELECT * FROM FOLLOW WHERE FROM_IDX = #{uIdx}) FW
+		WHERE FD.U_IDX = FW.TO_IDX
+		OR FD.U_IDX = #{uIdx}
+	</select>
+	
 	<!-- 로그인 -->
 	<select id="login" parameterType="map" resultType="com.sns.user.db.UserVO">
 		SELECT * 
