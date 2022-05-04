@@ -106,48 +106,10 @@ body {
 }
 
 
-
-.feed {
-	width: 500px;
-	margin: auto;
-	display: block;
-	margin-top: 50px;
-}
-
-#sbm {
-	margin-top: 2px;
-	height: 40px;
-	background-color: #1E82FF;
-	color: white;
-	font-size: 20px;
-	border: none;
-	width: 500px;
-	margin: auto;
-	display: block;
-	border-radius: 4px;
-}
-
 #f_input {
 	height: 30px;
 }
 
-
-.left_body {
-	background-color: gainsboro;
-	margin-right: 100px;
-	width: 500px;
-	height: 2000px;
-	display: flex;
-	flex-direction: column;
-}
-
-.right_body {
-	background-color: write;
-	width: 300px;
-	height: 1000px;
-	left: 65%;
-	position: fixed;
-}
 
 .main_body {
 	display: flex;

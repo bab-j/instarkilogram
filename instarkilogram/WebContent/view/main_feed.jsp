@@ -22,22 +22,18 @@
 
 <style>
 .left_body {
-	background-color: gainsboro;
+	width: 654px;
 	text-align: center;
 	height: 2000px;
-	display: flex;
-	flex-direction: column;
-	width: 654px;
 	flex-direction: column;
 	display: flex;
-	height: 2000px;
 }
 
 .feed_box {
-	background-color: white;
 	width: 634px;
 	margin: 10px;
 	float: inherit;
+	border: 1px solid #dbdbdb;
 }
 
 .feed_img {
@@ -151,8 +147,7 @@
 		<div class="left_body ">
 			<!-- 블루 -->
 			<% 
-			for(int i = 1; i< 5; i++) {
-				for(int j = 1; j <= i; j++) {
+				for(int j = 1; j <= 14; j++) {
 			
 				%>
 			
@@ -221,7 +216,7 @@
 
 			</div>
 			<%
-				}
+				
 			}
 			%>
 			
