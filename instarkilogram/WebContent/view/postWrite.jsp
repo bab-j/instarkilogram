@@ -71,7 +71,7 @@
 		<h1 class="feed">새 게시물</h1>
 		<div>
 			<div >
-				<div class="img_box"> <a href=""> <img src="../img/1.jpg"> </a> </div>
+				<div class="img_box"> <a href=""> <img src=" "> </a> </div>
 			</div>
 		</div>
 

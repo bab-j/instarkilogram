@@ -69,12 +69,14 @@ body {
 	height: 28px;
 	font-size: 15px;
 	margin-bottom: 8px;
+	border-radius: 4px;
 }
 
 .search_btn {
 	font-size: 15px;
 	height: 32px;
 	margin-bottom: 8px;
+	border-radius: 4px;
 }
 
 .search_result {
