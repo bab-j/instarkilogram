@@ -21,9 +21,9 @@ public class FeedDAO {
 	
 	//user로 옮겨~~~~~~~~~
 	// id와 pwd가 매칭되는 데이터 갯수~~
-	public static UserVO loginRight(String u_id, String pwd) {
+	public static UserVO loginRight(String uId, String pwd) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("u_id", u_id);
+		map.put("uId", uId);
 		map.put("pwd", pwd);
 		
 		UserVO vo = new UserVO();

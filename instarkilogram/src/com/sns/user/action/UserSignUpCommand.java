@@ -15,7 +15,7 @@ public class UserSignUpCommand implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserVO vo = new UserVO();
 		UserDAO uDao = new UserDAO();
-		vo.setuId(request.getParameter("uID"));
+		vo.setU_id(request.getParameter("uID"));
 		vo.setPwd(request.getParameter("upwd"));
 		vo.setEmail(request.getParameter("email"));
 		vo.setName(request.getParameter("name"));

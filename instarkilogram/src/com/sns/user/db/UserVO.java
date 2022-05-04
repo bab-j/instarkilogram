@@ -1,8 +1,8 @@
 package com.sns.user.db;
 
 public class UserVO {
-	private int uIdx;
-	private String uId;
+	private int u_idx;
+	private String u_id;
 	private String pwd;
 	private String phone;
 	private String email;
@@ -10,18 +10,17 @@ public class UserVO {
 	private String name;
 	private String uPic;
 	private String birth;
-	
-	public int getuIdx() {
-		return uIdx;
+	public int getU_idx() {
+		return u_idx;
 	}
-	public void setuIdx(int uIdx) {
-		this.uIdx = uIdx;
+	public void setU_idx(int u_idx) {
+		this.u_idx = u_idx;
 	}
-	public String getuId() {
-		return uId;
+	public String getU_id() {
+		return u_id;
 	}
-	public void setuId(String uId) {
-		this.uId = uId;
+	public void setU_id(String u_id) {
+		this.u_id = u_id;
 	}
 	public String getPwd() {
 		return pwd;
@@ -67,7 +66,7 @@ public class UserVO {
 	}
 	@Override
 	public String toString() {
-		return "UserVO [uIdx=" + uIdx + ", uId=" + uId + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email
+		return "UserVO [u_idx=" + u_idx + ", u_id=" + u_id + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email
 				+ ", bio=" + bio + ", name=" + name + ", uPic=" + uPic + ", birth=" + birth + "]";
 	}
 	
