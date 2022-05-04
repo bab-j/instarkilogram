@@ -21,7 +21,6 @@ body {
 	background-color: white;
 	border-bottom: 1px solid #dbdbdb;
 	border-top: highlight;
-	border-color: grey;
 }
 
 .linkLine {
@@ -44,7 +43,6 @@ body {
 }
 
 .nav-icon {
-	
 	justify-content: space-between;
 	margin-left: auto;
 	margin-right: auto;
@@ -97,19 +95,49 @@ body {
 	border-radius: 4px;
 }
 
-.post_content{
+.post_content {
 	width: 500px;
 	margin: auto;
 	display: block;
 	border-radius: 4px;
-
 }
 
+.feed {
+	width: 500px;
+	margin: auto;
+	display: block;
+	margin-top: 50px;
+}
+
+#sbm {
+	margin-top: 2px;
+	height: 40px;
+	background-color: #1E82FF;
+	color: white;
+	font-size: 20px;
+	border: none;
+	width: 634px;
+	margin: auto;
+	display: block;
+	border-radius: 4px;
+}
+
+.img_box {
+	width: 634px;
+	height: 634px;
+	margin: auto;
+	border: 1px solid #dbdbdb;
+	border-radius: 4px;
+	width: 614px;
+	height: 614px;
+	background-size: cover;
+	overflow: hidden;
+	margin: 0 auto;
+}
 
 #f_input {
 	height: 30px;
 }
-
 
 .main_body {
 	display: flex;
@@ -166,13 +194,6 @@ body {
 	align-items: center;
 }
 
-.profile_img1 {
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	margin-left: 10px;
-}
-
 .btn {
 	color: dodgerblue;
 	background-color: write;
@@ -189,9 +210,7 @@ body {
 	margin-bottom: 400px;
 }
 
-
- a {
+a {
 	text-decoration: none;
-	color: inherit;	
-	
+	color: inherit;
 }

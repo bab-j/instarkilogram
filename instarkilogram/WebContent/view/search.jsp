@@ -61,6 +61,7 @@
 				<li class="material-icons-outlined"><a href="main_feed.jsp">favorite_border</a></li>
 			</ul>
 		</div>
+		
 	</div>
 	
 	<br>
