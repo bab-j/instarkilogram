@@ -1,26 +1,27 @@
 package com.sns.user.db;
 
 public class UserVO {
-	private int u_idx;
-	private String u_id;
+	private int uIdx;
+	private String uId;
 	private String pwd;
 	private String phone;
 	private String email;
 	private String bio;
 	private String name;
-	private String u_pic;
+	private String uPic;
+	private String birth;
 	
-	public int getU_idx() {
-		return u_idx;
+	public int getuIdx() {
+		return uIdx;
 	}
-	public void setU_idx(int u_idx) {
-		this.u_idx = u_idx;
+	public void setuIdx(int uIdx) {
+		this.uIdx = uIdx;
 	}
-	public String getU_id() {
-		return u_id;
+	public String getuId() {
+		return uId;
 	}
-	public void setU_id(String u_id) {
-		this.u_id = u_id;
+	public void setuId(String uId) {
+		this.uId = uId;
 	}
 	public String getPwd() {
 		return pwd;
@@ -52,16 +53,17 @@ public class UserVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getU_pic() {
-		return u_pic;
+	public String getuPic() {
+		return uPic;
 	}
-	public void setU_pic(String u_pic) {
-		this.u_pic = u_pic;
+	public void setuPic(String uPic) {
+		this.uPic = uPic;
 	}
-	@Override
-	public String toString() {
-		return "UserVO [u_idx=" + u_idx + ", u_id=" + u_id + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email
-				+ ", bio=" + bio + ", name=" + name + ", u_pic=" + u_pic + "]";
+	public String getBirth() {
+		return birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
 	
 	

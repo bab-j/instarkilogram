@@ -108,11 +108,6 @@
 	window.onload = function () {
 		let asd = document.getElementById("uid");
 		asd.value = "${uid}";
-		/* if ("${login}" == 0) {
-			//document.getElementById("pp").style.visibility = "visible";
-		} else {
-			//document.getElementById("pp").style.visibility = "visible";
-		} */
 	}
 </script>
 </head>
@@ -146,7 +141,7 @@
 				</c:when>
 				</c:choose>
 			</form>
-			<form action="usercontroller?type=UserSignUp">
+			<form action="usercontroller?type=UserSignUp" method="post">
 			<table>
 			<tr>
 				<th>비밀번호</th> <td><input type="password" name=upwd id="pwd" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"></td>
@@ -169,7 +164,7 @@
 			</table>
 					<input type="button" id="butt" value="취소" onclick="goLogIn()">
 					<input type="submit" id="subm" value="가입" onclick="signUp()">
-					<input type="hidden" id="uID" value="${uid }">
+					<input type="hidden" name="uID" value="${uid }">
 			</form>
 </div>
 </body>

@@ -11,8 +11,8 @@
 	</select>
 	
 	<insert id="signUp" parameterType="UserVO">
-		INSERT INTO USER_INFO (U_IDX, U_ID, PWD, PHONE, EMAIL, BIRTH, BIO, NAME, U_PIC)
-					   VALUES (USER_INFO_SEQ.NEXTVAL, #{uid}, #{pwd}, #{phone}, #{email}, #{birth}, #{bio}, #{name}, #{u_pic})
+		INSERT INTO USER_INFO (U_IDX, U_ID, PWD, PHONE, EMAIL, BIRTH, NAME)
+					   VALUES (USER_INFO_SEQ.NEXTVAL, #{uId}, #{pwd}, #{phone}, #{email}, #{birth}, #{name})
 	</insert>
 
 

@@ -22,15 +22,10 @@ public class UserDAO {
 		return exist;
 	}
 	
-	public int signUp (boolean eid) {
+	public int signUp (UserVO vo) {
 		int result = 0;
-		SqlSession ss = DBService.getFactory().openSession();
-		List<UserVO> list = new ArrayList<>();
-		if (!eid) {
-			result = ss.insert("user.signUp", list);
-		} else {
-			result = 0;
-		}
+		SqlSession ss = DBService.getFactory().openSession(true);
+		result = ss.insert("user.signUp", vo);
 		ss.close();
 		return result;
 	}
