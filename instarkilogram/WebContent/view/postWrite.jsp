@@ -13,9 +13,6 @@
 	rel="stylesheet">
 
 
-<script>
-	document.getElementById('back').addEventListener("click", history.back());
-</script>
 
 <style>
 </style>
@@ -79,7 +76,7 @@
 		<br>
 		<form action="feedcontroller?type=postWrite" method="post"
 			enctype="multipart/form-data">
-			<input class="file" type="file" name="f_pic" id="f_input" title="사진"><br>
+			<input class="file" type="file" name="fPic" id="f_input" title="사진"><br>
 			<textarea class="post_content" name="content" rows="9" cols="100"
 				placeholder="내용을 입력해주세요." onfocus="this.placeholder=''"
 				onblur="this.placeholder='내용을 입력해주세요.'"></textarea>
