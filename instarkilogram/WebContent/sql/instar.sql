@@ -122,3 +122,15 @@ where u_id like '%검색어%' or bio like '%검색어%';
 -- 내용 검색(게시글 찾기)
 select * from feed
 where content like '%검색어%';
+
+
+
+
+
+
+
+
+
+
+
+
