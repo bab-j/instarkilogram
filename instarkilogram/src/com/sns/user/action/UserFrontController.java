@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sns.user.action.Command;
 import com.sns.user.action.UserSignUpCommand;
 
-@WebServlet("/user/usercontroller")
+@WebServlet("/view/usercontroller")
 public class UserFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

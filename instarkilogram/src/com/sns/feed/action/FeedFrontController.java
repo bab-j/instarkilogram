@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sns.feed.action.Command;
 import com.sns.feed.action.PostWriteCommand;
 
-@WebServlet("/feed/feedcontroller")
+@WebServlet("/view/feedcontroller")
 public class FeedFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
