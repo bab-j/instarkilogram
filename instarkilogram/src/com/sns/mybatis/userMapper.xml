@@ -7,12 +7,12 @@
 	<select id="exist" resultType="int" parameterType="String">
 		SELECT COUNT(U_ID)
 		FROM USER_INFO
-		WHERE U_ID = #{uid}
+		WHERE U_ID = #{u_id}
 	</select>
 	
 	<insert id="signUp" parameterType="UserVO">
 		INSERT INTO USER_INFO (U_IDX, U_ID, PWD, PHONE, EMAIL, BIRTH, NAME)
-					   VALUES (USER_INFO_SEQ.NEXTVAL, #{uId}, #{pwd}, #{phone}, #{email}, #{birth}, #{name})
+					   VALUES (USER_INFO_SEQ.NEXTVAL, #{u_id}, #{pwd}, #{phone}, #{email}, #{birth}, #{name})
 	</insert>
 
 

@@ -108,7 +108,11 @@
 	window.onload = function () {
 		let asd = document.getElementById("uid");
 		asd.value = "${uid}";
+		/* if (document.getElementByName("clickDu").value == N) {
+			alert("아이디 중복체크를 해주세요!");
+		} */
 	}
+	
 </script>
 </head>
 
@@ -125,7 +129,7 @@
 			<tr>
 				<th>아이디</th> 
 				<td>
-					<input type="text" name=uid id="uid" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
+					<input type="text" name=uid id="uid" placeholder="Username" style="ime-mode:disabled" onfocus="this.placeholder=''" onblur="this.placeholder='Username'">
 					<input type="button" id="button1" value="중복확인" onclick="idChk()">
 				</td>
 			</tr>
@@ -147,13 +151,13 @@
 				<th>비밀번호</th> <td><input type="password" name=upwd id="pwd" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"></td>
 			</tr>
 			<tr>
-				<th>비밀번호 확인</th> <td><input type="password" name=upwd_ok placeholder="Confirm Password" onfocus="this.placeholder=''" onblur="this.placeholder='Confirm Password'"></td>
+				<th>비밀번호 확인</th> <td><input type="password" name=uPwdOk placeholder="Confirm Password" onfocus="this.placeholder=''" onblur="this.placeholder='Confirm Password'"></td>
 			</tr>
 			<tr>
 				<th>이메일</th> <td><input type="email" name="email" placeholder="abc123@abc.com" onfocus="this.placeholder=''" onblur="this.placeholder='abc123@abc.com'"></td>
 			</tr>
 			<tr>
-				<th>이름</th> <td><input type="text" name="name"></td>
+				<th>이름</th> <td><input type="text" name="name" placeholder="홍길동" onfocus="this.placeholder=''" onblur="this.placeholder='홍길동'"></td>
 			</tr>	
 			<tr>
 				<th>전화번호</th> <td><input type="text" name="phone" placeholder="010-0000-0000" onfocus="this.placeholder=''" onblur="this.placeholder='010-0000-0000'"></td>
