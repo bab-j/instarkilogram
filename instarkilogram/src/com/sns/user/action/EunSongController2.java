@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.sns.user.action.Command;
 import com.sns.user.action.UserIdChkCommand;
@@ -24,6 +25,8 @@ public class EunSongController2 extends HttpServlet {
 		Command command = null;
 		
 		if("UserLogIn".equals(type)) {
+			HttpSession session = request.getSession();
+			session.removeAttribute("logChk");
 			command = new UserLogInCommand();
 		} else if ("GoSignUp".equals(type)) {
 			command = new GoSignUpCommand();

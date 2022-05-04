@@ -29,10 +29,10 @@ public class UserLogInCommand implements Command{
 		if(vo != null) { //-- 로그인 가능 : id와 u_idx를 저장 
 			logChk = "ok";
 			result = "main_feed.jsp";
-			session.setAttribute("u_idx", vo.getuIdx());
+			session.setAttribute("uIdx", vo.getuIdx());
 		} else { 
 			logChk = "fail";
-			result = "login.jsp";
+			result = "loginFail.jsp";
 		}
 		session.setAttribute("logChk", logChk);
 		return result;

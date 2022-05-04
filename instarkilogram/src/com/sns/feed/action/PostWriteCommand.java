@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -19,19 +20,18 @@ public class PostWriteCommand implements Command {
 		request.setCharacterEncoding("utf-8");
 		String path = "c:/upload/temp";
 		
+		HttpSession session = request.getSession();
 		 MultipartRequest mr = new MultipartRequest( request, path, (10*1024*1024),
 				 				"utf-8", new DefaultFileRenamePolicy() );
 
 		FeedVO fvo = new FeedVO();
 		fvo.setContent(mr.getParameter("content"));
-		// fvo.setU_idx(session.getAttribute("u_idx"));
-		fvo.setU_idx(1);
+		fvo.setuIdx((int)session.getAttribute("uIdx"));
 
-		if(mr.getFile("f_pic") != null) {
-			fvo.setF_pic(mr.getFilesystemName("f_pic")); 
+		if(mr.getFile("fPic") != null) {
+			fvo.setfPic(mr.getFilesystemName("fPic")); 
 		}
 		 
-
 		int result = FeedDAO.insert(fvo);
 
 		// return "main_feed.jsp";

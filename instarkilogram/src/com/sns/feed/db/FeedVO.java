@@ -1,18 +1,19 @@
 package com.sns.feed.db;
 
 public class FeedVO {	
-	private int f_idx;
+	private int fIdx;
 	private String regdate;
 	private String content;
-	private int u_idx;
-	private int u_like;
-	private String f_pic;
+	private int uIdx;
+	private int uLike;
+	private String fPic;
 	
-	public int getF_idx() {
-		return f_idx;
+	
+	public int getfIdx() {
+		return fIdx;
 	}
-	public void setF_idx(int f_idx) {
-		this.f_idx = f_idx;
+	public void setfIdx(int fIdx) {
+		this.fIdx = fIdx;
 	}
 	public String getRegdate() {
 		return regdate;
@@ -26,23 +27,31 @@ public class FeedVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public int getU_idx() {
-		return u_idx;
+	public int getuIdx() {
+		return uIdx;
 	}
-	public void setU_idx(int u_idx) {
-		this.u_idx = u_idx;
+	public void setuIdx(int uIdx) {
+		this.uIdx = uIdx;
 	}
-	public int getU_like() {
-		return u_like;
+	public int getuLike() {
+		return uLike;
 	}
-	public void setU_like(int u_like) {
-		this.u_like = u_like;
+	public void setuLike(int uLike) {
+		this.uLike = uLike;
 	}
-	public String getF_pic() {
-		return f_pic;
+	public String getfPic() {
+		return fPic;
 	}
-	public void setF_pic(String f_pic) {
-		this.f_pic = f_pic;
+	public void setfPic(String fPic) {
+		this.fPic = fPic;
 	}
-
+	@Override
+	public String toString() {
+		return "FeedVO [fIdx=" + fIdx + ", regdate=" + regdate + ", content=" + content + ", uIdx=" + uIdx + ", uLike="
+				+ uLike + ", fPic=" + fPic + "]";
+	}
+	
+	
+	
+	
 }

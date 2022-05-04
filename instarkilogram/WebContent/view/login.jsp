@@ -68,29 +68,14 @@
 </head>
 <script>
 
-	window.onload = function() {
-		<%%>;
-		let com = '<%=(String)session.getAttribute("logChk")%>';
-		console.log("com : " + com);
-		if(com == "fail"){
-			alert("아이디와 암호를 확인하세요.");
-		}
-	}
 
 	function logIn() {
-		console.log("login 메소드 실행");
 		let loginFrm = document.forms[0];
 		loginFrm.method = "post";
 		loginFrm.action = "eunsongcontroller?type=UserLogIn";
-		console.log("login 서브밋 전");
 		loginFrm.submit();
-		console.log("login 서브밋 후");
 	}
 	function SignUp() {
-		/* let loginFrm = document.forms[0];
-		loginFrm.method = "post";
-		btn.action = "eunsongcontroller?type=GoSignUp";
-		loginFrm.submit(); */
 		location.href = "eunsongcontroller?type=GoSignUp";
 	}
 	
