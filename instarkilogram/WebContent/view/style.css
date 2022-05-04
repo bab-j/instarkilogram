@@ -5,6 +5,8 @@ body {
 }
 
 .search_body {
+	text-align : center;
+	
 	height:inherit;
 	padding-top: 50px;
 	float: inherit;
@@ -97,8 +99,9 @@ body {
 }
 
 .search_result {
-	margin-left: 500px;
-}
+	margin-right: auto;
+	
+	}
 
 .write {
 	width: 800px;
