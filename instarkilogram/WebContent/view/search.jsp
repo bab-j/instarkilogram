@@ -62,8 +62,10 @@
 			</ul>
 		</div>
 	</div>
+	<!-- upside bar -->
 	
 	<br>
+	<div class="search_body">
 	<h1 class="search_result">'${search }' 검색 결과</h1>
 	<div class="search_grid">
 		<table class="grid_table">
@@ -84,6 +86,6 @@
 			</tbody>
 		</table>
 	</div>
-
+</div>
 </body>
 </html>

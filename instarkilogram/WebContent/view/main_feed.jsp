@@ -119,18 +119,13 @@
 
 	<div class="bar">
 		<div class="home">
-			<h1>
-				<em> <a class="linkLine" href="main_feed.jsp">
-						instarkilogram </a></em>
-			</h1>
+			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
 		</div>
 		<div class="container">
-			<form action="Searchcontroller?type=search" method="get"
-				enctype="multipart/form-data">
-				<span> <input class="total_search" type="text" id="search"
-					name="keyword" placeholder="통합검색">&nbsp;</a> <input
-					class="search_btn" type="submit" value="검색">
-				</span>
+				<form action="search.jsp" method="get" enctype="multipart/form-data">
+			<span>
+					<input class="total_search"type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;</a><input class="search_btn" type="submit" value="검색" >
+			</span>
 			</form>
 		</div>
 		<div class="nav-icon">
@@ -141,6 +136,7 @@
 			</ul>
 		</div>
 	</div>
+	<!-- upside bar -->
 
 	<br>
 	<br>
