@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sns.user.action.Command;
 import com.sns.user.action.UserIdChkCommand;
 
-@WebServlet("/user/eunsongcontroller")
+@WebServlet("/view/eunsongcontroller")
 public class EunSongController2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -25,6 +25,8 @@ public class EunSongController2 extends HttpServlet {
 		
 		if("UserLogIn".equals(type)) {
 			command = new UserLogInCommand();
+		} else if ("GoSignUp".equals(type)) {
+			command = new GoSignUpCommand();
 		}
 		String path = command.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);

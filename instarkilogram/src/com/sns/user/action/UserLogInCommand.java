@@ -23,17 +23,14 @@ public class UserLogInCommand implements Command{
 		
 		HttpSession session = request.getSession();
 		UserVO vo = FeedDAO.loginRight(uId, upwd);
-		System.out.println("userVO vo : " + vo);
-		
+		System.out.println("command 실행~~");
+		System.out.println(vo);
+		String logChk = "null";
 		if(vo != null) { //-- 로그인 가능 : id와 u_idx를 저장 
-			System.out.println("vo 있을 有");
 			logChk = "ok";
-			result = "tempUser.jsp";
-			System.out.println("getU_idx : " + vo.getU_idx());
-			session.setAttribute("u_idx", vo.getU_idx());
-			System.out.println("u_idx 세션 설정 후");
+			result = "main_feed.jsp";
+			session.setAttribute("u_idx", vo.getuIdx());
 		} else { 
-			System.out.println("vo 없을 無");
 			logChk = "fail";
 			result = "login.jsp";
 		}

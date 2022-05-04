@@ -69,20 +69,31 @@
 <script>
 
 	window.onload = function() {
-		console.log("온로드 되나요");
+		<%%>;
 		let com = '<%=(String)session.getAttribute("logChk")%>';
-		console.log("com 초기화 정상");
 		console.log("com : " + com);
 		if(com == "fail"){
 			alert("아이디와 암호를 확인하세요.");
 		}
-		
 	}
 
 	function logIn() {
+		console.log("login 메소드 실행");
 		let loginFrm = document.forms[0];
+		loginFrm.method = "post";
+		loginFrm.action = "eunsongcontroller?type=UserLogIn";
+		console.log("login 서브밋 전");
 		loginFrm.submit();
+		console.log("login 서브밋 후");
 	}
+	function SignUp() {
+		/* let loginFrm = document.forms[0];
+		loginFrm.method = "post";
+		btn.action = "eunsongcontroller?type=GoSignUp";
+		loginFrm.submit(); */
+		location.href = "eunsongcontroller?type=GoSignUp";
+	}
+	
 </script>
 <body>
 		<div class="top">
@@ -92,7 +103,7 @@
 	
 		<div class="sign">
 			<h1><i>instarkilogram</i></h1>
-			<form action="eunsongcontroller?type=UserLogIn" method="post">
+			<form name="inputFrm">
 				<input type="text" name="uid" id="name" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'"><br>
 				<input type="password" name="upwd" id="pwd" placeholder="Password" onfocus="this.placeholder=''" onblur="this.placeholder='Password'"><br><br><br>
 				<input type="button" id="logBtn" value="로그인" onclick="logIn()"><br>

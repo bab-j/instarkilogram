@@ -65,6 +65,11 @@ public class UserVO {
 	public void setBirth(String birth) {
 		this.birth = birth;
 	}
+	@Override
+	public String toString() {
+		return "UserVO [uIdx=" + uIdx + ", uId=" + uId + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email
+				+ ", bio=" + bio + ", name=" + name + ", uPic=" + uPic + ", birth=" + birth + "]";
+	}
 	
 	
 }
