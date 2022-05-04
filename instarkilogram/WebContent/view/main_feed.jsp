@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<link rel="stylesheet" href="style.css">
-<!--브라우저 적당량  -->
-<title>main</title>
 <link
 	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
 	rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<!--브라우저 적당량  -->
+<title>main</title>
 
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
@@ -18,7 +18,6 @@
 	crossorigin="anonymous">
 	
 </script>
-<link rel="stylesheet" href="style.css">
 <!--이클립스wtp지원ㄴignore로 설정-->
 
 <style>
@@ -28,7 +27,7 @@
 	height: 2000px;
 	display: flex;
 	flex-direction: column;
-	width: 520px;
+	width: 654px;
 	flex-direction: column;
 	display: flex;
 	height: 2000px;
@@ -36,52 +35,26 @@
 
 .feed_box {
 	background-color: white;
-	width: 500px;
+	width: 634px;
 	margin: 10px;
 	float: inherit;
 }
 
 .feed_img {
-	width: 100%;
-	height: 60%;
-	object-fit: contain;
+	padding: 8px;
+	padding-top: 3px;
+	width: 614px;
+	height: 614px;
 }
 
-.feed_content {
-	
-}
 
 .feed_like {
 	padding: 0x 0px;
 }
 
-.feed_feply {
-	padding: 0px 10px;
-	display: flex;
-	fiex-direction: column;
-}
-
-.profile_img {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	margin-left: 10px;
-	margin-top: 5px;
-}
-
-.mem {
-	margin-left: 30px;
-	color: grey;
-}
-
 .feed_name {
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.box_pro {
-	display: flex;
-	align-items: center;
 }
 
 .profile_img {
@@ -90,18 +63,6 @@
 	border-radius: 50%;
 	margin-left: 10px;
 	margin-right: 10px;
-}
-
-.btn {
-	color: dodgerblue;
-	background-color: write;
-	margin-left: 130px;
-	margin-bottom: 30px;
-	border: none;
-}
-
-.butt {
-	padding: 5px 10px;
 }
 
 .profile_name {
@@ -113,15 +74,7 @@
 .profile_box {
 	list-style-type: none;
 	float: left;
-	margin-left: 10px;
-}
-
-.image_size {
-	margin-left: 10px;
-}
-
-.feed_img {
-	margin-left: auto;
+	margin-left: 5px;
 }
 
 .img_row {
@@ -142,6 +95,24 @@
 
 .like {
 	font-weight: bold;
+}
+
+
+.user_name {
+	margin-left: 10px
+}
+
+.u_comment {
+	margin-left: 10px;
+	text-align: left;
+}
+
+.comment_write {
+	text-align: center;
+}
+
+.comment_textbox {
+	height: 32px;
 }
 </style>
 </head>
@@ -165,9 +136,9 @@
 		</div>
 		<div class="nav-icon">
 			<ul>
-				<li class="material-icons">home</li>
-				<li class="material-icons-outlined">explore</li>
-				<li class="material-icons-outlined">favorite_border</li>
+				<li class="material-icons"><a href="main_feed.jsp">home</a></li>
+				<li class="material-icons-outlined"><a href="postWrite.jsp">explore</a></li>
+				<li class="material-icons-outlined"><a href="main_feed.jsp">favorite_border</a></li>
 			</ul>
 		</div>
 	</div>
@@ -179,9 +150,17 @@
 		<!-- 메인 박스 -->
 		<div class="left_body ">
 			<!-- 블루 -->
+			<% 
+			for(int i = 1; i< 5; i++) {
+				for(int j = 1; j <= i; j++) {
+			
+				%>
+			
 			<div class="feed_box">
 				<!--흰 컨텐츠 -->
+			
 				<div class="feed_name">
+
 					<table>
 						<thead class="profile_box">
 							<tr>
@@ -191,12 +170,12 @@
 								<td><a class="profile_name" href=".jsp">jooheee </a></td>
 							</tr>
 						</thead>
-						<tbody class="feed_img">
-							<tr class="img_row">
-								<td class="img_size" colspan="2"><img class="feed_img"
-									src="https://images.chosun.com/resizer/fo-0AnY_2j3QZ2DbEuxxVc0VSZQ=/616x0/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/6Y6TZ5MYRVGFDNVP6FAEPRLIKQ.jpg">
-								</td>
+						<tbody>
+							<tr>
+							<td colspan="3"><img class="feed_img" src="../img/<%=j %>.jpg">
+							</td>
 							</tr>
+
 						</tbody>
 						<tbody class="feed_body">
 							<tr class="feed_row">
@@ -209,53 +188,48 @@
 							<tr>
 								<td class="like">좋아요 10개</td>
 							</tr>
-
-
-							<tr>
-								<td width="10%"><b>jin.99</b></td>
-								<td>제니이쁨</td>
-							</tr>
-							<tr>
-								<td><b>우기</b></td>
-								<td>부럽</td>
-							</tr>
 						</tbody>
-
-						<tbody>
-							<tr>
-								<td></td>
-							</tr>
-						</tbody>
-
-						<tfoot>
-							<tr>
-								
-									
-									
-							</tr>
-							<tr>		
-								<td width="1%"><img class="profile_img1"
-									src="data:image/jpeg;base64,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">
-								</td>
-							<td style="width: 80% " ><input type="text" name="댓글" placeholder="댓글"
-									width="88%"></td>
-								<td><input type="submit" name="전송" value="전송" width="11%" >
-								</td>
-							</tr>
-
-
-						</tfoot>
-
-
-
 					</table>
+					<br>
+					<div class="u_comment">
+						<div>
+							<span><b>jin.99</b></span>&nbsp;&nbsp; <span>제니이쁨</span>
+						</div>
+						<div>
+							<span><b>우기</b></span> &nbsp;&nbsp; <span>부럽</span>
+						</div>
+					</div>
+					<br> <br>
+				</div>
+
+
+				<div class="comment_write">
+					<span class="profile_box"> <img class="profile_img"
+						src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8REBAPEA8QDxAOEBAPEA8SEg8QEBAQFREWFhURExUYHSggGBolGxcVITEhJSkrLi4uGB8zODMtNygtNCsBCgoKDQ0NDw0NDjcZFRkrNy0tNys3LS0rNystKystLSstKysrKysrLSstKysrKysrKy0rKys3KysrKysrKysrK//AABEIAOMA3gMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYBAwQCB//EADkQAAIBAQUFBgQFAgcAAAAAAAABAgMEBREhMRJBUWFxIjKBkaHRE1LB4QZCYrHwI5IUFTNygqKy/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oADAMBAAIRAxEAPwD7iAAAAAAAAAaq9ohBYzkor1fRbwNoxIS0329Kcf8AlL2Iyvaqk+9Jvlu8gLLVt9GOs10XafoclS+6a0jKXkkV8FwTMr9e6n5y+x4/z2fyR82RIGIllfs/kj5s2Qv3jT8pfYhQMFip31Seu1HqsV6HZRtVOfdnF8sc/IqIGKugKrZ7wqw0k2uEu0iVst9QeU1sPis4+6IJUHmE01immnvWaPQAAAAAAAAAAAAAAMSkksW8EtW9DVabRGnHak8F6t8EVy3W+dV/LHdH34sCQtt86xpZ/rf0RDVKjk8ZNtve3ieQVAAFAAAAAAAAAAAAABus1pnTeMJNcVufVE7Yb1jPCMuxL0fR/QrgILoCv3derjhGpi47pb4+6J+Ek0mninmmtGiKyAAAAAAAAaLVaY04uUvBb2+CNlaqoxcpPBJYsq1ttcqstp6aRjwQGLXaZVJbUn0W5LgjQAVAAFAAAAAAAAAAAAAAAAAAADvuy8HTey84N5r5eaOAEFyhNNJp4p5preeiu3Rb9h7En2JPL9L9ixEUAAAA4b2tXw6eXenlHlxYEZfVt25bEX2YPPnL7EYAVAAFAAAAAAAAAAAAAAAAAAAAAAAAAn7ktu0vhyfaisnxj9iANlGq4SUlrF4kFwBrs9ZTipLSSx+xsIoVe9bT8So8O7Hsx8NX5k9eNfYpSlvwwXV5FVLAABUAAAAAAA9Qi20ksW8kgMJN5LNvcSNmutvObw/StfFnXYrIqax1k9Xw5I6iK00rNCOkV11fmbTIAw0c9WxU5flwfGOR0gCEtV3yhmu1H1XVHGWcjbwsOs4LPVxW/mgIoAFQAAAAAAABM/h+0ZypP/dH6r+cybKhZqzhOM1+V4+G8t0XisVo80Zqob8Q1e5DrJ/svqQp3XzUxrS/ThHyXvicJUAAUAAAAAAlrqs2C+I9Zd3kuPiRlKG1JR+ZpeZY4pJJLRZIisgAAAAAAAAACFvOzbMtpd2fo96OIn7fS2qcuKW0vAgAgACgAAAAAFnuertUY8Y4xfh9sCsE1+Hanfj0l9H9CVUVapY1JvjOX7moy36mAgACgAAAAA6rtX9WPj+zJ0grt/1Y+P7MnSKAAAAAAAAAADDK0WVlaYGAAVAAAAAAO+56uzN84P8AdHAeoTaeKIPIPdWOEpLhKS8meAAAKAAAAADZZ6mzOMuDTfTeWMrBN3ZaNqGy+9DLqtz+hFdgAAAAAAAAAA02upswk+TS6vJFeJG9rRi1Bflzl14EcEAAUAAAAAAyYOmw0tuTX6W/VEGbyhhVqL9WPnn9TlJS/wClhUjL5o4eKftgRYAAFAAAAAANlCs4SUlqvVcGawBYrPXjNYrxW9PmbSuUasoPGLwfo+TJWzXjCWUuw/8Ar57iK7gYTxzWZkAAeKlSMc5NJc3gB7OS32xQWCzm9OXNnParz3U/7n9ERjeObzb3gGzABUAAAAAAAACW/D9PGU3wil5v7ESWG4KWFNy+eTfgsvclV6vyjtUtrfB7Xho/5yK4XKcU009GsH0KjaKThKUH+VtdeDEGsAFQAAAAAAAAAAHuFSUe7Jro2jb/AIyr88jVGlJ6Rk/BmxWOr8kiA7ZV+eXmaZSbzbb65m52SovyS8sTVKDWqa6poDyACgAAAAAAAAAAMpY5LNvJdS3WalsQjD5Ul4kBctn2qqb0h2vHcv5wLISqENf9l0qrd2ZdNz+hMnmrBSTi801gyCmg32yzunNxe7R8VuZoKgACgAZSAwbaFnnPurHnol4nfZLt/NU/t9ySiklgsktxFR9G64rObcnwWS89Tsp0IR0il4Z+ZtAAAAAABoqWSnLWK6rJ+hw17resHjyevmSoArdSm4vCSafM8Fkq0oyWEliv26ERbLA4dpdqPquoRxAAoAAAASNzWPbntvuwfnLciCWuqy/DppPvS7UvY7QCKAADivOxfFjl345xf0KzKLTweTWTRcyLve7tv+pBdpar5l7lFfBkwVGUsclqTNhsSh2pZz/88lzNd12XBfElq+7yXEkSKAAAAAAAAAAAAAAAAibwsOHbgst8eHNciOLMQt42XYeKXZlpyfADjAPdGlKclGKxbKj3ZbPKpJQjv1e5LiWmz0Ywiox0XrzNN32JUo4ayfelx5dDrMqAAAAAAAAi70uvbxnDBT3rdL2ZEWSzOU9lprZzkmtEtxazVOim28EpPfx6gcxkzKDWpgoAAAAAAAAAAAAAAAAGuvSU4uL3rye5mw9wpt9OIFbpWWcp7CWMk8HwXN8ix2CwxpLjJ96X0XI6KdJRxwSWOr3vqeyAAAAAAAAAAAAAAw0aZ0OHkbwBxyi1qYOxo1yoroBzg2ug9x4dN8CjyA0AAMGcHwYAHpUpcD2qHFgaj1GDZ0RpJHsg1Qopa5m0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//9k=">
+					</span> 
+					<span>
+						<form action="">
+							<input class="comment_textbox" type="text" name="댓글"
+								placeholder="댓글" style="width: 80%;">&nbsp;<input
+								style="height: 38px;" type="submit" name="comment" value="추가">
+					</span>
+					</form>
+					<div>
+					&nbsp;
+					</div>
 				</div>
 
 			</div>
+			<%
+				}
+			}
+			%>
+			
+			
+			
+			<!--왼쪽  -->
+			<!--오른쪽  -->
 		</div>
-		<!--왼쪽  -->
-		<!--오른쪽  -->
 	</div>
-	<!-- main -->
 </body>
 </html>
