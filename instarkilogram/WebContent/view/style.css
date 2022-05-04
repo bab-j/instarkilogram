@@ -21,6 +21,7 @@ body {
 	background-color: white;
 	border-bottom: 1px solid #dbdbdb;
 	border-top: highlight;
+	border-radius: 4px;
 }
 
 .linkLine {
@@ -106,7 +107,7 @@ body {
 
 .feed {
 	width: 500px;
-	margin: auto;
+	margin: 200px;
 	display: block;
 	margin-top: 50px;
 }
@@ -152,6 +153,8 @@ body {
 	width: 480px;
 	margin: 10px;
 	height: 3000px;
+	border-radius: 5px;
+	
 }
 
 .feed_img {
