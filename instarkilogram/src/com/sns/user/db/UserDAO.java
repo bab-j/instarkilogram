@@ -37,6 +37,13 @@ public class UserDAO {
 		ss.close();
 		return id;
 	}
+	public String findPWD (UserVO vo) {
+		String id = "";
+		SqlSession ss = DBService.getFactory().openSession();
+		id = ss.selectOne("user.findPWD", vo);
+		ss.close();
+		return id;
+	}
 	
 	
 }

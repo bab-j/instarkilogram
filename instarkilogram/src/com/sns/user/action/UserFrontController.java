@@ -25,6 +25,8 @@ public class UserFrontController extends HttpServlet {
 			command = new UserSignUpCommand();
 		} else if("FindID".equals(type)) {
 			command = new FindIdCommand();
+		} else if("FindPWD".equals(type)) {
+			command = new FindPwdCommand();
 		}
 		
 		String path = command.exec(request, response);

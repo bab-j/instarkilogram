@@ -3,23 +3,32 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
-	
+	<!--아이디 중복체크  -->
 	<select id="exist" resultType="int" parameterType="String">
 		SELECT COUNT(U_ID)
 		FROM USER_INFO
 		WHERE U_ID = #{u_id}
 	</select>
-	
+	<!-- 회원가입디비 삽입 -->
 	<insert id="signUp" parameterType="UserVO">
 		INSERT INTO USER_INFO (U_IDX, U_ID, PWD, PHONE, EMAIL, BIRTH, NAME)
 					   VALUES (USER_INFO_SEQ.NEXTVAL, #{u_id}, #{pwd}, #{phone}, #{email}, #{birth}, #{name})
 	</insert>
 
-	
+	<!-- 아이디찾기 -->
 	<select id="findID" parameterType="UserVO" resultType="String">
 		SELECT U_ID
 		  FROM USER_INFO
 		 WHERE EMAIL = #{email}
+		   AND PHONE = #{phone}
+		   AND BIRTH = #{birth}
+	</select>
+	<!-- 비번찾기 -->
+	<select id="findPWD" parameterType="UserVO" resultType="String">
+		SELECT PWD
+		  FROM USER_INFO
+		 WHERE U_ID = #{u_id}
+		   AND EMAIL = #{email}
 		   AND PHONE = #{phone}
 		   AND BIRTH = #{birth}
 	</select>

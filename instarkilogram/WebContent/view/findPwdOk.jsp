@@ -9,11 +9,11 @@
 <body>
 <script>
 	if (check == 0) {
-		alert("찾으시는 ID는 ${findId} 입니다.")
+		alert("찾으시는 Password는 ${findPwd} 입니다.")
 		location.href="login.jsp";
 	} else {
-		alert("입력된 정보의 ID는 존재하지 않습니다.");
-		location.href="findID.jsp";
+		alert("입력된 정보의 Password는 존재하지 않습니다.");
+		location.href="findPWD.jsp";
 	}
 </script>
 </body>

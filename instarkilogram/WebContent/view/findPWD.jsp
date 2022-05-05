@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Find Password</title>
+<title>Find PWD</title>
 <style>
 	table th {
 		font-size: 1em;
@@ -31,7 +31,7 @@
 		margin-left: 38%;
 		margin-top: 5%;
 		width: 350px;
-		height: 490px;
+		height: 500px;
 		text-align: center;
 	}
 	.sign h1 {
@@ -49,19 +49,19 @@
 		color: gray;
 		padding-left: 10px;
 	}
-	#submit { 
+	#subBtn { 
 		border:none;
 		margin-bottom: 4%;
 	}
-	#submit:hover {
+	#subBtn:hover {
 		background-color: #a7aaad;
 	}
-	#button {
+	#butBtn {
 		border:none;
 		background-color: #50575e;
 		color: white;
 	}
-	#button:hover {
+	#butBtn:hover {
 		background-color: #2c3338;
 	}
 	a {
@@ -72,6 +72,11 @@
 	}
 
 </style>
+<script>
+	function goLogin() {
+		location.href = "login.jsp";
+	}
+</script>
 </head>
 <body>
 		<div class="top">
@@ -79,11 +84,11 @@
 		</div>
 <div class="sign">
 			<h1><i>instarkilogram</i></h1>
-			<form>
+			<form action="usercontroller?type=FindPWD" method="post">
 			<table>
 				<tr>
 					<th>아이디</th> 
-					<td><input type="text" name="uID" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'"></td>
+					<td><input type="text" name="uid" placeholder="Username" onfocus="this.placeholder=''" onblur="this.placeholder='Username'"></td>
 				</tr>
 				<tr>
 					<th>이메일</th> 
@@ -98,10 +103,9 @@
 					<td><input type="text" name="birth" placeholder="생년월일 6자리" onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"></td>
 				</tr>
 			</table>
-				<input type="button" id="button" value="취소" onclick="history.back()">
-				<input type="submit" id="submit" value="가입">
+				<input type="button" id="subBtn" value="취소" onclick="goLogin()">
+				<input type="submit" id="butBtn" value="비밀번호 찾기">
 			</form>
 </div>
 </body>
 </html>
-
