@@ -30,7 +30,13 @@ public class UserDAO {
 		return result;
 	}
 	
-	
+	public String findID (UserVO vo) {
+		String id = "";
+		SqlSession ss = DBService.getFactory().openSession();
+		id = ss.selectOne("user.findID", vo);
+		ss.close();
+		return id;
+	}
 	
 	
 }
