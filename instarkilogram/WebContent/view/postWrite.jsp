@@ -40,50 +40,52 @@
 	<div class="bar">
 		<div class="home">
 			<h1>
-				<em> <a class="linkLine" href="main_feed.jsp">
-						instarkilogram </a></em>
+				<em> <a class="linkLine" href="mainFeed.jsp">instarkilogram
+				</a></em>
 			</h1>
 		</div>
 		<div class="container">
 			<form action="search.jsp" method="get" enctype="multipart/form-data">
 				<span> <input class="total_search" type="text" id="search"
-					name="keyword"> <input class="search_btn" type="submit"
-					value="검색">
+					name="keyword" placeholder="통합검색">&nbsp;</a><input
+					class="search_btn" type="submit" value="검색">
 				</span>
 			</form>
-		</div>
+			</div>
 		<div class="nav-icon">
-			<ul>
 
-				<li class="material-icons"><a
-					href="javascript:window.history.back();">keyboard_backspace</a></li>
-				<li class="material-icons-outlined">explore</li>
-				<li class="material-icons-outlined">favorite_border</li>
-			</ul>
+				<span class="img_icon"></span> 
+				<span class="img_icon"></span>
+			<a href="javascript:window.history.back();">
+			<span class="material-icons img_icon"> arrow_back_ios</span></a> 
 		</div>
 	</div>
 
 
 	<div class="write">
-		<h1 class="feed">새 게시물</h1>
-		<div>
-			<div >
-				<div class="img_box"> <a href=""> <img src=" "> </a> </div>
+		<div class="feed">
+			<h1 style="font-style: inherit;">새 게시물</h1>
+			<div>
+				<div>
+					<div class="img_box">
+						<a href=""> <img src=" ">
+						</a>
+					</div>
+				</div>
 			</div>
-		</div>
 
-		<br>
-		<br>
-		<form action="feedcontroller?type=postWrite" method="post"
-			enctype="multipart/form-data">
-			<input class="file" type="file" name="fPic" id="f_input" title="사진"><br>
-			<textarea class="post_content" name="content" rows="9" cols="100"
-				placeholder="내용을 입력해주세요." onfocus="this.placeholder=''"
-				onblur="this.placeholder='내용을 입력해주세요.'"></textarea>
-			<br> <input type="button" value="등록" id="sbm"
-				onclick="sendPost()">
-		</form>
-		<br> <br>
+			<br> <br>
+			<form action="feedcontroller?type=postWrite" method="post"
+				enctype="multipart/form-data">
+				<input class="file" type="file" name="fPic" id="f_input" title="사진"><br>
+				<textarea class="post_content" name="content" rows="9" cols="100"
+					placeholder="내용을 입력해주세요." onfocus="this.placeholder=''"
+					onblur="this.placeholder='내용을 입력해주세요.'"></textarea>
+				<br> <input type="button" value="등록" id="sbm"
+					onclick="sendPost()">
+			</form>
+			<br> <br>
+		</div>
 	</div>
 </body>
 </html>

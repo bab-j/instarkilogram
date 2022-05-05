@@ -1,17 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+	rel="stylesheet">
+
+
 <meta charset="UTF-8">
-<title>회원 가입</title>
+<title>개인페이지 수정</title>
+
 <style>
 body {
 	padding-top: 75px;
-	
 }
 
 .bar {
@@ -30,9 +33,8 @@ form p {
 	margin-top: 0px;
 }
 
-
 table {
-	width: 400px;
+	width: 800px;
 	border-collapse: collapse;
 	margin-bottom: 20px;
 }
@@ -43,51 +45,35 @@ th {
 	font-family: monospace;
 	font-size: 1em;
 }
-
-
-
 </style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
- 	<%-- $().ready(function(){		
-		$("#uid").val(<%=request.getParameter("uid")%>);
-	}); --%>
- 	
-	function idChk() {
-		let firstForm = document.forms[0];
-		firstForm.submit();
-	}
-	function signUp() {
-	
-	}
-	function goLogIn() {
-		location.href = "login.jsp";
-	}
-	
-	window.onload = function () {
-		let asd = document.getElementById("uid");
-		asd.value = "${uid}";
-		/* if (document.getElementByName("clickDu").value == N) {
-			alert("아이디 중복체크를 해주세요!");
-		} */
-	}
-	
-</script>
-</head>
 
+
+</head>
 <body>
+
 	<div class="bar">
 		<div class="home">
 			<h3>instarkilogram</h3>
 		</div>
 	</div>
 
-	<div class="sign">
+	<div class="sign_update">
 		<h1>
 			<i>instarkilogram</i>
 		</h1>
+
+
+
 		<form action="usercontroller?type=UserIdChk" method="post">
 			<table>
+				<tr>
+					<th>사진첨부</th>
+					<td>
+					<input class="file" type="file" name="u_Pic" id= title="사진">
+					<input type="button" value="등록" id="" onclick="">
+					</td>
+					
+				</tr>
 				<tr>
 					<th>아이디</th>
 					<td><input type="text" name=uid id="uid"
@@ -146,15 +132,9 @@ th {
 				</tr>
 			</table>
 			<input type="button" id="butt" value="취소" onclick="goLogIn()">
-			<input type="submit" id="subm" value="가입" onclick="signUp()">
+			<input type="submit" id="subm" value="수정" onclick="signUp()">
 			<input type="hidden" name="uID" value="${uid }">
 		</form>
 	</div>
 </body>
 </html>
-
-
-
-
-
-

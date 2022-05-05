@@ -51,7 +51,7 @@ tr, td {
 
 	<div class="bar">
 		<div class="home">
-			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
+			<h1><em> <a class="linkLine" href="mainFeed.jsp"> instarkilogram </a></em></h1>
 		</div>
 		<div class="container">
 				<form action="search.jsp" method="get" enctype="multipart/form-data">
@@ -62,7 +62,7 @@ tr, td {
 		</div>
 		<div class="nav-icon">
 			<ul>
-				<li class="material-icons"><a href="main_feed.jsp">home</a></li>
+				<li class="material-icons"><a href="personalFeed.jsp">home</a></li>
 				<li class="material-icons-outlined"><a href="postWrite.jsp">add_circle_outline</a></li>
 				<li class="material-icons"><a href="main_feed.jsp">logout</a></li>
 			</ul>

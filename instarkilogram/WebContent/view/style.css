@@ -1,13 +1,12 @@
 @charset "UTF-8";
 
 body {
-	
+	background-color: #f6f7f7;
 }
 
 .search_body {
-	text-align : center;
-	
-	height:inherit;
+	text-align: center;
+	height: inherit;
 	padding-top: 50px;
 	float: inherit;
 }
@@ -30,6 +29,8 @@ body {
 	border-bottom: 1px solid #dbdbdb;
 	border-top: highlight;
 	border-radius: 4px;
+	font-size: 16px;
+	font-style: italic;
 }
 
 .linkLine {
@@ -55,23 +56,26 @@ body {
 	justify-content: space-between;
 	margin-left: auto;
 	margin-right: auto;
-	font-size: 50px;
+	font-size: 10px;
 	align-items: center;
 }
-
+.img_icon { 
+	background-image:url("../img/blank.png");
+	width: 50px;
+	height: 24px;
+	padding-left:5px;
+	
+	
+}
 .grid-head {
 	float: inherit;
 }
 
 .search_grid {
 	display: flex;
-	
-	
-	
 }
 
 .grid-body {
-	
 	
 }
 
@@ -100,13 +104,12 @@ body {
 
 .search_result {
 	margin-right: auto;
-	
-	}
+}
 
 .write {
 	width: 800px;
 	height: 1000px;
-	margin: auto;
+	margin: 0 auto;
 	margin-top: 120px;
 }
 
@@ -126,11 +129,11 @@ body {
 }
 
 .feed {
-	width: 614px;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
 	margin-top: 50px;
+	width: 400px;
 }
 
 #sbm {
@@ -140,7 +143,7 @@ body {
 	color: white;
 	font-size: 20px;
 	border: none;
-	width: 614px;
+	width: 400px;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -159,8 +162,10 @@ body {
 }
 
 #f_input {
-	height: 30px;
+	margin-left: auto;
+	margin-right: auto; height : 30px;
 	width: 400px;
+	height: 30px;
 }
 
 .main_body {
@@ -237,16 +242,110 @@ body {
 }
 
 .id_search_body {
-	padding-top:50px;
-	margin-left : auto;
-	margin-right : auto;
+	padding-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
 	width: 500px;
-	
-	
 }
-
 
 a {
 	text-decoration: none;
 	color: inherit;
 }
+
+/*
+sign up css -->
+ */
+.sign {
+	background-color: white;
+	border: 1.5px solid silver;
+	border-radius: 10px;
+	margin-left: 36%;
+	width: 400px;
+	height: 670px;
+	text-align: center;
+}
+
+.sign h1 {
+	font-size: 2.5em;
+	font-family: monospace;
+	font-style: italic;
+}
+
+.sign input {
+	border: 1px solid gray;
+	border-radius: 5px;
+	margin: 10px;
+	width: 230px;
+	height: 40px;
+	font-size: 1em;
+	color: gray;
+	padding-left: 10px;
+}
+
+.sign_update {
+	background-color: white;
+	border: 1.5px solid silver;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	height: 700px;
+	text-align: center;
+}
+
+.sign_update h1 {
+	font-size: 2.5em;
+	font-family: monospace;
+	font-style: italic;
+}
+
+.sign_update input {
+	border: 1px solid gray;
+	border-radius: 5px;
+	margin: 10px;
+	width: 230px;
+	height: 40px;
+	font-size: 1em;
+	color: gray;
+	padding-left: 10px;
+}
+
+#uid {
+	width: 180px;
+}
+
+#button1 {
+	width: auto;
+	height: 30px;
+	font-size: 0.7em;
+}
+
+#button1:hover {
+	background-color: #a7aaad;
+}
+
+#butt {
+	text-align: center;
+	width: 50px;
+}
+
+#subm {
+	padding-left: 0px;
+	text-align: center;
+	width: 150px;
+	background-color: #3582c4;
+	color: white;
+}
+
+#butt:hover {
+	background-color: #a7aaad;
+}
+
+#subm:hover {
+	background-color: #0a4b78;
+}
+
+/*
+<-- sign up css
+ */

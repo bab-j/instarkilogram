@@ -110,7 +110,6 @@
 	height: 32px;
 	border-radius: 4px;
 	border-style: solid;
-	
 }
 </style>
 </head>
@@ -119,18 +118,21 @@
 
 	<div class="bar">
 		<div class="home">
-			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
+			<h1>
+				<em> <a class="linkLine" href="mainFeed.jsp">instarkilogram </a></em>
+			</h1>
 		</div>
 		<div class="container">
-				<form action="search.jsp" method="get" enctype="multipart/form-data">
-			<span>
-					<input class="total_search"type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;</a><input class="search_btn" type="submit" value="검색" >
-			</span>
+			<form action="search.jsp" method="get" enctype="multipart/form-data">
+				<span> <input class="total_search" type="text" id="search"
+					name="keyword" placeholder="통합검색">&nbsp;</a><input
+					class="search_btn" type="submit" value="검색">
+				</span>
 			</form>
 		</div>
 		<div class="nav-icon">
 			<ul>
-				<li class="material-icons"><a href="main_feed.jsp">home</a></li>
+				<li class="material-icons"><a href="personalFeed.jsp">home</a></li>
 				<li class="material-icons-outlined"><a href="postWrite.jsp">add_circle_outline</a></li>
 				<li class="material-icons"><a href="main_feed.jsp">logout</a></li>
 			</ul>
@@ -146,7 +148,7 @@
 		<div class="left_body ">
 			<!-- 블루 -->
 			<%
-				for (int j = 1; j <= 14; j++) {
+			for (int j = 1; j <= 14; j++) {
 			%>
 
 			<div class="feed_box">
@@ -180,8 +182,7 @@
 					<div class="u_comment">
 						<div>
 							<hr style="border-top: 0.3px solid #dbdbdb;">
-							<span class="like">좋아요 10개</span>
-							<br> <br>
+							<span class="like">좋아요 10개</span> <br> <br>
 						</div>
 						<div>
 							<span><b>jin.99</b></span>&nbsp;&nbsp; <span>제니이쁨</span>
@@ -209,7 +210,7 @@
 
 			</div>
 			<%
-				}
+			}
 			%>
 
 
