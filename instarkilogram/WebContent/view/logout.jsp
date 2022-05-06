@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <%
 	session.removeAttribute("u_idx");
-	System.out.println("${u_idx}");
 %>
 <script>
 	location.href="login.jsp";
