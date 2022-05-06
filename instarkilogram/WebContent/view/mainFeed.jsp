@@ -131,9 +131,9 @@ padding-bottom: 50px;
 		</div>
 		<div class="nav-icon">
 			<ul>
-				<li class="material-icons"><a href="personalFeed.jsp">home</a></li>
-				<li class="material-icons-outlined"><a href="postWrite.jsp">add_circle_outline</a></li>
-				<li class="material-icons"><a href="main_feed.jsp">logout</a></li>
+				<li class="material-icons icon_space"><a href="personalFeed.jsp">home</a></li>
+				<li class="material-icons-outlined icon_space"><a href="postWrite.jsp">add_circle_outline</a></li>
+				<li class="material-icons icon_space"><a href="main_feed.jsp">logout</a></li>
 			</ul>
 		</div>
 	</div>
