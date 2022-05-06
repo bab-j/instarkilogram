@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <!--브라우저 적당량  -->
-<title>main</title>
+<title>instrakilogram : 메인화면</title>
 
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
