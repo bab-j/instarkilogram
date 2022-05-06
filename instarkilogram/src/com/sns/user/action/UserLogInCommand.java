@@ -13,7 +13,6 @@ import com.sns.user.db.UserVO;
 
 public class UserLogInCommand implements Command{
 
-	String logChk = "null";
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");

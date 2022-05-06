@@ -63,7 +63,12 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
 	crossorigin="anonymous">
-	
+
+	function goPostPage() {
+		request.setAttribute("fvo", ${pv});
+		System.out.println("goPostPage() 실행");
+		location.href = "FeedFrontController?type=";
+	}
 </script>
 
 <style>
@@ -192,6 +197,7 @@ padding-bottom: 50px;
 			<c:when test="${empty pList }">
 				<div>게시물이 존재하지 않습니다.</div>
 			</c:when>
+			
 			<c:otherwise>
 			<c:forEach var="pv" items='${pList }'>
 				<div class="feed_box">
@@ -208,10 +214,13 @@ padding-bottom: 50px;
 									<td><a class="profile_name" href=".jsp">${pv.u_idx } </a></td>
 								</tr>
 							</thead>
+							<!-- 여기서 u_id, u_pic 가져오기(UserVO) -->
 							<tbody>
 								<tr>
-									<td colspan="3"><img class="feed_img"
-										src="c:/upload/temp/${pv.f_pic} "></td>
+									<td colspan="3">
+										<img class="feed_img" src="c:/upload/temp/${pv.f_pic} "
+											onclick="goPostPage()">
+									</td>
 								</tr>
 							</tbody>
 							<tbody class="feed_body">
