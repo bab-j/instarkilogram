@@ -67,6 +67,7 @@
 table {
 	margin-left: auto;
 	margin-right: auto;
+	height: 60px;
 }
 
 .tr_space {
@@ -80,6 +81,7 @@ table {
 	padding-left: 30px;
 	padding-right: 30px;
 	text-align: center;
+	font-size : 18px;
 }
 
 tr, td {

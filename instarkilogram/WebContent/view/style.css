@@ -275,10 +275,12 @@ body {
 }
 
 .id_search_body {
-	padding-top: 50px;
+	margin-top: 75px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 500px;
+	width: 800px;
+	background-color: white;
+	border: 1px solid silver;
 }
 
 a {

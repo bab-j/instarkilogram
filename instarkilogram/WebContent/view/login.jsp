@@ -12,7 +12,8 @@
 <title>instarkilogram : 로그인</title>
 <style>
 body {
-	background-color: #f6f7f7;
+	margin-top: 150px; 
+	background-color : #f6f7f7;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Helvetica, Arial, sans-serif;
 }
@@ -45,7 +46,7 @@ body {
 	margin: 5px;
 	width: 230px;
 	height: 40px;
-	font-size: 1em;	
+	font-size: 1em;
 	color: gray;
 	padding-left: 10px;
 }
@@ -53,10 +54,8 @@ body {
 #logBtn {
 	border: none;
 	margin-bottom: 4%;
-		background-color: #1E82FF;
-		color : white;
-	
-	
+	background-color: #1E82FF;
+	color: white;
 }
 
 #logBtn:hover {
@@ -110,9 +109,9 @@ a {
 				onfocus="this.placeholder=''" onblur="this.placeholder='Username'"><br>
 			<input type="password" name="upwd" id="pwd" placeholder="PASSWORD"
 				onfocus="this.placeholder=''" onblur="this.placeholder='Password'"><br>
-			<br> <br> 
-			<input type="button" id="logBtn" value="로그인" onclick="logIn()"><br> 
-			<input type="button" id="signBtn" value="회원가입" onclick="SignUp()"><br> <br>
+			<br> <br> <input type="button" id="logBtn" value="로그인"
+				onclick="logIn()"><br> <input type="button"
+				id="signBtn" value="회원가입" onclick="SignUp()"><br> <br>
 		</form>
 		<a href="#">ID 찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="#">비밀번호 찾기</a>
