@@ -51,12 +51,6 @@ body {
 	padding-left: 10px;
 }
 
-.font1 {
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Helvetica, Arial, sans-serif;
-
-}
-
 #logBtn {
 	border: none;
 	margin-bottom: 4%;
