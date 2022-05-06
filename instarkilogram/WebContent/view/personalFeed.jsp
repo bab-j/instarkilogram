@@ -11,12 +11,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet"
 	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 <link
 	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
 	rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <title>instrakilogram : 개인피드</title>
 
@@ -125,7 +125,7 @@ tr, td {
 			<ul>
 				<li class="material-icons"><a href="mainFeed.jsp">home</a></li>
 				<li class="material-icons-outlined"><a href="postWrite.jsp">add_circle_outline</a></li>
-				<li class="material-icons"><a href="mainFeed.jsp">logout</a></li>
+				<li class="material-icons"><a href="login.jsp">logout</a></li>
 			</ul>
 		</div>
 	</div>

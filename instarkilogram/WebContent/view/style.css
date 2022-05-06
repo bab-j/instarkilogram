@@ -2,6 +2,9 @@
 
 body {
 	background-color: #f6f7f7;
+	width: 1800px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
 }
 
 .search_body {
@@ -31,12 +34,20 @@ body {
 	border-radius: 4px;
 	font-size: 16px;
 	font-style: italic;
+	width: 100%;
+}
+
+.material-icons {
+	font-size: 30px;
+}
+
+.material-icons-outlined {
+	font-size: 30px;
 }
 
 .linkLine {
 	text-decoration: none;
 	color: inherit;
-	
 }
 
 .home {
@@ -57,15 +68,21 @@ body {
 	justify-content: space-between;
 	margin-left: auto;
 	margin-right: auto;
-	font-size: 10px;
 	align-items: center;
+	font-size: 30px;
+}
+
+.icon_space {
+	padding : 8px;
+	
+	
 }
 
 .img_icon {
 	background-image: url("../img/blank.png");
-	width: 50px;
 	height: 24px;
-	padding-left: 5px;
+	width: 48px;
+	display: inline-block;
 }
 
 .grid-head {
@@ -89,17 +106,16 @@ body {
 
 .total_search {
 	width: 50%;
-	height: 28px;
+	height: 26px;
 	font-size: 15px;
-	margin-bottom: 8px;
+	padding-bottom: 0px;
 	border-radius: 4px;
 	border-style: solid;
 }
 
 .search_btn {
 	font-size: 15px;
-	height: 32px;
-	margin-bottom: 8px;
+	height: 30px;
 	border-radius: 4px;
 }
 
@@ -108,10 +124,13 @@ body {
 }
 
 .write {
-	width: 800px;
-	height: 1000px;
+	width: 550px;
+	height: 900px;
 	margin: 0 auto;
 	margin-top: 120px;
+	background-color: white;
+	border-radius: 1%;
+	border: 1px solid silver;
 }
 
 .file {
@@ -193,7 +212,6 @@ body {
 	border: 1px solid #dbdbdb;
 }
 
-
 .feed_img {
 	padding: 8px;
 	padding-top: 3px;
@@ -201,7 +219,6 @@ body {
 	height: 614px;
 	object-fit: contain;
 }
-
 
 .feed_content {
 	paddint: 10px;

@@ -7,10 +7,12 @@
 <title>post_write.jsp</title>
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="style.css">
 <link
 	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
 	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet" href="style.css">
 
 
 
@@ -46,18 +48,17 @@
 		</div>
 		<div class="container">
 			<form action="search.jsp" method="get" enctype="multipart/form-data">
-				<span> <input class="total_search" type="text" id="search"
-					name="keyword" placeholder="통합검색">&nbsp;</a><input
+				<span> <input src="" class="total_search" type="text"
+					id="search" name="keyword" placeholder="통합검색">&nbsp;</a><input
 					class="search_btn" type="submit" value="검색">
 				</span>
 			</form>
-			</div>
+		</div>
 		<div class="nav-icon">
 
-				<span class="img_icon"></span> 
-				<span class="img_icon"></span>
-			<a href="javascript:window.history.back();">
-			<span class="material-icons img_icon"> arrow_back_ios</span></a> 
+			<span class="img_icon"></span> <span class="img_icon"></span> <a
+				href="javascript:window.history.back();"> <span
+				class="material-icons img_icon"> arrow_back_ios</span></a>
 		</div>
 	</div>
 
