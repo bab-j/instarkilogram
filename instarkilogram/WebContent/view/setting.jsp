@@ -48,6 +48,7 @@ ol {
 		Helvetica, Arial, sans-serif;
 	margin-left: 20px;
 	font-size: 24px;
+	font-weight: bold;
 }
 </style>
 
