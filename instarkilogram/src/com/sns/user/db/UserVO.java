@@ -8,7 +8,7 @@ public class UserVO {
 	private String email;
 	private String bio;
 	private String name;
-	private String uPic;
+	private String u_pic;
 	private String birth;
 	public int getU_idx() {
 		return u_idx;
@@ -53,10 +53,10 @@ public class UserVO {
 		this.name = name;
 	}
 	public String getuPic() {
-		return uPic;
+		return u_pic;
 	}
 	public void setuPic(String uPic) {
-		this.uPic = uPic;
+		this.u_pic = uPic;
 	}
 	public String getBirth() {
 		return birth;
@@ -67,7 +67,7 @@ public class UserVO {
 	@Override
 	public String toString() {
 		return "UserVO [u_idx=" + u_idx + ", u_id=" + u_id + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email
-				+ ", bio=" + bio + ", name=" + name + ", uPic=" + uPic + ", birth=" + birth + "]";
+				+ ", bio=" + bio + ", name=" + name + ", uPic=" + u_pic + ", birth=" + birth + "]";
 	}
 	
 	

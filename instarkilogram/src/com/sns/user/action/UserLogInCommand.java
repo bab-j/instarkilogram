@@ -27,9 +27,9 @@ public class UserLogInCommand implements Command{
 		
 		HttpSession session = request.getSession();
 		if(vo != null) { //-- 로그인 가능 : id와 u_idx를 저장 
-			result = "mainFeed.jsp";
-			session.setAttribute("u_idx", vo.getU_idx());
 			session.setAttribute("u_id", vo.getU_id());
+			session.setAttribute("u_pic", vo.getuPic());
+			result = "mainFeed.jsp";
 		} else { 
 			result = "loginFail.jsp";
 		}

@@ -13,20 +13,21 @@ public class FeedDAO {
 
 	
 	
-	// 메인 피드 게시물 총 수량 (리스트로)
-	public static List<FeedVO> CntMain(int u_idx){
+	// 메인 피드 게시물 총 수량 (리스트로)ok
+	public static List<FeedVO> CntMain(String u_id){
 		SqlSession ss = DBService.getFactory().openSession();
-		List<FeedVO> list = ss.selectList("post.totalCountMain",u_idx);
+		List<FeedVO> list = ss.selectList("post.totalCountMain",u_id);
 		ss.close();
 		return list;
 	}
 	
 	
 	
-	// 한 페이지에서 보이는 게시물 불러오기
-	public static List<FeedVO> mainList(int u_idx, int begin, int end){
-		Map<String, Integer> map = new HashMap<String, Integer>();
-		map.put("u_idx", u_idx);
+	// 한 페이지에서 보이는 게시물 불러오기 ok
+	//public static List<FeedVO> mainList(String u_id){
+	public static List<FeedVO> mainList(String u_id, String begin, String end){
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("u_id", u_id);
 		map.put("begin", begin);
 		map.put("end",end);
 		
@@ -37,15 +38,8 @@ public class FeedDAO {
 	}
 	
 	
-	// 메인 피드 불러오기------버려
-	public static List<FeedVO> selectMain(int u_idx){
-		SqlSession ss = DBService.getFactory().openSession();
-		List<FeedVO> list = ss.selectList("post.mainFeed",u_idx);
-		ss.close();
-		return list;
-	}
 	
-	// 게시물 등록
+	// 게시물 등록ok
 	public static int insert(FeedVO fvo) {
 		SqlSession ss = DBService.getFactory().openSession(true);
 		int result = ss.insert("post.insert", fvo);
@@ -63,7 +57,7 @@ public class FeedDAO {
 		UserVO vo = new UserVO();
 		SqlSession ss = DBService.getFactory().openSession();
 		vo = ss.selectOne("post.login",map);
-		System.out.println("feedDAO 실행완");
+		System.out.println("feedDAO.loginRight() 실행완");
 		ss.close();
 		return vo;
 	}

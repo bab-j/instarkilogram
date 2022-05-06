@@ -6,35 +6,35 @@
 <mapper namespace="post">
 
 	
-	<!-- 메인 피드 전체 게시글 수 -->
-	<select id="totalCountMain" parameterType="int" resultType="com.sns.feed.db.FeedVO">
-		SELECT *
-         FROM (SELECT DISTINCT FD.F_IDX, FD.REGDATE, FD.CONTENT, FD.U_IDX, FD.U_LIKE, FD.F_PIC
-				FROM FEED FD, (SELECT * FROM FOLLOW WHERE FROM_IDX = #{u_idx}) FW
-				WHERE FD.U_IDX = FW.TO_IDX
-				OR FD.U_IDX = #{u_idx})
-        ORDER BY F_IDX DESC
+	<!-- 메인 피드 전체 게시글 수 ok-->
+	<select id="totalCountMain" parameterType="string" resultType="com.sns.feed.db.FeedVO">
+        SELECT *   
+        FROM(SELECT DISTINCT FEED.*
+            FROM FEED, (SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id})FW
+            WHERE FEED.U_ID = FW.TO_ID
+            OR FEED.U_ID = #{u_id})
+   		 ORDER BY F_IDX DESC
 	</select>
 	
-	<!-- 메인 피드 : 한 페이지에서 보이는 게시글 목록 -->
+	<!-- 메인 피드 : 한 페이지에서 보이는 게시글 목록ok -->
 	<select id="mainFeed" parameterType="map" resultType="com.sns.feed.db.FeedVO">
 		SELECT *
-		FROM (SELECT ROWNUM, RR.*
-		    FROM (SELECT DISTINCT FD.F_IDX, FD.REGDATE, FD.CONTENT, FD.U_IDX, FD.U_LIKE, FD.F_PIC
-		        FROM FEED FD, (SELECT * FROM FOLLOW WHERE FROM_IDX = #{u_idx}) FW
-		        WHERE FD.U_IDX = FW.TO_IDX
-		        OR FD.U_IDX = #{u_idx}
-		        ORDER BY F_IDX DESC) RR)
-	    WHERE ROWNUM BETWEEN #{begin} AND #{end}
+        FROM (SELECT ROWNUM, TT.* 
+                    FROM (SELECT DISTINCT FEED.*
+                        FROM FEED, (SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id})FW
+                        WHERE FEED.U_ID = FW.TO_ID
+                        OR FEED.U_ID = #{u_id}
+                        ORDER BY F_IDX DESC) TT)
+        WHERE ROWNUM BETWEEN TO_NUMBER(#{begin}) AND TO_NUMBER(#{end})
 	</select>
 	
-	<!-- 게시글 등록 -->
+	<!-- 게시글 등록 ok-->
 	<insert id="insert" parameterType="com.sns.feed.db.FeedVO">
-		INSERT INTO FEED (F_IDX, REGDATE, CONTENT, U_IDX, U_LIKE, F_PIC)
-            	VALUES(FEED_SEQ.nextval, SYSDATE, #{content}, #{u_idx},0, #{f_pic})
+		INSERT INTO FEED (F_IDX, REGDATE, CONTENT, U_ID, U_PIC, F_LIKE, F_PIC) 
+                VALUES (FEED_SEQ.NEXTVAL,SYSDATE,#{content},#{u_id},#{u_pic},NULL,#{f_pic})
 	</insert>
 	
-	<!-- 로그인 -->
+	<!-- 로그인 ok-->
 	<select id="login" parameterType="map" resultType="com.sns.user.db.UserVO">
 		SELECT * 
 		FROM USER_INFO
