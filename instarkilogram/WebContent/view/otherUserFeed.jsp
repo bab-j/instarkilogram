@@ -18,7 +18,7 @@
 	rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
-<title>instrakilogram : 개인피드</title>
+<title>instrakilogram</title>
 
 
 <style>

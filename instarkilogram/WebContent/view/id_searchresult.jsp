@@ -76,11 +76,11 @@ class="profile_result"
 
 	<div class="id_search_body">
 		<div>
+
+			<table>
 			<%
 				for (int i = 1; i < 10; i++) {
 			%>
-
-			<table>
 			<tbody>
 				<tr width="500px	">
 					<td class="td_img" width="70px;"><img class="profile_img"
