@@ -15,16 +15,22 @@
 
 </head>
 <body>
+<script>
+
+
+</script>
+
 
 
 	<div class="bar">
 		<div class="home">
-			<h1><em> <a class="linkLine" href="main_feed.jsp"> instarkilogram </a></em></h1>
+			<h1><em> <a class="linkLine" methed="get" href="main_feed.jsp"> instarkilogram </a></em></h1>
 		</div>
 		<div class="container">
-				<form action="search.jsp" method="get" enctype="multipart/form-data">
+				<form action="searchContorller?type=search" method="post">
 			<span>
-					<input class="total_search"type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;</a><input class="search_btn" type="submit" value="검색" >
+					<input class="total_search"type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;</a>
+					<input class="search_btn" type="submit" value="검색" >
 			</span>
 			</form>
 		</div>
@@ -79,6 +85,8 @@
 			</thead>
 			</table>
 
+
+			
 
 	</div>
 </body>

@@ -6,12 +6,11 @@
 	
 	
 	<!-- 아이디검색 -->
-	<select id="select_id_bio" parameterType="String" resultType="com.sns.user.db.UserVO">
+	<select id="select_id_bio" parameterType="string" resultType="com.sns.user.db.UserVO">
 	
-	
-	SELECT *
+	SELECT u_id
 	FROM USER_INFO
-	WHRER U_ID LIKE = #{u_id}
+	WHERE U_ID LIKE '%'||#{u_id}||'%'
 	
 	
 	</select>
