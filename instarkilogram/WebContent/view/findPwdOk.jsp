@@ -8,7 +8,7 @@
 </head>
 <body>
 <script>
-	if (check == 0) {
+	if (${check} == 0) {
 		alert("찾으시는 Password는 ${findPwd} 입니다.")
 		location.href="login.jsp";
 	} else {
