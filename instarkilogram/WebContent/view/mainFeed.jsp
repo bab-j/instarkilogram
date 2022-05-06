@@ -19,35 +19,8 @@
 	crossorigin="anonymous">
 	
 </script>
-<!--이클립스wtp지원ㄴignore로 설정-->
 
 <style>
-.left_body {
-	width: 654px;
-	text-align: center;
-	height: 2000px;
-	flex-direction: column;
-	display: flex;
-}
-
-.feed_box {
-	width: 634px;
-	margin: 10px;
-	float: inherit;
-	border: 1px solid #dbdbdb;
-}
-
-.feed_img {
-	padding: 8px;
-	padding-top: 3px;
-	width: 614px;
-	height: 614px;
-}
-
-.feed_like {
-	padding: 0x 0px;
-}
-
 .feed_name {
 	margin-left: auto;
 	margin-right: auto;
@@ -64,7 +37,7 @@
 .profile_name {
 	font-weight: bold;
 	height: 32px;
-	font-size: large;
+	font-size: 20px;
 }
 
 .profile_box {
@@ -91,6 +64,7 @@
 
 .like {
 	font-weight: bold;
+	padding-top: 8px;
 }
 
 .user_name {
@@ -109,8 +83,27 @@
 .comment_textbox {
 	height: 32px;
 	border-radius: 4px;
-	border-style: solid;
+	border: 1px solid silver;
 }
+
+.comment_width {
+	width: 70px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+
+
+.feed_contain_font {
+	text-align: left;
+	padding-bottom: 30px;
+	font: bold 12px;
+}
+.contain_box {
+padding-bottom: 50px;
+
+}
+
 </style>
 </head>
 <body>
@@ -119,7 +112,8 @@
 	<div class="bar">
 		<div class="home">
 			<h1>
-				<em> <a class="linkLine" href="mainFeed.jsp">instarkilogram </a></em>
+				<em> <a class="linkLine" href="mainFeed.jsp">instarkilogram
+				</a></em>
 			</h1>
 		</div>
 		<div class="container">
@@ -132,9 +126,9 @@
 		</div>
 		<div class="nav-icon">
 			<ul>
-				<li class="material-icons"><a href="personalFeed.jsp">home</a></li>
-				<li class="material-icons-outlined"><a href="postWrite.jsp">add_circle_outline</a></li>
-				<li class="material-icons"><a href="logout.jsp">logout</a></li>
+				<li class="material-icons "><a href="personalFeed.jsp">home</a></li>
+				<li class="material-icons-outlined "><a href="postWrite.jsp">add_circle_outline</a></li>
+				<li class="material-icons "><a href="login.jsp">logout</a></li>
 			</ul>
 		</div>
 	</div>
@@ -145,10 +139,10 @@
 
 	<div class="main_body">
 		<!-- 메인 박스 -->
-		<div class="left_body ">
+		<div class="center_body ">
 			<!-- 블루 -->
 			<%
-			for (int j = 1; j <= 14; j++) {
+				for (int j = 1; j <= 14; j++) {
 			%>
 
 			<div class="feed_box">
@@ -170,25 +164,29 @@
 								<td colspan="3"><img class="feed_img"
 									src="../img/<%=j%>.jpg"></td>
 							</tr>
-
 						</tbody>
 						<tbody class="feed_body">
 							<tr class="feed_row">
-								<td class="material-icons-outlined">favorite_border</td>
-								<td class="material-icons-outlined">mode_comment</td>
+								<td class="material-icons-outlined icon_space">favorite_border</td>
+								<td class="material-icons-outlined icon_space">mode_comment</td>
 							</tr>
 						</tbody>
 					</table>
 					<div class="u_comment">
+						<div class="like">
+							<span>좋아요 10개</span> <br> <br>
+						</div>
+						<div class="contain_box">
+						<span class="comment_width">bab__j</span>
+						<span class="feed_contain_font">우리 아이유 너무 이뿌죠?</span>
+						</div>
+						<hr style="border-top: 0.3px solid #dbdbdb;">
+
 						<div>
-							<hr style="border-top: 0.3px solid #dbdbdb;">
-							<span class="like">좋아요 10개</span> <br> <br>
+							<span class="comment_width">jin.99</span><span>제니이쁨</span>
 						</div>
 						<div>
-							<span><b>jin.99</b></span>&nbsp;&nbsp; <span>제니이쁨</span>
-						</div>
-						<div>
-							<span><b>우기</b></span> &nbsp;&nbsp; <span>부럽</span>
+							<span class="comment_width">woogie</span><span>부럽</span>
 						</div>
 					</div>
 					<br> <br>
@@ -210,7 +208,7 @@
 
 			</div>
 			<%
-			}
+				}
 			%>
 
 
@@ -221,5 +219,3 @@
 	</div>
 </body>
 </html>
-
-
