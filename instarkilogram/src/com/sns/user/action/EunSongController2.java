@@ -26,12 +26,10 @@ public class EunSongController2 extends HttpServlet {
 		
 		if("UserLogIn".equals(type)) {
 			command = new UserLogInCommand();
-			System.out.println("userLogIn 도착");
 		} else if ("GoSignUp".equals(type)) {
 			command = new GoSignUpCommand();
 		}
 		String path = command.exec(request, response);
-		System.out.println("은송컨트롤러 경로 지정 완");
 		request.getRequestDispatcher(path).forward(request, response);
 	}
 

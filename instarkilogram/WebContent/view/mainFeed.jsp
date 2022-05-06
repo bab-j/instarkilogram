@@ -1,5 +1,50 @@
+<%@page import="com.sns.common.Paging"%>
+<%@page import="com.sns.feed.db.FeedVO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.sns.feed.db.FeedDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	Paging p = new Paging();
+	int u_idx = (int)session.getAttribute("u_idx");
+	
+	List<FeedVO> postList = FeedDAO.CntMain(u_idx);
+	int total = postList.size();
+	System.out.println("게시물 총수량 : " + total);
+	
+	p.setTotalRecord(total);
+	p.setTotalPage();
+	
+	
+	String cPage = request.getParameter("cPage");
+	if(cPage != null){
+		p.setNowPage(Integer.parseInt(cPage));
+	}
+	
+	p.setEnd(p.getNowPage() * p.getNumPerPage());
+	p.setBegin(p.getEnd() - p.getNumPerPage() + 1);
+	int begin = p.getBegin();
+	int end = p.getEnd();
+	
+	int beginPage = (p.getNowPage() - 1) / p.getPagePerBlock() * p.getPagePerBlock() + 1;
+	p.setBeginPage(beginPage);
+	p.setEndPage(beginPage + p.getPagePerBlock() - 1);
+	
+	if(p.getEndPage() > p.getTotalPage()){
+		p.setEndPage(p.getTotalPage());
+	}
+	
+	List<FeedVO> pList = FeedDAO.mainList(u_idx, begin, end);
+	
+	System.out.println("pList.size() : " + pList.size()); ///--------- 왜 0이야!!
+	System.out.println("u_idx, begin, end : " + u_idx +  "," + begin +","+end);
+	pageContext.setAttribute("pList", pList);
+	
+	pageContext.setAttribute("pvo", p);
+	
+	
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

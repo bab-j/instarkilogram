@@ -7,6 +7,7 @@ public class FeedVO {
 	private int u_idx;
 	private int u_like;
 	private String f_pic;
+	
 	public int getF_idx() {
 		return f_idx;
 	}
