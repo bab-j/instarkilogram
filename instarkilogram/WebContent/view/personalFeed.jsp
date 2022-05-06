@@ -36,16 +36,16 @@
 }
 
 .bigProfile_img {
+	border-radius: 50%;
 	width: 150px;
 	height: 150px;
-	border-radius: 50%;
 	display: inline;
 	padding:30px;
 }
 
 .profile {
 	width: 920px;
-	margin-bottom: 100px;
+	margin-bottom: 40px;
 }
 
 .big_img {
