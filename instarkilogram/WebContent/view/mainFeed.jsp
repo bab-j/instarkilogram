@@ -163,10 +163,11 @@ padding-bottom: 50px;
 			</h1>
 		</div>
 		<div class="container">
-			<form action="search.jsp" method="get" enctype="multipart/form-data">
-				<span> <input class="total_search" type="text" id="search"
-					name="keyword" placeholder="통합검색">&nbsp;</a><input
-					class="search_btn" type="submit" value="검색">
+			<form action="searchContorller?type=search" method="get" enctype="multipart/form-data">
+				<span> 
+					<input class="total_search" type="text" id="search"
+					name="keyword" placeholder="통합검색">&nbsp;
+					<input class="search_btn" type="submit" value="검색">
 				</span>
 			</form>
 		</div>
@@ -259,6 +260,43 @@ padding-bottom: 50px;
 			</c:otherwise>
 			</c:choose>
 
+			<foot>
+			<tr>
+				<td colspan="4">
+					<ol class="paging">
+					<%--[이전으로]에 대한 사용여부 처리 --%>
+					<c:if test="${pvo.beginPage == 1 }">
+						<li class="disable">이전으로</li>
+					</c:if>	
+					<c:if test="${pvo.beginPage != 1 }">
+						<li>
+							<a href="mainFeed.jsp?cPage=${pvo.beginPage - 1 }">이전으로</a>
+						</li>
+					</c:if>
+						
+					<%--블록내에 표시할 페이지 태그 작성(시작페이지 ~ 끝페이지) --%>
+					<c:forEach var="pageNo" begin="${pvo.beginPage }" end="${pvo.endPage }">
+					<c:if test="${pageNo == pvo.nowPage}">
+						<li class="now">${pageNo }</li>
+					</c:if>	
+					<c:if test="${pageNo != pvo.nowPage}">
+						<li><a href="mainFeed.jsp?cPage=${pageNo }">${pageNo }</a></li>
+					</c:if>
+						
+					</c:forEach>	
+						
+					<%--[다음으로]에 대한 사용여부 처리 --%>
+					<c:if test="${pvo.endPage < pvo.totalPage }">
+						<li><a href="mainFeed.jsp?cPage=${pvo.endPage + 1 }">다음으로</a></li>
+					</c:if>	
+					<c:if test="${pvo.endPage >= pvo.totalPage }">
+						<li class="disable">다음으로</li>
+					</c:if>
+						
+					</ol>
+				</td>
+			</tr>
+		</foot>
 
 			<!--왼쪽  -->
 			<!--오른쪽  -->
