@@ -1,4 +1,4 @@
-package com.sns.comment;
+package com.sns.comment.db;
 
 public class CommentVO {
 	private int co_idx;

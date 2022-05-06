@@ -7,7 +7,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.sns.vo.BBSVO;
-import com.sns.comment.CommentVO;
+import com.sns.comment.db.CommentVO;
 import com.sns.mybatis.DBService;
 public class DAO {
 
