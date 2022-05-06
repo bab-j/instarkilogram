@@ -31,7 +31,6 @@ public class UserLogInCommand implements Command{
 			result = "mainFeed.jsp";
 			session.setAttribute("u_idx", vo.getU_idx());
 			session.setAttribute("u_id", vo.getU_id());
-			session.setAttribute("u_id", "AA");
 		} else { 
 			result = "loginFail.jsp";
 		}

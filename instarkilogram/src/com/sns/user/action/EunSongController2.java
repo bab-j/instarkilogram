@@ -18,7 +18,7 @@ public class EunSongController2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(">> 은송Controller.doGet() 실행");
+		System.out.println(">> Controller.doGet() 실행");
 		
 		String type = request.getParameter("type");
 		
@@ -34,7 +34,7 @@ public class EunSongController2 extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(">> 은송Controller.doPost() 실행");
+		System.out.println(">> Controller.doPost() 실행");
 		request.setCharacterEncoding("utf-8");
 		doGet(request, response);
 	}

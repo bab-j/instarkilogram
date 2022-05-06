@@ -17,7 +17,7 @@
 	</select>
 	
 	<!-- 메인 피드 : 한 페이지에서 보이는 게시글 목록 -->
-	<select id="mainFeed" parameterType="map" resultType="com.sns.feed.db.MainFeedVO">
+	<select id="mainFeed" parameterType="map" resultType="com.sns.feed.db.FeedVO">
 		SELECT *
 		FROM (SELECT ROWNUM, RR.*
 		    FROM (SELECT DISTINCT FD.F_IDX, FD.REGDATE, FD.CONTENT, FD.U_IDX, FD.U_LIKE, FD.F_PIC

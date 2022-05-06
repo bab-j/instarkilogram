@@ -63,6 +63,7 @@ public class FeedDAO {
 		UserVO vo = new UserVO();
 		SqlSession ss = DBService.getFactory().openSession();
 		vo = ss.selectOne("post.login",map);
+		System.out.println("feedDAO 실행완");
 		ss.close();
 		return vo;
 	}
