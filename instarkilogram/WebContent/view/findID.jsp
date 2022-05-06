@@ -1,76 +1,99 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="stylesheet" href="style.css">
+
 <meta charset="UTF-8">
 <title>아이디찾기</title>
 <style>
-	table th {
-		font-size: 1em;
-		font-family: monospace;
-		
-	}
-	table {
-		margin-bottom: 20px;
-		margin-left: 20px;
-	}
-	body {
-		background-color: #f6f7f7;
-	}
-	.top {
-		margin-left: 100px;
-		margin-top: 30px;
-		font-size: 1em;
-	}
-	.sign {
-		background-color: white;
-		border: 1.5px solid silver;
-		border-radius: 10px;
-		padding-top: 1%;
-		margin-left: 38%;
-		margin-top: 5%;
-		width: 350px;
-		height: 450px;
-		text-align: center;
-	}
-	.sign h1 {
-		font-size: 2.5em;
-		font-family: monospace;
-		margin-bottom: 10%;
-	}
-	.sign input {
-		border: 1px solid gray;
-		border-radius: 5px;
-		margin: 5px;
-		width: 230px;
-		height: 41px;
-		font-size: 1em;
-		color: gray;
-		padding-left: 10px;
-	}
-	#subBtn { 
-		border:none;
-		margin-bottom: 4%;
-	}
-	#subBtn:hover {
-		background-color: #a7aaad;
-	}
-	#butBtn {
-		border:none;
-		background-color: #50575e;
-		color: white;
-	}
-	#butBtn:hover {
-		background-color: #2c3338;
-	}
-	a {
-		text-decoration: none;
-		color: #3c434a;
-		font-family: monospace;
-		font-size: 1.2em;
-	}
+body {
+	margin-top: 150px;
+	background-color: #f6f7f7;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
+}
 
+.bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-align: left;
+}
+
+.home {
+	margin-left: 100px;
+	font-size: 32px;
+}
+
+
+
+
+table th {
+	font-size: 1em;
+	font-family: monospace;
+}
+
+table {
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+
+.sign{
+height: 550px;
+
+
+
+}
+
+.sign input {
+width : 240px;
+
+}
+
+
+
+
+#subBtn {
+width : 140px;
+	border: none;
+	margin-bottom: 4%;
+	color:white;
+		background-color: #1E82FF;
+	
+}
+
+#subBtn:hover {
+	background-color: #a7aaad;
+}
+
+#butBtn {
+width : 140px;
+	border: none;
+	background-color: #50575e;
+	color: white;
+}
+
+#butBtn:hover {
+	background-color: #2c3338;
+}
+
+a {
+	text-decoration: none;
+	color: #3c434a;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+
+
+th {
+text-align: left;
+
+}
 </style>
 <script>
 	function goLogin() {
@@ -79,30 +102,41 @@
 </script>
 </head>
 <body>
-		<div class="top">
-			<h3>instarkilogram</h3>
+	<div class="bar">
+		<div>
+			<h3 class="home">instarkilogram</h3>
 		</div>
-<div class="sign">
-			<h1><i>instarkilogram</i></h1>
-			<form action="usercontroller?type=FindID" method="post">
-			<table>
+	</div>
+
+
+
+	<div class="sign">
+		<h1> instarkilogram
+		</h1>
+		<form action="usercontroller?type=FindID" method="post">
+			<table class="font1">
 				<tr>
-					<th>이메일</th> 
-					<td><input type="email" name="email" placeholder="abc123@abc.com" onfocus="this.placeholder=''" onblur="this.placeholder='abc123@abc.com'"></td>
+					<th>이메일</th>
+					<td><input type="email" name="email"
+						placeholder="abc123@abc.com" onfocus="this.placeholder=''"
+						onblur="this.placeholder='abc123@abc.com'"></td>
 				</tr>
 				<tr>
-					<th>전화번호</th> 
-					<td><input type="text" name="phone" placeholder="010-0000-0000" onfocus="this.placeholder=''" onblur="this.placeholder='010-0000-0000'"></td>
+					<th>전화번호</th>
+					<td><input type="text" name="phone"
+						placeholder="010-0000-0000" onfocus="this.placeholder=''"
+						onblur="this.placeholder='010-0000-0000'"></td>
 				</tr>
 				<tr>
-					<th>생년월일</th> 
-					<td><input type="text" name="birth" placeholder="생년월일 6자리" onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"></td>
+					<th>생년월일</th>
+					<td><input type="text" name="birth" placeholder="생년월일 6자리"
+						onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"></td>
 				</tr>
 			</table>
-				<input type="button" id="subBtn" value="취소" onclick="goLogin()">
-				<input type="submit" id="butBtn" value="아이디 찾기">
-			</form>
-</div>
+			<input type="button" id="butBtn" value="취소" onclick="goLogin()">
+			<input type="submit" id="subBtn" value="아이디 찾기">
+		</form>
+	</div>
 </body>
 </html>
 
