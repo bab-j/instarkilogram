@@ -51,6 +51,12 @@ body {
 	padding-left: 10px;
 }
 
+.font1 {
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
+
+}
+
 #logBtn {
 	border: none;
 	margin-bottom: 4%;
@@ -113,8 +119,8 @@ a {
 				onclick="logIn()"><br> <input type="button"
 				id="signBtn" value="회원가입" onclick="SignUp()"><br> <br>
 		</form>
-		<a href="#">ID 찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="#">비밀번호 찾기</a>
+		<a class="font1" href="../view/findID.jsp">ID 찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a class="font1" href="../view/findPWD.jsp">비밀번호 찾기</a>
 	</div>
 
 
