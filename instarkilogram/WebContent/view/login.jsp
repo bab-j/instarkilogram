@@ -9,34 +9,34 @@
 
 
 <meta charset="UTF-8">
-<title>Login</title>
+<title>instarkilogram : 로그인</title>
 <style>
 body {
 	background-color: #f6f7f7;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif;
 }
 
 .bar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	text-align: left;
+}
+
+.home {
+	margin-left: 100px;
+	font-size: 32px;
 }
 
 .sign {
 	background-color: white;
 	border: 1.5px solid silver;
-	border-radius: 10px;
-	padding-top: 1%;
-	margin-left: 38%;
-	margin-top: 5%;
-	width: 310px;
-	height: 450px;
+	border-radius: 2%;
+	margin-top: 75px;
+	width: 400px;
+	height: 600px;
 	text-align: center;
-}
-
-.sign h1 {
-	font-size: 2.5em;
-	font-family: monospace;
-	margin-bottom: 10%;
 }
 
 .sign input {
@@ -45,7 +45,7 @@ body {
 	margin: 5px;
 	width: 230px;
 	height: 40px;
-	font-size: 1em;
+	font-size: 1em;	
 	color: gray;
 	padding-left: 10px;
 }
@@ -53,6 +53,10 @@ body {
 #logBtn {
 	border: none;
 	margin-bottom: 4%;
+		background-color: #1E82FF;
+		color : white;
+	
+	
 }
 
 #logBtn:hover {
@@ -90,27 +94,25 @@ a {
 </script>
 <body>
 	<div class="bar">
-		<div class="home">
-			<h3>instarkilogram</h3>
+		<div>
+			<h3 class="home">instarkilogram</h3>
 		</div>
 	</div>
 
 
 
 	<div class="sign">
-		<h1>
-			<i>instarkilogram</i>
-		</h1>
+		<div>
+			<h1>instarkilogram</h1>
+		</div>
 		<form name="inputFrm">
-			<input type="text" name="uid" id="name" placeholder="Username"
+			<input type="text" name="uid" id="name" placeholder="ID"
 				onfocus="this.placeholder=''" onblur="this.placeholder='Username'"><br>
-			<input type="password" name="upwd" id="pwd" placeholder="Password"
+			<input type="password" name="upwd" id="pwd" placeholder="PASSWORD"
 				onfocus="this.placeholder=''" onblur="this.placeholder='Password'"><br>
-			<br>
-			<br> <input type="button" id="logBtn" value="로그인"
-				onclick="logIn()"><br> <input type="button"
-				id="signBtn" value="회원가입" onclick="SignUp()"><br>
-			<br>
+			<br> <br> 
+			<input type="button" id="logBtn" value="로그인" onclick="logIn()"><br> 
+			<input type="button" id="signBtn" value="회원가입" onclick="SignUp()"><br> <br>
 		</form>
 		<a href="#">ID 찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="#">비밀번호 찾기</a>
