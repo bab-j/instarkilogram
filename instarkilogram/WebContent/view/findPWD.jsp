@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Find PWD</title>
+<title>비밀번호찾기</title>
 <style>
 	table th {
 		font-size: 1em;

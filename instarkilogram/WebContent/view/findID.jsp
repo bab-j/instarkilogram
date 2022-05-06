@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Find ID</title>
+<title>아이디찾기</title>
 <style>
 	table th {
 		font-size: 1em;
