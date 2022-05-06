@@ -127,7 +127,7 @@ tr, td {
 			<ul>
 				<li class="material-icons"><a href="mainFeed.jsp">home</a></li>
 				<li class="material-icons-outlined"><a href="postWrite.jsp">add_circle_outline</a></li>
-				<li class="material-icons"><a href="login.jsp">logout</a></li>
+				<li class="material-icons"><a href="logout.jsp">logout</a></li>
 			</ul>
 		</div>
 	</div>
@@ -138,7 +138,7 @@ tr, td {
 			<div>
 				<div class="float_table">
 					<div class="ailgn_right">
-						<a href="account_update.jsp"><div class="material-symbols-outlined">settings</div></a>
+						<a href="setting.jsp"><div class="material-symbols-outlined">settings</div></a>
 					</div>
 					<span>
 						<table>

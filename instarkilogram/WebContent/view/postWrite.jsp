@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>post_write.jsp</title>
+<title>instarkilogram : 새 게시물</title>
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link
@@ -49,14 +49,18 @@
 		<div class="container">
 			<form action="search.jsp" method="get" enctype="multipart/form-data">
 				<span> <input src="" class="total_search" type="text"
-					id="search" name="keyword" placeholder="통합검색">&nbsp;</a><input
+					id="search" name="keyword" placeholder="통합검색">&nbsp;
+					<input
 					class="search_btn" type="submit" value="검색">
 				</span>
 			</form>
 		</div>
+		
+		
 		<div class="nav-icon">
 
-			<span class="img_icon"></span> <span class="img_icon"></span> <a
+			<span class="img_icon"></span> <span class="img_icon"></span> 
+			<a
 				href="javascript:window.history.back();"> <span
 				class="material-icons img_icon"> arrow_back_ios</span></a>
 		</div>

@@ -63,7 +63,7 @@ height: 70px;
 			<ul>
 				<li class="material-icons"><a href="main_feed.jsp">home</a></li>
 				<li class="material-icons-outlined"><a href="postWrite.jsp">add_circle_outline</a></li>
-				<li class="material-icons"><a href="main_feed.jsp">logout</a></li>
+				<li class="material-icons"><a href="logout.jsp">logout</a></li>
 			</ul>
 		</div>
 	</div>
