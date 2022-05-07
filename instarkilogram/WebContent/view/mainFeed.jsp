@@ -11,6 +11,8 @@
 	String u_id = (String)session.getAttribute("u_id");
 	String u_pic = (String)session.getAttribute("u_pic");
 	
+	System.out.println("u_pic " + u_pic);
+	
 	List<FeedVO> postList = FeedDAO.CntMain(u_id);
 	int total = postList.size();
 	System.out.println("게시물 총수량 : " + total);
@@ -23,12 +25,11 @@
 	if(cPage != null){
 		p.setNowPage(Integer.parseInt(cPage));
 	}
+	System.out.println("cPage : " + cPage);
 	
 	p.setEnd(p.getNowPage() * p.getNumPerPage());
 	p.setBegin(p.getEnd() - p.getNumPerPage() + 1);
 	
-	//int begin = p.getBegin();
-	//int end = p.getEnd();
 	String begin = Integer.toString(p.getBegin());
 	String end = Integer.toString(p.getEnd());
 	
@@ -40,11 +41,14 @@
 		p.setEndPage(p.getTotalPage());
 	}
 	
-	//List<FeedVO> pList = FeedDAO.mainList(u_id, begin, end);
+	System.out.println("beginPage :" + p.getBeginPage());
+	System.out.println("endPage :" + p.getEndPage());
+	
 	List<FeedVO> pList = FeedDAO.mainList(u_id,begin,end);
 	
 	System.out.println("pList.size() : " + pList.size()); ///--------- 왜 0이야!!
 	System.out.println("u_id, begin, end : " + u_id +  "," + begin +","+end);
+	
 	pageContext.setAttribute("pList", pList);
 	pageContext.setAttribute("pvo", p);
 	

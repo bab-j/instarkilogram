@@ -14,18 +14,12 @@
 	    FROM FEED, (SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id}) FW
 	    WHERE FEED.U_ID = FW.TO_ID
         
-        <!-- SELECT *   
-        FROM(SELECT DISTINCT FEED.*
-            FROM FEED, (SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id})FW
-            WHERE FEED.U_ID = FW.TO_ID
-            OR FEED.U_ID = #{u_id})
-   		 ORDER BY F_IDX DESC -->
 	</select>
 	
 	<!-- 메인 피드 : 한 페이지에서 보이는 게시글 목록ok -->
 	<select id="mainFeed" parameterType="map" resultType="com.sns.feed.db.FeedVO">
 		SELECT *
-        FROM (SELECT ROWNUM, PP.*
+        FROM (SELECT ROWNUM R_NUM, PP.*
             FROM (SELECT *
                  FROM (SELECT * FROM FEED WHERE U_ID = #{u_id}
                     UNION
@@ -33,7 +27,7 @@
                     FROM FEED, (SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id}) FW
                     WHERE FEED.U_ID = FW.TO_ID) TT
                  ORDER BY TT.F_IDX DESC) PP)
-        WHERE ROWNUM BETWEEN TO_NUMBER(#{begin}) AND TO_NUMBER(#{end})
+        WHERE R_NUM BETWEEN TO_NUMBER(#{begin}) AND TO_NUMBER(#{end})
 		
 		<!-- SELECT *
         FROM (SELECT ROWNUM, TT.* 
