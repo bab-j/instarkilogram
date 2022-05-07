@@ -160,6 +160,13 @@ padding-bottom: 50px;
 }
 
 </style>
+<script>
+	function goPostPage() {
+		request.setAttribute("pv",${pv});
+		console.log("pv : " + pv);
+	}
+</script>
+
 </head>
 <body>
 
@@ -199,7 +206,7 @@ padding-bottom: 50px;
 			<!-- 블루 -->
 			<c:choose>
 			<c:when test="${empty pList }">
-				<h3>게시물이 존재하지 않습니다.</h3>
+				<br><br><h3>게시물이 존재하지 않습니다.</h3>
 			</c:when>
 			
 			<c:otherwise>
@@ -219,11 +226,11 @@ padding-bottom: 50px;
 									
 								</tr>
 							</thead>
-							<!-- 여기서 u_id, u_pic 가져오기(UserVO) -->
 							<tbody>
 								<tr>
 									<td colspan="3">
-										<img class="feed_img" src="c:/upload/temp/${fv.f_pic} ">
+										<img class="feed_img" src="c:/upload/temp/${fv.f_pic} "
+											onclick="goPostPage()">
 									</td>
 								</tr>
 							</tbody>

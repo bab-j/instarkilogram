@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.sns.user.action.Command;
 import com.sns.user.action.UserIdChkCommand;
 
-@WebServlet("/view/eunsongcontroller")
+@WebServlet("/view/AAcontroller")
 public class AAAUserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

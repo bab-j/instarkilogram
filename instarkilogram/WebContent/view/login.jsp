@@ -84,11 +84,11 @@ a {
 	function logIn() {
 		let loginFrm = document.forms[0];
 		loginFrm.method = "post";
-		loginFrm.action = "eunsongcontroller?type=UserLogIn";
+		loginFrm.action = "AAcontroller?type=UserLogIn";
 		loginFrm.submit();
 	}
 	function SignUp() {
-		location.href = "eunsongcontroller?type=GoSignUp";
+		location.href = "AAcontroller?type=GoSignUp";
 	}
 </script>
 <body>
