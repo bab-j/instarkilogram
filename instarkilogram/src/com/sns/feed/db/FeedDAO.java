@@ -11,6 +11,13 @@ import com.sns.user.db.UserVO;
 
 public class FeedDAO {
 
+	// f_idx로 게시물 조회
+	public static FeedVO mainToIdvPost(int f_idx) {
+		SqlSession ss = DBService.getFactory().openSession();
+		FeedVO vo = ss.selectOne("post.idvPost", f_idx);
+		ss.close();
+		return vo;
+	}
 	
 	
 	// 메인 피드 게시물 총 수량 (리스트로)ok
@@ -24,7 +31,6 @@ public class FeedDAO {
 	
 	
 	// 한 페이지에서 보이는 게시물 불러오기 ok
-	//public static List<FeedVO> mainList(String u_id){
 	public static List<FeedVO> mainList(String u_id, String begin, String end){
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("u_id", u_id);

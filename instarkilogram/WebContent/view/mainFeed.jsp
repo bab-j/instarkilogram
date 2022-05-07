@@ -159,15 +159,20 @@ padding-bottom: 50px;
 
 }
 
+
 </style>
+</head>
 <script>
 	function goPostPage() {
-		request.setAttribute("pv",${pv});
-		console.log("pv : " + pv);
+		console.log("제발");
+		let tmt = document.getElementById("feed_idx").value;
+		console.log("tmt : " + tmt);
+		document.forms[1].submit();
+		console.log("scope 설정 성공");
 	}
+	
 </script>
 
-</head>
 <body>
 
 
@@ -211,6 +216,13 @@ padding-bottom: 50px;
 			
 			<c:otherwise>
 			<c:forEach var="fv" items='${pList }'>
+		
+			<!-- 객체 저장해보자~~ -->
+			<c:set var="fvo" value="${fv }"/>
+			<form action="feedcontroller?type=idvPage" id="idvPost" method="post">
+				<input type="hidden" value="${fv.f_idx }" name="f_idx" id="feed_idx">
+			</form>
+
 				<div class="feed_box">
 					<!--흰 컨텐츠 -->
 	
@@ -229,8 +241,8 @@ padding-bottom: 50px;
 							<tbody>
 								<tr>
 									<td colspan="3">
-										<img class="feed_img" src="c:/upload/temp/${fv.f_pic} "
-											onclick="goPostPage()">
+										<img class="feed_img" src="c:/upload/temp/${fv.f_pic} " id="feed_img" 
+										onclick="goPostPage()">
 									</td>
 								</tr>
 							</tbody>

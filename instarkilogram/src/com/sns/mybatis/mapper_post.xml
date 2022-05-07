@@ -5,6 +5,14 @@
   
 <mapper namespace="post">
 
+
+	<!-- f_idx로 게시물 조회 -->
+	<select id="idvPost" parameterType="int" resultType="com.sns.feed.db.FeedVO">
+		SELECT *
+		FROM FEED
+		WHERE F_IDX =#{f_idx}
+	</select>
+	
 	
 	<!-- 메인 피드 전체 게시글 수 ok-->
 	<select id="totalCountMain" parameterType="string" resultType="com.sns.feed.db.FeedVO">
@@ -29,14 +37,6 @@
                  ORDER BY TT.F_IDX DESC) PP)
         WHERE R_NUM BETWEEN TO_NUMBER(#{begin}) AND TO_NUMBER(#{end})
 		
-		<!-- SELECT *
-        FROM (SELECT ROWNUM, TT.* 
-                    FROM (SELECT DISTINCT FEED.*
-                        FROM FEED, (SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id})FW
-                        WHERE FEED.U_ID = FW.TO_ID
-                        OR FEED.U_ID = #{u_id}
-                        ORDER BY F_IDX DESC) TT)
-        WHERE ROWNUM BETWEEN TO_NUMBER(#{begin}) AND TO_NUMBER(#{end}) -->
 	</select>
 	
 	<!-- 게시글 등록 ok-->
