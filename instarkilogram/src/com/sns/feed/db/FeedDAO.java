@@ -6,12 +6,53 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.sns.follow.FollowVO;
 import com.sns.mybatis.DBService;
 import com.sns.user.db.UserVO;
 
 public class FeedDAO {
 
-	// f_idx로 게시물 조회
+	// 팔로우 상태(버튼)
+	public static int followChk(String u_id, String f_id) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("u_id", u_id);
+		map.put("f_id", f_id);
+		
+		SqlSession ss = DBService.getFactory().openSession();
+		int result = ss.selectOne("post.followCheck",map);
+		ss.close();
+		return result;
+	}
+	
+	
+	// 유저의 팔로잉 목ㄱ록
+	public static List<FollowVO> followingList(String f_id) {
+		SqlSession ss = DBService.getFactory().openSession();
+		List<FollowVO> list = ss.selectList("post.myFollowing", f_id);
+		ss.close();
+		return list;
+	}
+	
+	
+	// 유저의 팔로워 목록
+	public static List<FollowVO> followerList(String f_id){
+		SqlSession ss = DBService.getFactory().openSession();
+		List<FollowVO> list = ss.selectList("post.myFollower", f_id);
+		ss.close();
+		return list;
+	}
+	
+	
+	// f_id로 본인 작성 게시글 리스트 조회
+	public static List<FeedVO> whosePosts(String f_id){
+		SqlSession ss = DBService.getFactory().openSession();
+		List<FeedVO> list = ss.selectList("post.getPosts", f_id);
+		ss.close();
+		return list;
+	}
+	
+	
+	// f_idx(글번호)로 게시물 조회 
 	public static FeedVO mainToIdvPost(int f_idx) {
 		SqlSession ss = DBService.getFactory().openSession();
 		FeedVO vo = ss.selectOne("post.idvPost", f_idx);
@@ -66,6 +107,13 @@ public class FeedDAO {
 		System.out.println("feedDAO.loginRight() 실행완");
 		ss.close();
 		return vo;
+	}
+	
+	public static UserVO getOtherUser(String f_id) {
+		SqlSession ss = DBService.getFactory().openSession();
+		UserVO uv = ss.selectOne("post.therUser", f_id);
+		ss.close();
+		return uv;
 	}
 }
 

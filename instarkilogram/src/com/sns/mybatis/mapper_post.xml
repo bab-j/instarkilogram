@@ -4,9 +4,36 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="post">
+	
+	<!-- 팔로우 여부 판단 : 헷갈림 int or vo -->
+	<!-- <select id="followCheck" parameterType="map" resultType="com.sns.follow.FollowVO"> -->
+	<select id="followCheck" parameterType="map" resultType="int">
+		SELECT * FROM FOLLOW 
+		WHERE FROM_ID = #{u_id}
+		AND TO_ID = #{f_id}
+	</select>
+	
+	<!-- 나의 팔로잉들 -->
+	<select id="myFollowing" parameterType="string" resultType="com.sns.follow.FollowVO">
+		SELECT * FROM FOLLOW WHERE FROM_ID = #{f_id}
+	</select>
+	
+	<!-- 나의 팔로워들 -->
+	<select id="myFollower" parameterType="string" resultType="com.sns.follow.FollowVO"> 
+		SELECT * FROM FOLLOW WHERE TO_ID = #{f_id}
+	</select>
+	
+	<!-- 작성자로 게시글 조회 -->
+	<select id="getPosts" parameterType="string" resultType="com.sns.feed.db.FeedVO">
+		SELECT * FROM FEED WHERE U_ID = #{f_id}
+	</select>
+	
+	<!-- feed u_id(f_id)로 개인정보 조회 -->
+	<select id="otherUser" parameterType="string" resultType="com.sns.user.db.UserVO">
+		SELECT * FROM USER_INFO WHERE U_ID = #{f_id}
+	</select>
 
-
-	<!-- f_idx로 게시물 조회 -->
+	<!-- f_idx로 개별 게시물 조회 ok-->
 	<select id="idvPost" parameterType="int" resultType="com.sns.feed.db.FeedVO">
 		SELECT *
 		FROM FEED
