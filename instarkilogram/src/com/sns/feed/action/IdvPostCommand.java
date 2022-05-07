@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.sns.feed.db.FeedDAO;
 import com.sns.feed.db.FeedVO;
 
-public class IdvPageCommand implements Command {
+public class IdvPostCommand implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
