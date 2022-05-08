@@ -1,3 +1,4 @@
+<%@page import="com.sns.feed.db.FeedVO"%>
 <%@page import="com.sns.common.Paging"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
@@ -97,6 +98,7 @@ tr, td {
 		}
 
 	}
+	
 </script>
 
 <%
@@ -151,9 +153,9 @@ tr, td {
 							</thead>
 							<tbody>
 								<tr>
-									<td class="td_space">100</td>
-									<td class="td_space">100</td>
-									<td class="td_space">100</td>
+									<td class="td_space">${feedList.size() }</td>
+									<td class="td_space">${fwerList.size() }</td>
+									<td class="td_space">${fingList.size() }</td>
 								</tr>
 							</tbody>
 						</table>
@@ -164,9 +166,9 @@ tr, td {
 
 				<div class="float_table">
 					<div>
-						<b>아이디</b>
+						<b>${uv.getU_id() }</b>
 					</div>
-					<div>bio@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</div>
+					<div>${uv.getBio() }</div>
 				</div>
 				<div>
 					<img class="bigProfile_img"
@@ -179,28 +181,53 @@ tr, td {
 
 
 
-
+		<c:choose>
+		<c:when test="${empty feedList }">
+			<h3>게시물이 존재하지 않습니다.</h3>
+		</c:when>
+		<c:otherwise>
 		<div class="search_grid">
 			<table class="grid_table">
+			
 				<tbody class="grid-body">
-
+					
+					
+					
+				 <%for (int j = 1; j <= 12; j += 3) {%>
+					<tr>
+						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
+							<td>
+								<img src="c:/upload/temp/${feedList[i].getF_pic()}" width="293px" height="293px"/>
+							</td>
+						</c:forEach>
+					</tr>
 					<%
-						int i;
+					}
+					%>
+
+
+					<%-- <%
 					for (int j = 1; j <= 20; j += 3) {
 					%>
 					<tr>
 						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
-							<td><a href="../img/${i }.jpg"><img
-									src="../img/${i }.jpg" width="293px" height="293px"
-									alt="${i }.jpg"></img></a></td>
+							<td>
+							<a href="../img/${i }.jpg">
+							<img src="../img/${i }.jpg" width="293px" height="293px" alt="${i }.jpg"/>
+							</a>
+							</td>
 						</c:forEach>
 					</tr>
 					<%
 						}
-					%>
+					%> --%>
 				</tbody>
 			</table>
 		</div>
+		
+		</c:otherwise>
+		</c:choose>
+		
 	</div>
 </body>
 </html>

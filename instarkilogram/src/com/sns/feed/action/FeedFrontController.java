@@ -31,7 +31,7 @@ public class FeedFrontController extends HttpServlet {
 		} else if("otherUser".equals(type)) {
 			command = new OtherUserCommand(); 
 		} else if("myPage".equals(type)) {
-			command = new IdvPostCommand(); ///---
+			command = new MyPageCommand(); ///---
 		}
 		
 		String path = command.exec(request, response);

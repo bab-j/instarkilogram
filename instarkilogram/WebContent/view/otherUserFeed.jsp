@@ -163,7 +163,7 @@ tr, td {
 
 				<div class="float_table">
 					<div>
-						<b>아이디</b>
+						<b>${vo.getU_id() }</b>
 					</div>
 					<div>bio@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</div>
 				</div>
@@ -184,7 +184,6 @@ tr, td {
 				<tbody class="grid-body">
 
 					<%
-						int i;
 					for (int j = 1; j <= 20; j += 3) {
 					%>
 					<tr>

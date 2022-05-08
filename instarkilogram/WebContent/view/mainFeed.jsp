@@ -46,7 +46,7 @@
 	
 	List<FeedVO> pList = FeedDAO.mainList(u_id,begin,end);
 	
-	System.out.println("pList.size() : " + pList.size()); ///--------- 왜 0이야!!
+	System.out.println("pList.size() : " + pList.size()); 
 	System.out.println("u_id, begin, end : " + u_id +  "," + begin +","+end);
 	
 	pageContext.setAttribute("pList", pList);
@@ -163,12 +163,13 @@ padding-bottom: 50px;
 </style>
 </head>
 <script>
-	
+
+		
 	function isItMe() {
-		console.log("확인 세션u_id : " + ${sessionScope.u_id});
+		let u_id = '${sessionScope.u_id}';
 		let feed_id = document.getElementById("feed_id").value;
 		
-		if (feed_id == ${sessionScope.u_id}) {
+		if (feed_id == u_id) {
 			document.forms[1].action = "feedcontroller?type=myPage";
 			goWhere();
 		} else {
@@ -191,6 +192,11 @@ padding-bottom: 50px;
 		document.forms[1].method = "post";
 		document.forms[1].submit();
 	}
+	
+	function myHome(){
+		location.href="feedcontroller?type=myHome";
+	}
+	
 </script>
 
 <body>
@@ -214,7 +220,8 @@ padding-bottom: 50px;
 		</div>
 		<div class="nav-icon">
 			<ul>
-				<li class="material-icons "><a href="personalFeed.jsp">home</a></li>
+				<!-- <li class="material-icons "><a href="personalFeed.jsp">home</a></li> -->
+				<li class="material-icons " onclick="myHome()">home</li>
 				<li class="material-icons-outlined "><a href="postWrite.jsp">add_circle_outline</a></li>
 				<li class="material-icons "><a href="logout.jsp">logout</a></li>
 			</ul>
@@ -229,6 +236,8 @@ padding-bottom: 50px;
 		<!-- 메인 박스 -->
 		<div class="center_body ">
 			<!-- 블루 -->
+			
+			<!-- 게시물 시작~~~~~~------- -->
 			<c:choose>
 			<c:when test="${empty pList }">
 				<br><br><h3>게시물이 존재하지 않습니다.</h3>
@@ -237,11 +246,10 @@ padding-bottom: 50px;
 			<c:otherwise>
 			<c:forEach var="fv" items='${pList }'>
 		
-			<c:set var="fvo" value="${fv }"/>
-			<form action="feedcontroller?type=idvPage" id="idvPost" method="post">
-				<input type="hidden" value="${fv.f_idx }" name="f_idx" id="feed_idx">
-				<input type="hidden" value="${fv.u_id }" name="f_id" id="feed_id">
-			</form>
+				<form id="idvPost">
+					<input type="hidden" value="${fv.f_idx }" name="f_idx" id="feed_idx">
+					<input type="hidden" value="${fv.u_id }" name="f_id" id="feed_id">
+				</form>
 
 				<div class="feed_box">
 					<!--흰 컨텐츠 -->

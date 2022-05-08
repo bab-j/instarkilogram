@@ -25,7 +25,7 @@ public class FeedDAO {
 	}
 	
 	
-	// 유저의 팔로잉 목ㄱ록
+	// 유저의 팔로잉 목록
 	public static List<FollowVO> followingList(String f_id) {
 		SqlSession ss = DBService.getFactory().openSession();
 		List<FollowVO> list = ss.selectList("post.myFollowing", f_id);
@@ -109,9 +109,10 @@ public class FeedDAO {
 		return vo;
 	}
 	
+	//u_id로 유저정보 조회
 	public static UserVO getOtherUser(String f_id) {
 		SqlSession ss = DBService.getFactory().openSession();
-		UserVO uv = ss.selectOne("post.therUser", f_id);
+		UserVO uv = ss.selectOne("post.otherUser", f_id);
 		ss.close();
 		return uv;
 	}
