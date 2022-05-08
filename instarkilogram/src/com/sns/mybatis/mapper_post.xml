@@ -5,7 +5,7 @@
   
 <mapper namespace="post">
 	
-	<!-- 팔로우 여부 판단 : 헷갈림 int or vo -->
+	<!-- 나의 팔로우 여부 판단 : 헷갈림 int or vo ~~~~~~~~아직 미사용~~~~~~~-->
 	<!-- <select id="followCheck" parameterType="map" resultType="com.sns.follow.FollowVO"> -->
 	<select id="followCheck" parameterType="map" resultType="int">
 		SELECT * FROM FOLLOW 

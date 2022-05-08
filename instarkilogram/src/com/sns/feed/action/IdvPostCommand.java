@@ -14,8 +14,9 @@ public class IdvPostCommand implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		
 		int f_idx = Integer.parseInt(request.getParameter("f_idx"));
-		String f_id = request.getParameter("f_id");
+		
 		FeedVO fvo = FeedDAO.mainToIdvPost(f_idx);
 		request.setAttribute("fvo", fvo);
 		System.out.println(">> fvo : " + fvo);

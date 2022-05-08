@@ -24,14 +24,12 @@ public class FeedFrontController extends HttpServlet {
 		Command command = null;
 		if("postWrite".equals(type)) {
 			command = new PostWriteCommand();
-		} else if("viewPost".equals(type)) {
-			command = new ViewPostCommand();
-		} else if("idvPage".equals(type)) {
+		} else if("idvPage".equals(type)) {   //---- 게시글 개별 페이지
 			command = new IdvPostCommand();
-		} else if("otherUser".equals(type)) {
-			command = new OtherUserCommand(); 
-		} else if("myPage".equals(type)) {
-			command = new MyPageCommand(); ///---
+		} else if("otherUser".equals(type)) {  //----- id, 프사  눌렀을 때
+			command = new WhoseFeedCommand(); 
+		} else if("myHome".equals(type)) {
+			command = new MyHomeCommand(); ///---
 		}
 		
 		String path = command.exec(request, response);
