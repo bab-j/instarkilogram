@@ -159,6 +159,22 @@ padding-bottom: 50px;
 
 }
 
+.paging {
+list-style: none;
+display: inline-flex;
+
+}
+
+
+.li_paging {
+align-content: center;
+margin-left: 20px;
+
+}
+.now {
+font-weight: bold;
+}
+
 
 </style>
 </head>
@@ -327,31 +343,31 @@ padding-bottom: 50px;
 					<ol class="paging">
 					<%--[이전으로]에 대한 사용여부 처리 --%>
 					<c:if test="${pvo.beginPage == 1 }">
-						<li class="disable">이전으로</li>
+						<li class="disable li_paging">이전으로</li>
 					</c:if>	
 					<c:if test="${pvo.beginPage != 1 }">
-						<li>
-							<a href="mainFeed.jsp?cPage=${pvo.beginPage - 1 }">이전으로</a>
+						<li class="li_paging">
+							<a href="mainFeed.jsp?cPage=${pvo.beginPage - 1 }"> 이전으로</a>
 						</li>
 					</c:if>
 						
 					<%--블록내에 표시할 페이지 태그 작성(시작페이지 ~ 끝페이지) --%>
 					<c:forEach var="pageNo" begin="${pvo.beginPage }" end="${pvo.endPage }">
 					<c:if test="${pageNo == pvo.nowPage}">
-						<li class="now">${pageNo }</li>
+						<li class="now li_paging ">${pageNo }</li>
 					</c:if>	
 					<c:if test="${pageNo != pvo.nowPage}">
-						<li><a href="mainFeed.jsp?cPage=${pageNo }">${pageNo }</a></li>
+						<li class="li_paging"><a href="mainFeed.jsp?cPage=${pageNo }">${pageNo }</a></li>
 					</c:if>
 						
 					</c:forEach>	
 						
 					<%--[다음으로]에 대한 사용여부 처리 --%>
 					<c:if test="${pvo.endPage < pvo.totalPage }">
-						<li><a href="mainFeed.jsp?cPage=${pvo.endPage + 1 }">다음으로</a></li>
+						<li class="li_paging"><a href="mainFeed.jsp?cPage=${pvo.endPage + 1 }">다음으로</a></li>
 					</c:if>	
 					<c:if test="${pvo.endPage >= pvo.totalPage }">
-						<li class="disable">다음으로</li>
+						<li class="disable li_paging">다음으로</li>
 					</c:if>
 						
 					</ol>
