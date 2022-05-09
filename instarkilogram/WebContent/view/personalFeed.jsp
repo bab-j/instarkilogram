@@ -85,26 +85,26 @@ table {
 }
 
 tr, td {
-
+	
 }
+
 .feed_img {
-padding:5px;
-width : 293px; 
-height: 293px;
+	padding: 5px;
+	width: 293px;
+	height: 293px;
 }
-
-
 
 .feed_table {
 	border: 5px solid #FFFFFF;
 	border-collapse: collapse;
 	width: 960px;
 	text-align: center;
-	
-	
-
 }
 
+.subject_center {
+	text-align: center;
+	font-size: 28px;
+}
 </style>
 <script>
 	function searching() {
@@ -197,26 +197,26 @@ Paging p = new Paging();
 
 		<c:choose>
 			<c:when test="${empty feedList }">
-				<h3>게시물이 존재하지 않습니다.</h3>
+				<h3 class="subject_center">게시물이 존재하지 않습니다.</h3>
 			</c:when>
 			<c:otherwise>
 				<div class="search_grid">
 
 
 
-							<div class ="feed_table">
-							<%for (int j = 1; j <= 15; j += 3) {%>
-								<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
-									<a
-										href="feedcontroller?type=idvPage&f_idx=${feedList[i].getF_idx() }">
-										<img class="feed_img" src="c:/upload/temp/${feedList[i].getF_pic()}"
-										 />
-									</a>
-								</c:forEach>
-							<%
-							}
-							%>
-							</div>
+					<div class="feed_table">
+						<%for (int j = 1; j <= 15; j += 3) {%>
+						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
+							<a
+								href="feedcontroller?type=idvPage&f_idx=${feedList[i].getF_idx() }">
+								<img class="feed_img"
+								src="c:/upload/temp/${feedList[i].getF_pic()}" />
+							</a>
+						</c:forEach>
+						<%
+						}
+						%>
+					</div>
 
 				</div>
 

@@ -22,7 +22,7 @@
 
 
 <style>
-.personal_body { 
+.personal_body {
 	background-color: white;
 	border: 1px solid silver;
 	height: auto;
@@ -99,7 +99,7 @@ tr, td {
 </script>
 
 <%
-	Paging p = new Paging();
+Paging p = new Paging();
 %>
 </head>
 <body>
@@ -115,11 +115,10 @@ tr, td {
 
 
 		<div class="container">
-			<form action="searchContorller?type=search" method="post" >
-				<span> 
-					<input class="total_search" type="text" id="search"
-					name="keyword" placeholder="통합검색">&nbsp;
-					<input class="search_btn" type="submit" value="검색">
+			<form action="searchContorller?type=search" method="post">
+				<span> <input class="total_search" type="text" id="search"
+					name="keyword" placeholder="통합검색">&nbsp; <input
+					class="search_btn" type="submit" value="검색">
 				</span>
 			</form>
 		</div>
@@ -140,15 +139,18 @@ tr, td {
 					<div class="ailgn_right">
 						<!-- 팔로우 버튼~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 						<c:choose>
-						<c:when test="${fwChk == null }">  <!-- 팔로우 상태가 아니면 -->
-							<input type="button" id="followBtn" value="팔로우" onclick=""><br>
-						</c:when>
-						<c:otherwise>
-							<input type="button" id="followBtn" value="언팔로우" onclick=""><br>
-						</c:otherwise>
+							<c:when test="${fwChk == null }">
+								<!-- 팔로우 상태가 아니면 -->
+								<input type="button" id="followBtn" value="팔로우" onclick="">
+								<br>
+							</c:when>
+							<c:otherwise>
+								<input type="button" id="followBtn" value="언팔로우" onclick="">
+								<br>
+							</c:otherwise>
 						</c:choose>
 					</div>
-					
+
 					<span>
 						<table>
 							<thead>
@@ -178,7 +180,7 @@ tr, td {
 					<div>${uv.getBio() }</div>
 				</div>
 				<div>
-					<img class="bigProfile_img" src="c:/upload/temp/${uv.getU_pic() }"/>
+					<img class="bigProfile_img" src="c:/upload/temp/${uv.getU_pic() }" />
 				</div>
 			</div>
 		</div>
@@ -189,38 +191,31 @@ tr, td {
 
 
 		<c:choose>
-		<c:when test="${empty feedList }">
-			<h3>게시물이 존재하지 않습니다.</h3>
-		</c:when>
-		<c:otherwise>
-		<div class="search_grid">
-			<table class="grid_table">
-			
-				<tbody class="grid-body">
-					
-					
-					
-				 <%for (int j = 1; j <= 15; j += 3) {%>
-					<tr>
-						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
-							<td>
-								<a href="feedcontroller?type=idvPage&f_idx=${feedList[i].getF_idx() }">
-								<img src="c:/upload/temp/${feedList[i].getF_pic()}" width="293px" height="293px"/>
-								</a>
-							</td>
-						</c:forEach>
-					</tr>
-					<%
-					}
-					%>
+			<c:when test="${empty feedList }">
+				<h3 class="subject_center">게시물이 존재하지 않습니다.</h3>
+			</c:when>
+			<c:otherwise>
+				<div class="search_grid">
 
-				</tbody>
-			</table>
-		</div>
-		
-		</c:otherwise>
+					<div class="feed_table">
+						<%for (int j = 1; j <= 15; j += 3) {%>
+						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
+							<a
+								href="feedcontroller?type=idvPage&f_idx=${feedList[i].getF_idx() }">
+								<img class="feed_img"
+								src="c:/upload/temp/${feedList[i].getF_pic()}" />
+							</a>
+						</c:forEach>
+						<%
+						}
+						%>
+					</div>
+
+				</div>
+
+			</c:otherwise>
 		</c:choose>
-		
+
 	</div>
 </body>
 </html>
