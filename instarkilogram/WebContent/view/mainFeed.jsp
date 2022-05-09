@@ -281,6 +281,8 @@ font-weight: bold;
 								<tr class="feed_row">
 								<c:choose>
 								<%FeedVO vo = new FeedVO();
+								vo.setF_idx(%>${}<%);
+								vo.setU_id((String)session.getAttribute("u_id"));
 								%>
 								<c:when test="<%=FeedDAO.likeOk(vo) %> == 1">
 									<td class="material-icons-outlined icon_space" id="like"><a>favorite_border</a></td>
