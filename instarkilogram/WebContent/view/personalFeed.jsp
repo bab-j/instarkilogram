@@ -196,7 +196,9 @@ tr, td {
 					<tr>
 						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
 							<td>
+								<a href="feedcontroller?type=idvPage&f_idx=${feedList[i].getF_idx() }">
 								<img src="c:/upload/temp/${feedList[i].getF_pic()}" width="293px" height="293px"/>
+								</a>
 							</td>
 						</c:forEach>
 					</tr>
@@ -204,22 +206,6 @@ tr, td {
 					}
 					%>
 
-
-					<%-- <%
-					for (int j = 1; j <= 20; j += 3) {
-					%>
-					<tr>
-						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
-							<td>
-							<a href="../img/${i }.jpg">
-							<img src="../img/${i }.jpg" width="293px" height="293px" alt="${i }.jpg"/>
-							</a>
-							</td>
-						</c:forEach>
-					</tr>
-					<%
-						}
-					%> --%>
 				</tbody>
 			</table>
 		</div>
