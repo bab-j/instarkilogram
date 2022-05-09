@@ -241,18 +241,9 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 	object-fit: contain;
 }
 
-.feed_content {
-	paddint: 10px;
-}
 
 .feed_like {
 	padding: 0x 0px;
-}
-
-.feed_feply {
-	padding: 0px 10px;
-	display: flex;
-	fiex-direction: column;
 }
 
 .profile_img {
@@ -263,14 +254,6 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 	margin-top: 5px;
 }
 
-.mem {
-	margin-left: 30px;
-	color: grey;
-}
-
-.feed_name {
-	justify-content: space-between;
-}
 
 .box_pro {
 	display: flex;
@@ -289,9 +272,6 @@ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 	padding: 5px 10px;
 }
 
-.profile_name {
-	margin-bottom: 400px;
-}
 
 .id_search_body {
 	margin-top: 75px;
