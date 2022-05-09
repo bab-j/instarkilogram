@@ -22,7 +22,7 @@
 
 
 <style>
-.personal_body {
+.personal_body { 
 	background-color: white;
 	border: 1px solid silver;
 	height: auto;
