@@ -31,7 +31,7 @@ public class FeedDAO {
 		map.put("f_id", f_id);
 		
 		SqlSession ss = DBService.getFactory().openSession(true);
-		ss.insert("post.followOrUnfollow",map);
+		ss.insert("post.followGo",map);
 		ss.close();
 	}
 	
@@ -148,7 +148,6 @@ public class FeedDAO {
 		int result = 0;
 		SqlSession ss = DBService.getFactory().openSession();
 		result = ss.selectOne("comment.likeOk", fvo);
-		System.out.println("result : " + result);
 		ss.close();
 		return result;
 	}

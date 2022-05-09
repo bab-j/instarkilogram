@@ -272,11 +272,12 @@ font-weight: bold;
 							<tbody class="feed_body">
 								<tr class="feed_row">
 								<%FeedVO vo = new FeedVO();
-								vo.setF_idx((Integer)pageContext.getAttribute("f_idx"));
+								vo.setF_idx((int)pageContext.getAttribute("f_idx"));
 								vo.setU_id((String)session.getAttribute("u_id"));
 								int result = FeedDAO.likeOk(vo);
 								pageContext.setAttribute("result", result);
-								System.out.println("result : " + pageContext.getAttribute("f_idx"));
+								System.out.println("result : " + pageContext.getAttribute("result"));
+								System.out.println("u_id : " + session.getAttribute("u_id"));
 								%>
 								<c:choose>
 								<c:when test="${result == 0 }">
