@@ -32,8 +32,13 @@ public class FeedFrontController extends HttpServlet {
 			command = new MyHomeCommand(); ///--- 홈버튼
 		} else if("followCheck".equals(type)) {
 			command = new FollowCheckCommand(); ///--- 팔로우 여부 체크
+		} else if("delLike".equals(type)) {
+			command = new DelLikeCommand(); // 좋아요 해제
+		} else if("addLike".equals(type)) {
+			request.setAttribute("f_idx", (int)request.getAttribute("f_idx"));
+			command = new AddLikeCommand(); // 좋아요 등록
 		}
-		
+		 
 		
 		String path = command.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);

@@ -262,8 +262,8 @@ font-weight: bold;
 								<tr>
 									<td colspan="3">
 										<a href="feedcontroller?type=idvPage&f_idx=${fv.f_idx }">
-										<c:set var="f_idx" value="${fv.f_idx }" />
-										<%= pageContext.getAttribute("f_idx")%>
+										<c:set var="f_idx" value="${fv.f_idx }" scope="request"/>
+										<%= request.getAttribute("f_idx")%>
 											<img class="feed_img" src="c:/upload/temp/${fv.f_pic} " id="feed_img" >
 										</a>
 									</td>
@@ -272,7 +272,7 @@ font-weight: bold;
 							<tbody class="feed_body">
 								<tr class="feed_row">
 								<%FeedVO vo = new FeedVO();
-								vo.setF_idx((int)pageContext.getAttribute("f_idx"));
+								vo.setF_idx((int)request.getAttribute("f_idx"));
 								vo.setU_id((String)session.getAttribute("u_id"));
 								int result = FeedDAO.likeOk(vo);
 								pageContext.setAttribute("result", result);
@@ -281,11 +281,11 @@ font-weight: bold;
 								%>
 								<c:choose>
 								<c:when test="${result == 0 }">
-									<td class="material-icons-outlined icon_space" id="like"><a>favorite_border</a></td>
+									<td class="material-icons-outlined icon_space" id="like"><a href="feedcontroller?type=addLike&f_idx=${fv.f_idx }">favorite_border</a></td>
 									<td class="material-icons-outlined icon_space">mode_comment</td>
 								</c:when>
 								<c:otherwise>
-									<td class="material-icons-outlined" style="color:red;" id=like>favorite</td>
+									<td class="material-icons-outlined" style="color:red;" id=like><a href="feedcontroller?type=delLike&f_idx=${fv.f_idx }">favorite</a></td>
 									<td class="material-icons-outlined icon_space">mode_comment</td>
 								</c:otherwise>
 								</c:choose>
