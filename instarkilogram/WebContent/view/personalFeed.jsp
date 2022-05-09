@@ -160,8 +160,8 @@ tr, td {
 								</tr>
 							</tbody>
 						</table>
-
-						<hr>
+						
+						
 					</span>
 				</div>
 
