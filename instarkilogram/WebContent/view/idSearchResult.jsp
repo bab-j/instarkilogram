@@ -17,7 +17,7 @@
 
 
 <meta charset="UTF-8">
-<title>검색 화면</title>
+<title>instarkilogram : 검색 화면</title>
 
 <style>
 body {
