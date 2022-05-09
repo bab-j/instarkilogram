@@ -43,7 +43,7 @@ border-botto
 			</h1>
 		</div>
 		<div class="container">
-			<form action="search.jsp" method="get" enctype="multipart/form-data">
+			<form action="search.jsp" method="post" >
 				<span> <input class="total_search" type="text" id="search"
 					name="keyword" placeholder="통합검색">&nbsp;</a>
 					<input class="search_btn" type="submit" value="검색">

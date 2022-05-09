@@ -118,10 +118,11 @@ tr, td {
 
 
 		<div class="container">
-			<form action="search.jsp" method="get" enctype="multipart/form-data">
-				<span> <input class="total_search" type="text" id="search"
-					name="keyword" placeholder="통합검색">&nbsp;<input
-					class="search_btn" type="submit" value="검색">
+			<form action="searchContorller?type=search" method="post" >
+				<span> 
+					<input class="total_search" type="text" id="search"
+					name="keyword" placeholder="통합검색">&nbsp;
+					<input class="search_btn" type="submit" value="검색">
 				</span>
 			</form>
 		</div>
