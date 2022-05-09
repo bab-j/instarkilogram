@@ -320,14 +320,14 @@ sign up css -->
 	padding-left: 10px;
 }
 
-.sign_update {
+.sign_body {
 	background-color: white;
 	border: 1.5px solid silver;
 	border-radius: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 800px;
-	height: 700px;
+	height: 1000px;
 	text-align: center;
 }
 
