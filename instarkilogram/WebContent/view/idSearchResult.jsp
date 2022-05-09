@@ -36,6 +36,7 @@ height: 65px;
 	width: 600px;
 	height: 65px;
 	background-color: white;
+	border: 1px solid silver;
 }
 
 .user_id_box{

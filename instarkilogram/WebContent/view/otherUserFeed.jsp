@@ -83,9 +83,27 @@ table {
 	font-size: 18px;
 }
 
+
 tr, td {
+	
+}
+
+.feed_img {
+	padding: 5px;
+	width: 293px;
+	height: 293px;
+}
+
+.feed_table {
 	border: 5px solid #FFFFFF;
 	border-collapse: collapse;
+	width: 960px;
+	text-align: center;
+}
+
+.subject_center {
+	text-align: center;
+	font-size: 28px;
 }
 </style>
 <script>
