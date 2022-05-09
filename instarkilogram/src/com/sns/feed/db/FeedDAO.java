@@ -141,11 +141,14 @@ public class FeedDAO {
 		return uv;
 	}
 	
+	//------------------------------------------------내가 고친거
+	
 	//좋아요 데이터 존재여부 가져오기
 	public static int likeOk(FeedVO fvo) {
 		int result = 0;
 		SqlSession ss = DBService.getFactory().openSession();
 		result = ss.selectOne("comment.likeOk", fvo);
+		System.out.println("result : " + result);
 		ss.close();
 		return result;
 	}

@@ -186,17 +186,7 @@ font-weight: bold;
 			// 4. 0개일 경우 --> 빈 하트로 출력, 하트 클릭시 컬럼에 데이터 추가
 			
 			$("#like").click(function(){
-<%
-	FeedVO fvo = new FeedVO();
-	
-	/* fvo.getF_idx();
-	fvo.getU_id();
-	FeedDAO.addLike(fvo); */
-	System.out.println("클릭!!");
-%>
 			});
-<%/* console.log("li : " + ${li}); */
-				%>
 				
 	});
 </script>
@@ -272,6 +262,8 @@ font-weight: bold;
 								<tr>
 									<td colspan="3">
 										<a href="feedcontroller?type=idvPage&f_idx=${fv.f_idx }">
+										<c:set var="f_idx" value="${fv.f_idx }" />
+										<%= pageContext.getAttribute("f_idx")%>
 											<img class="feed_img" src="c:/upload/temp/${fv.f_pic} " id="feed_img" >
 										</a>
 									</td>
@@ -279,16 +271,22 @@ font-weight: bold;
 							</tbody>
 							<tbody class="feed_body">
 								<tr class="feed_row">
-								<c:choose>
 								<%FeedVO vo = new FeedVO();
-								vo.setF_idx(%>${}<%);
+								vo.setF_idx((Integer)pageContext.getAttribute("f_idx"));
 								vo.setU_id((String)session.getAttribute("u_id"));
+								int result = FeedDAO.likeOk(vo);
+								pageContext.setAttribute("result", result);
+								System.out.println("result : " + pageContext.getAttribute("f_idx"));
 								%>
-								<c:when test="<%=FeedDAO.likeOk(vo) %> == 1">
+								<c:choose>
+								<c:when test="${result == 0 }">
 									<td class="material-icons-outlined icon_space" id="like"><a>favorite_border</a></td>
-									<td class="material-icons-outlined" style="color:red;" id=like>favorite</td>
 									<td class="material-icons-outlined icon_space">mode_comment</td>
 								</c:when>
+								<c:otherwise>
+									<td class="material-icons-outlined" style="color:red;" id=like>favorite</td>
+									<td class="material-icons-outlined icon_space">mode_comment</td>
+								</c:otherwise>
 								</c:choose>
 								</tr>
 							</tbody>
