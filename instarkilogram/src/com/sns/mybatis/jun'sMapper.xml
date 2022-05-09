@@ -15,7 +15,25 @@
 			   (CO_IDX, REGDATE, COMM, F_IDX)
 		VALUES (COMM_SEQ.NEXTVAL, SYSDATE, #{comm}, #{f_idx})
 	</insert>
-
+	
+	<select id="likeOk" resultType="int" parameterType="FeedVO">
+		SELECT COUNT(L_IDX)
+		  FROM LIKE_LIST
+		 WHERE U_ID = #{u_id}
+		   AND F_IDX = #{f_idx}
+	</select>
+	
+	<insert id="addLike" parameterType="FeedVO">
+		INSERT INTO LIKE_LIST
+					(L_IDX, F_IDX, U_ID)
+			VALUES (LIKE_SEQ.NEXTVAL, #{f_idx}, #{u_id})
+	</insert>
+	
+	<delete id="delLike" parameterType="FeedVO">
+		DELETE FROM LIKE_LIST
+		 WHERE F_IDX = #{f_idx}
+		   AND U_ID = #{u_id}
+	</delete>
 	
 	
 </mapper>

@@ -58,6 +58,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 <link
 	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -67,7 +68,7 @@
 <meta name="viewport" content="width=device-width">
 <!--브라우저 적당량  -->
 <title>instrakilogram : 메인화면</title>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
@@ -177,10 +178,29 @@ font-weight: bold;
 
 
 </style>
-</head>
 <script>
-
+	$().ready(function(){
+			// 1. 게시물번호와 로그인계정의 아이디를 받아온다.
+			// 2. 테이블에 데이터가 존재하면 갯수는 1개 존재하지 않으면 0개
+			// 3. 1개일 경우 --> 빨간하트로 출력, 하트 클릭시 컬럼에 데이터 삭제
+			// 4. 0개일 경우 --> 빈 하트로 출력, 하트 클릭시 컬럼에 데이터 추가
+			
+			$("#like").click(function(){
+<%
+	FeedVO fvo = new FeedVO();
+	
+	/* fvo.getF_idx();
+	fvo.getU_id();
+	FeedDAO.addLike(fvo); */
+	System.out.println("클릭!!");
+%>
+			});
+<%/* console.log("li : " + ${li}); */
+				%>
+				
+	});
 </script>
+</head>
 
 <body>
 
@@ -259,8 +279,15 @@ font-weight: bold;
 							</tbody>
 							<tbody class="feed_body">
 								<tr class="feed_row">
-									<td class="material-icons-outlined icon_space">favorite_border</td>
+								<c:choose>
+								<%FeedVO vo = new FeedVO();
+								%>
+								<c:when test="<%=FeedDAO.likeOk(vo) %> == 1">
+									<td class="material-icons-outlined icon_space" id="like"><a>favorite_border</a></td>
+									<td class="material-icons-outlined" style="color:red;" id=like>favorite</td>
 									<td class="material-icons-outlined icon_space">mode_comment</td>
+								</c:when>
+								</c:choose>
 								</tr>
 							</tbody>
 						</table>

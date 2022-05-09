@@ -116,6 +116,28 @@ public class FeedDAO {
 		ss.close();
 		return uv;
 	}
+	
+	//좋아요 데이터 존재여부 가져오기
+	public static int likeOk(FeedVO fvo) {
+		int result = 0;
+		SqlSession ss = DBService.getFactory().openSession();
+		result = ss.selectOne("comment.likeOk", fvo);
+		ss.close();
+		return result;
+	}
+	//좋아요 클릭시 테이블에 데이터 추가(like의 경우)
+	public static void addLike(FeedVO fvo) {
+		SqlSession ss = DBService.getFactory().openSession(true);
+		ss.insert("comment.addLike", fvo);
+		ss.close();
+		
+	}
+	//좋아요 클릭시 테이블에 데이터 삭제(unlike의 경우)
+	public static void delLike(FeedVO fvo) {
+		SqlSession ss = DBService.getFactory().openSession(true);
+		ss.delete("comment.delLike", fvo);
+		ss.close();
+	}
 }
 
 
