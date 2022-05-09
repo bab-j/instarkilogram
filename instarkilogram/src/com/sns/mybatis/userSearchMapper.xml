@@ -8,9 +8,11 @@
 	<!-- 아이디검색 -->
 	<select id="select_id_bio" parameterType="string" resultType="com.sns.user.db.UserVO">
 	
-	SELECT u_id
+	SELECT *
 	FROM USER_INFO
 	WHERE U_ID LIKE '%'||#{u_id}||'%'
+	OR BIO LIKE '%'||#{u_id}||'%'
+    
 	
 	
 	</select>

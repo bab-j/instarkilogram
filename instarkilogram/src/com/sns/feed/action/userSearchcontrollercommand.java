@@ -25,6 +25,7 @@ public class userSearchcontrollercommand extends HttpServlet {
 		} //여기서 jsp컨트롤러 href="list"같은거 가져온다
 		String path = command.exec(request, response);//경로
 		request.getRequestDispatcher(path).forward(request, response);
+		System.out.println("doget실행");
 		
 	}
 

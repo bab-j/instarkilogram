@@ -16,16 +16,17 @@ public class SearchCommand implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//파라미터 값 추출 (확인)
-		String keyword = request.getParameter("keyword");//id_searchresult에서name에서 가져온것
-		System.out.print("Command search : "+keyword);
+		String keyword = request.getParameter("keyword");//mainfeed에서 가져온것
+		System.out.println("Command search : "+keyword);
 		//1.DB데이터 조회하기
-		List<String> list  =userSearchDAO.searchid(keyword);
+		List<UserVO> list  =userSearchDAO.searchid(keyword);
+		
 		
 		
 		//2응답페이지(id_list.jsp")에전달
 		request.setAttribute("list", list);
 		
-		return "id_list.jsp";
+		return "idSearchResult.jsp";
 	}
 
 }

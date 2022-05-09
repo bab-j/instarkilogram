@@ -193,7 +193,7 @@ font-weight: bold;
 			</h1>
 		</div>
 		<div class="container">
-			<form action="searchContorller?type=search" method="get" enctype="multipart/form-data">
+			<form action="searchContorller?type=search" method="post" >
 				<span> 
 					<input class="total_search" type="text" id="search"
 					name="keyword" placeholder="통합검색">&nbsp;

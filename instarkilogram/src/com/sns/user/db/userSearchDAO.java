@@ -11,14 +11,14 @@ import com.sun.org.apache.xpath.internal.SourceTree;
 
 public class userSearchDAO {
 
-	public static List<String> searchid(String id) {
+	public static List<UserVO> searchid(String id) {
 		
 		SqlSession ss = DBService.getFactory().openSession();
-		List<String> list =ss.selectList("usersearch.select_id_bio",id);
+		List<UserVO> list =ss.selectList("usersearch.select_id_bio",id);
 		System.out.println(list);
 		ss.close();
 		System.out.println("dao.searchid 실행");
 		
-		return list;
+		return list;//dao
 	}
 }
