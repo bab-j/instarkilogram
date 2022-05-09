@@ -28,7 +28,7 @@ public class WhoseFeedCommand implements Command {
 		System.out.println(">> u_id : " + u_id);
 		
 		String result = "";
-		if(f_id.equals(u_id)) {
+		if(f_id.equals(u_id)) { 
 			result = "personalFeed.jsp";
 		} else {
 			FollowVO fwChk = FeedDAO.followChk(u_id, f_id);   //-------- 팔로우 여부 확인(남일 때)
