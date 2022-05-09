@@ -203,7 +203,6 @@ font-weight: bold;
 		</div>
 		<div class="nav-icon">
 			<ul>
-				<!-- <li class="material-icons "><a href="personalFeed.jsp">home</a></li> -->
 				<li class="material-icons " ><a href="feedcontroller?type=myHome">home</a></li>
 				<li class="material-icons-outlined "><a href="postWrite.jsp">add_circle_outline</a></li>
 				<li class="material-icons "><a href="logout.jsp">logout</a></li>
