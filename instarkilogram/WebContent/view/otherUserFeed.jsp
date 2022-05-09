@@ -114,6 +114,7 @@ tr, td {
 		}
 
 	}
+	
 </script>
 
 <%
@@ -159,11 +160,13 @@ Paging p = new Paging();
 						<c:choose>
 							<c:when test="${fwChk == null }">
 								<!-- 팔로우 상태가 아니면 -->
-								<input type="button" id="followBtn" value="팔로우" onclick="">
+								<input type="button" id="followBtn" value="팔로우" 
+									onclick="location.href='feedcontroller?type=followCheck&other_id=${uv.getU_id()}'">
 								<br>
 							</c:when>
 							<c:otherwise>
-								<input type="button" id="followBtn" value="언팔로우" onclick="">
+								<input type="button" id="followBtn" value="언팔로우" 
+									onclick="location.href='feedcontroller?type=followCheck&other_id=${uv.getU_id()}'">
 								<br>
 							</c:otherwise>
 						</c:choose>

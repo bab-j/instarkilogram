@@ -29,8 +29,11 @@ public class FeedFrontController extends HttpServlet {
 		} else if("otherUser".equals(type)) {  //----- id, 프사  눌렀을 때
 			command = new WhoseFeedCommand(); 
 		} else if("myHome".equals(type)) {
-			command = new MyHomeCommand(); ///---
+			command = new MyHomeCommand(); ///--- 홈버튼
+		} else if("followCheck".equals(type)) {
+			command = new FollowCheckCommand(); ///--- 팔로우 여부 체크
 		}
+		
 		
 		String path = command.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);

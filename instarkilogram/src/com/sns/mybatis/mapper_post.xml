@@ -4,6 +4,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="post">
+
+	<!-- unfollow -->
+	<delete id="unFollow" parameterType="map">
+		DELETE FROM FOLLOW
+		WHERE FROM_ID = #{u_id}
+		AND TO_ID = #{f_id}
+	</delete>
+	
+	
+	<!-- follow  -->
+	<insert id="followOrUnfollow" parameterType="map">
+		INSERT INTO FOLLOW (FW_IDX, TO_ID, FROM_ID)
+				VALUES(FOLLOW_SEQ, #{o_id}, #{u_id})
+	</insert>
 	
 	<!-- 나의 팔로우 여부 판단 ok -->
 	<select id="followCheck" parameterType="map" resultType="com.sns.follow.FollowVO">

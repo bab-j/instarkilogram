@@ -12,6 +12,30 @@ import com.sns.user.db.UserVO;
 
 public class FeedDAO {
 
+	// 언팔로우
+	public static void deleteFollow(String u_id, String f_id) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("u_id", u_id);
+		map.put("f_id", f_id);
+		
+		SqlSession ss = DBService.getFactory().openSession(true);
+		ss.delete("post.unFollow", map);
+		ss.close();
+	}
+	
+	
+	// 팔로우 입력
+	public static void insertFollow(String u_id, String f_id) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("u_id", u_id);
+		map.put("f_id", f_id);
+		
+		SqlSession ss = DBService.getFactory().openSession(true);
+		ss.insert("post.followOrUnfollow",map);
+		ss.close();
+	}
+	
+	
 	// 팔로우 상태(버튼)
 	public static FollowVO followChk(String u_id, String f_id) {
 		Map<String, String> map = new HashMap<String, String>();
