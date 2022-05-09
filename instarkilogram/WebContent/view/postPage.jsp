@@ -148,10 +148,14 @@ font-weight: bold;
 			</form>
 		</div>
 		<div class="nav-icon">
-			<span class="material-icons-outlined">arrow_back</span>
-			<!-- 하나세트 -->
+
+			<span class="img_icon"></span> <span class="img_icon"></span> 
+			<a
+				href="javascript:window.history.back();"> <span
+				class="material-icons img_icon"> arrow_back_ios</span></a>
 		</div>
 	</div>
+
 
 
 

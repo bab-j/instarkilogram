@@ -90,7 +90,7 @@ table {
 				<span class="update_flex">사진첨부</span>
 				
 				<span class="update_flex"> 
-				<input class="file1" type="file" name="u_Pic" title="사진"> <input type="button" value="등록" id=""
+				<input id="f_input" type="file" name="u_Pic" title="사진"> <input type="button" value="등록" id=""
 					onclick="">
 				</span>
 
