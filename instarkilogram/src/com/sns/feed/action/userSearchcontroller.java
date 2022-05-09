@@ -9,13 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/view/searchContorller")
-public class userSearchcontrollercommand extends HttpServlet {
+public class userSearchcontroller extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(">> FrontControllerCommand.doGet() 실행--------");
+		
 		String type = request.getParameter("type");
 		System.out.println("> type : " + type);
 

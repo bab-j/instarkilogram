@@ -43,12 +43,19 @@ border-botto
 			</h1>
 		</div>
 		<div class="container">
-			<form action="search.jsp" method="post" >
+			<form action="searchContorller?type=search" method="post" >
+				<span> 
+					<input class="total_search" type="text" id="search"
+					name="keyword" placeholder="통합검색">&nbsp;
+					<input class="search_btn" type="submit" value="검색">
+				</span>
+			</form>
+			<!-- <form action="search.jsp" method="post" >
 				<span> <input class="total_search" type="text" id="search"
 					name="keyword" placeholder="통합검색">&nbsp;</a>
 					<input class="search_btn" type="submit" value="검색">
 				</span>
-			</form>
+			</form> -->
 		</div>
 		<div class="nav-icon">
 			<ul>
@@ -68,15 +75,15 @@ border-botto
 					</td>
 					<td width="0.5%">&nbsp; </td>
 					<td>
-						<!--  --><a class="profile_name" href="personalFeed.jsp?personal_id=${search.u_id}&personal_bio=${search.bio}">
+						<%-- <a class="profile_name" href="personalFeed.jsp?personal_id=${search.u_id}&personal_bio=${search.bio}"> --%>
 						<c:forEach var="search" items="${list}">
-								<%-- 	<a class="profile_name" href="personalFeed.jsp?personal_id=${search.u_id}&personal_bio=${search.bio}"> --%>
+						<a class="profile_name" href="feedcontroller?type=otherUser&f_id=${search.u_id }">
 							<li>
 								<div class="id.1">${search.u_id}</div>
 								<div class="id.1">${search.bio}</div>
 							</li>
-	 	 				</c:forEach>    	
 	 	 				</a>
+	 	 				</c:forEach>    	
 					</td>
 				</tr>
 			

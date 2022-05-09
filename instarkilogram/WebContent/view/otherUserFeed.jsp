@@ -140,7 +140,7 @@ tr, td {
 					<div class="ailgn_right">
 						<!-- 팔로우 버튼~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 						<c:choose>
-						<c:when test="${fwChk == 0 }">  <!-- 팔로우 상태가 아니면 -->
+						<c:when test="${fwChk == null }">  <!-- 팔로우 상태가 아니면 -->
 							<input type="button" id="followBtn" value="팔로우" onclick=""><br>
 						</c:when>
 						<c:otherwise>
