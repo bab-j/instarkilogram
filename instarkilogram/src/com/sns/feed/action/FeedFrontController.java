@@ -20,6 +20,7 @@ public class FeedFrontController extends HttpServlet {
 		System.out.println(">> FrontController.doGet() 실행");
 		
 		String type = request.getParameter("type");
+		System.out.println("feedController type : " + type);
 		
 		Command command = null;
 		if("postWrite".equals(type)) {
@@ -37,6 +38,9 @@ public class FeedFrontController extends HttpServlet {
 		} else if("addLike".equals(type)) {
 			request.setAttribute("f_idx", (int)request.getAttribute("f_idx"));
 			command = new AddLikeCommand(); // 좋아요 등록
+		} else if("searchPost".equals(type)) {
+			System.out.println("searchPost 실행");
+			command = new SearchPostCommand(); 
 		}
 		 
 		

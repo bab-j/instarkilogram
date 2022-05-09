@@ -72,9 +72,32 @@ tr, td {
 	
 	<br>
 	<div class="search_body">
-	<h1 class="search_result">#'${search }' 검색 결과</h1>
+	<h1 class="search_result">#'${postContent}' 검색 결과</h1>
 	<div class="search_grid">
-		<table class="grid_table">
+	
+	<c:choose>
+			<c:when test="${empty contentList }">
+				<h3 class="subject_center">게시물이 존재하지 않습니다.</h3>
+			</c:when>
+			<c:otherwise>
+				<div class="search_grid">
+
+					<div class="feed_table">
+					
+					<c:forEach var="feed" items="${contentList }">
+						<a href="feedcontroller?type=idvPage&f_idx=${feed.getF_idx() }">
+							<img class="feed_img"
+							src="c:/upload/temp/${feed.getF_pic()}" />
+						</a>
+					</c:forEach>
+					</div>
+
+				</div>
+
+			</c:otherwise>
+		</c:choose>
+	
+		<%-- <table class="grid_table">
 			<tbody class="grid-body">
 
 				<%
@@ -90,7 +113,7 @@ tr, td {
 					}
 				%>
 			</tbody>
-		</table>
+		</table> --%>
 	</div>
 </div>
 </body>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -186,10 +187,7 @@ font-weight: bold;
 				<div>
 					<div class="feed_content">
 						<p class="feed_txt">
-							<b> ${fvo.getU_id() } </b> ${fvo.getContent() } content! <br>
-							content <br> content <br> content <br> content <br>
-							content <br> content <br> content <br> content <br>
-							content <br>
+							<b> ${fvo.getU_id() } </b> ${fvo.getContent() }
 						</p>
 					</div>
 
@@ -210,30 +208,24 @@ font-weight: bold;
 					<div>
 
 						<div class="profile_box1">
-							<div class="">
-								<span class="comment_width1">woogy1</span><span>부럽</span>
-							</div>
-							<div class="">
-								<span class="comment_width1">woogy2</span><span>부럽</span>
-							</div>
-							<div class="">
-								<span class="comment_width1">woogy3</span><span>부럽</span>
-							</div>
-							<div class="">
-								<span class="comment_width1">woogy4</span><span>부럽</span>
-							</div>
+							<c:forEach var='comm' items='${commList }'>
+								<div class="">
+									<span class="comment_width1">${comm.getU_id() }</span><span>${comm.getComm() }</span>
+								</div>
+							</c:forEach>
 						</div>
 					</div>
-
-					<form action="">
+									<!-- 임시로 AA컨트롤러 씀 -->
+					<form action="AAcontroller?type=writeComm" method="post">
 						<div class="recommend_box">
 							<hr
 								style="border: 1px solid silver; margin-right: 15px; margin-left: 10px;"
 								width="340px;">
 							<img class="profile_img1"
 								src="data:image/jpeg;base64,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">
-							<input class="comment_width2" type="text" name="댓글"
+							<input class="comment_width2" type="text" name="comments"
 								placeholder="댓글">
+							<input type="hidden" name="f_idx" value="${fvo.getF_idx() }">
 						</div>
 					</form>
 

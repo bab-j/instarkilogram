@@ -6,12 +6,43 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.sns.comment.db.CommentVO;
 import com.sns.follow.FollowVO;
 import com.sns.mybatis.DBService;
 import com.sns.user.db.UserVO;
 
 public class FeedDAO {
 
+	
+	// 내용검색
+	public static List<FeedVO> searchFeed(String content){
+		SqlSession ss = DBService.getFactory().openSession();
+		List<FeedVO> list = ss.selectList("post.searchContent", content);
+		ss.close();
+		return list;
+	}
+	
+	
+	// comment 입력하기
+	public static void insertComment(CommentVO cv ) {
+		SqlSession ss = DBService.getFactory().openSession(true);
+		ss.insert("post.wrtComment", cv);
+		ss.close();
+	}
+	
+	
+	//f_idx로 commentVO 가져오기
+	public static List<CommentVO> postComments(int f_idx){
+		SqlSession ss = DBService.getFactory().openSession();
+		List<CommentVO> list = ss.selectList("post.getComment", f_idx);
+		ss.close();
+		return list;
+	}
+	
+	
+	
+	
+	
 	// 언팔로우
 	public static void deleteFollow(String u_id, String f_id) {
 		Map<String, String> map = new HashMap<String, String>();

@@ -202,12 +202,7 @@ Paging p = new Paging();
 			<c:otherwise>
 				<div class="search_grid">
 
-
-
 					<div class="feed_table">
-					
-					
-					<c:set var='lgth' value='${feedList.size() }'/>
 					
 					<c:forEach var="feed" items="${feedList }">
 						<a href="feedcontroller?type=idvPage&f_idx=${feed.getF_idx() }">

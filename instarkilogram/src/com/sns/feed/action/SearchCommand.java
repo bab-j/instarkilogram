@@ -25,6 +25,7 @@ public class SearchCommand implements Command {
 		
 		//2응답페이지(id_list.jsp")에전달
 		request.setAttribute("list", list);
+		request.setAttribute("keyword", keyword);
 		
 		return "idSearchResult.jsp";
 	}

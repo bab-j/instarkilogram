@@ -5,6 +5,28 @@
   
 <mapper namespace="post">
 
+	<!-- 피드 내용 검색 -->
+	<select id="searchContent" parameterType="string" resultType="com.sns.feed.db.FeedVO">
+		SELECT * 
+		FROM FEED
+		WHERE CONTENT LIKE '%'||#{content}||'%'
+		ORDER BY F_IDX DESC
+	</select>
+
+	<!-- comment 입력 -->
+	<insert id="wrtComment" parameterType="com.sns.comment.db.CommentVO">
+		INSERT INTO COMM (CO_IDX, U_ID, REGDATE, COMM, F_IDX)
+        VALUES (COMM_SEQ.NEXTVAL, #{u_id}, SYSDATE, #{comm}, TO_NUMBER(#{f_idx}))
+	</insert>
+	
+	<!-- f_idx로 comment 가져오기 -->
+	<select id="getComment" parameterType="int" resultType="com.sns.comment.db.CommentVO">
+		SELECT * FROM COMM
+		WHERE F_IDX = #{f_idx}
+		ORDER BY CO_IDX
+	</select>
+	
+	
 	<!-- unfollow -->
 	<delete id="unFollow" parameterType="map">
 		DELETE FROM FOLLOW

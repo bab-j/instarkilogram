@@ -87,6 +87,13 @@ height:1000px;
 	</div>
 
 	<div class="search_body">
+	
+	<div>
+		<a href="feedcontroller?type=searchPost&postContent=${keyword }">
+			<h3>'${keyword }' 검색 결과 게시물</h3>
+		</a>
+	</div>
+	
 		<c:forEach var="search" items="${list}">
 			<div class="profile_box">
 				<span><img class="profile_img"

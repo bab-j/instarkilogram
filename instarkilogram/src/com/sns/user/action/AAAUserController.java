@@ -21,14 +21,18 @@ public class AAAUserController extends HttpServlet {
 		System.out.println(">> Controller.doGet() 실행");
 		
 		String type = request.getParameter("type");
-		
+		System.out.println("type : " + type);
 		Command command = null;
 		
 		if("UserLogIn".equals(type)) {
 			command = new UserLogInCommand();
 		} else if ("GoSignUp".equals(type)) {
 			command = new GoSignUpCommand();
+		} else if ("writeComm".equals(type)) {
+			command = new WriteCommentCommand();
 		}
+		
+		
 		String path = command.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
 	}
