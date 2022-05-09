@@ -14,9 +14,9 @@
 	
 	
 	<!-- follow  -->
-	<insert id="followOrUnfollow" parameterType="map">
+	<insert id="followGo" parameterType="map">
 		INSERT INTO FOLLOW (FW_IDX, TO_ID, FROM_ID)
-				VALUES(FOLLOW_SEQ, #{o_id}, #{u_id})
+				VALUES(FOLLOW_SEQ.NEXTVAL, #{f_id}, #{u_id})
 	</insert>
 	
 	<!-- 나의 팔로우 여부 판단 ok -->

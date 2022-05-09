@@ -27,12 +27,13 @@ public class WhoseFeedCommand implements Command {
 		System.out.println(">> f_id : " + f_id);
 		System.out.println(">> u_id : " + u_id);
 		
+		FollowVO fwChk = null;
+		
 		String result = "";
 		if(f_id.equals(u_id)) { 
 			result = "personalFeed.jsp";
 		} else {
-			FollowVO fwChk = FeedDAO.followChk(u_id, f_id);   //-------- 팔로우 여부 확인(남일 때)
-			request.setAttribute("fwChk", fwChk);
+			fwChk = FeedDAO.followChk(u_id, f_id);   //-------- 팔로우 여부 확인(남일 때)
 			result = "otherUserFeed.jsp";
 		}
 		
@@ -41,6 +42,7 @@ public class WhoseFeedCommand implements Command {
 		List<FollowVO> fwerList = FeedDAO.followerList(f_id);
 		List<FollowVO> fingList = FeedDAO.followingList(f_id);
 		
+		request.setAttribute("fwChk", fwChk);
 		request.setAttribute("uv", uv);
 		request.setAttribute("feedList", feedList);
 		request.setAttribute("fwerList", fwerList);

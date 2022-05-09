@@ -15,7 +15,7 @@ public class userSearchcontroller extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(">> FrontControllerCommand.doGet() 실행--------");
+		System.out.println(">> FrontController.doGet() 실행--------");
 		
 		String type = request.getParameter("type");
 		System.out.println("> type : " + type);
@@ -24,9 +24,10 @@ public class userSearchcontroller extends HttpServlet {
 		if("search".equals(type)) {
 			command = new SearchCommand();
 		} //여기서 jsp컨트롤러 href="list"같은거 가져온다
+		
+		
 		String path = command.exec(request, response);//경로
 		request.getRequestDispatcher(path).forward(request, response);
-		System.out.println("doget실행");
 		
 	}
 

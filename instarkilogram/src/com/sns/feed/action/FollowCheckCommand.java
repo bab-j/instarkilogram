@@ -35,7 +35,8 @@ public class FollowCheckCommand implements Command {
 		List<FollowVO> fingList = FeedDAO.followingList(f_id);
 		
 		
-		System.out.println("fwChk : " + fwChk1.toString());
+		//System.out.println("fwChk1 : " + fwChk1.toString());
+		System.out.println("책갈피");
 		
 		if(fwChk1 == null) {  //---- 남이면 
 			FeedDAO.insertFollow(u_id, f_id);  //--- 팔로우하기
