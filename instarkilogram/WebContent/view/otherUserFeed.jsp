@@ -219,7 +219,16 @@ Paging p = new Paging();
 				<div class="search_grid">
 
 					<div class="feed_table">
-						<%for (int j = 1; j <= 15; j += 3) {%>
+						
+					<c:set var='lgth' value='${feedList.size() }'/>
+					<c:forEach var="feed" items="${feedList }">
+						<a href="feedcontroller?type=idvPage&f_idx=${feed.getF_idx() }">
+							<img class="feed_img"
+							src="c:/upload/temp/${feed.getF_pic()}" />
+						</a>
+					</c:forEach>
+					
+						<%-- <%for (int j = 1; j <= 15; j += 3) {%>
 						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
 							<a
 								href="feedcontroller?type=idvPage&f_idx=${feedList[i].getF_idx() }">
@@ -229,7 +238,8 @@ Paging p = new Paging();
 						</c:forEach>
 						<%
 						}
-						%>
+						%> --%>
+						
 					</div>
 
 				</div>
