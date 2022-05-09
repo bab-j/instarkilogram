@@ -8,7 +8,7 @@
 <%@page import="com.sns.common.Paging"%>
 
 
- 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,15 +25,14 @@
 <style>
 .personal_body {
 	background-color: white;
-	border: 1px solid silver; 
+	border: 1px solid silver;
 	height: auto;
 	width: 960px;
-	padding-top : 20px;
+	padding-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 75px;
 	border-radius: 5px;
-	
 }
 
 .bigProfile_img {
@@ -41,7 +40,7 @@
 	width: 150px;
 	height: 150px;
 	display: inline;
-	padding:30px;
+	padding: 30px;
 }
 
 .profile {
@@ -82,13 +81,30 @@ table {
 	padding-left: 30px;
 	padding-right: 30px;
 	text-align: center;
-	font-size : 18px;
+	font-size: 18px;
 }
 
 tr, td {
+
+}
+.feed_img {
+padding:5px;
+width : 293px; 
+height: 293px;
+}
+
+
+
+.feed_table {
 	border: 5px solid #FFFFFF;
 	border-collapse: collapse;
+	width: 960px;
+	text-align: center;
+	
+	
+
 }
+
 </style>
 <script>
 	function searching() {
@@ -98,11 +114,10 @@ tr, td {
 		}
 
 	}
-	
 </script>
 
 <%
-	Paging p = new Paging();
+Paging p = new Paging();
 %>
 </head>
 <body>
@@ -118,11 +133,10 @@ tr, td {
 
 
 		<div class="container">
-			<form action="searchContorller?type=search" method="post" >
-				<span> 
-					<input class="total_search" type="text" id="search"
-					name="keyword" placeholder="통합검색">&nbsp;
-					<input class="search_btn" type="submit" value="검색">
+			<form action="searchContorller?type=search" method="post">
+				<span> <input class="total_search" type="text" id="search"
+					name="keyword" placeholder="통합검색">&nbsp; <input
+					class="search_btn" type="submit" value="검색">
 				</span>
 			</form>
 		</div>
@@ -160,8 +174,8 @@ tr, td {
 								</tr>
 							</tbody>
 						</table>
-						
-						
+
+
 					</span>
 				</div>
 
@@ -172,8 +186,8 @@ tr, td {
 					<div>${uv.getBio() }</div>
 				</div>
 				<div>
-					 <img class="bigProfile_img" src="c:/upload/temp/${uv.getU_pic() }"/>
-				 </div>
+					<img class="bigProfile_img" src="c:/upload/temp/${uv.getU_pic() }" />
+				</div>
 			</div>
 		</div>
 
@@ -182,38 +196,33 @@ tr, td {
 
 
 		<c:choose>
-		<c:when test="${empty feedList }">
-			<h3>게시물이 존재하지 않습니다.</h3>
-		</c:when>
-		<c:otherwise>
-		<div class="search_grid">
-			<table class="grid_table">
-			
-				<tbody class="grid-body">
-					
-					
-					
-				 <%for (int j = 1; j <= 15; j += 3) {%>
-					<tr>
-						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
-							<td>
-								<a href="feedcontroller?type=idvPage&f_idx=${feedList[i].getF_idx() }">
-								<img src="c:/upload/temp/${feedList[i].getF_pic()}" width="293px" height="293px"/>
-								</a>
-							</td>
-						</c:forEach>
-					</tr>
-					<%
-					}
-					%>
+			<c:when test="${empty feedList }">
+				<h3>게시물이 존재하지 않습니다.</h3>
+			</c:when>
+			<c:otherwise>
+				<div class="search_grid">
 
-				</tbody>
-			</table>
-		</div>
-		
-		</c:otherwise>
+
+
+							<div class ="feed_table">
+							<%for (int j = 1; j <= 15; j += 3) {%>
+								<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
+									<a
+										href="feedcontroller?type=idvPage&f_idx=${feedList[i].getF_idx() }">
+										<img class="feed_img" src="c:/upload/temp/${feedList[i].getF_pic()}"
+										 />
+									</a>
+								</c:forEach>
+							<%
+							}
+							%>
+							</div>
+
+				</div>
+
+			</c:otherwise>
 		</c:choose>
-		
+
 	</div>
 </body>
 </html>
