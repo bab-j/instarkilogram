@@ -12,7 +12,16 @@ import com.sns.mybatis.DBService;
 import com.sun.org.apache.xpath.internal.SourceTree;
 
 public class UserDAO {
-
+	
+	
+	// 회원정보 수정
+	public static void updatePro(UserVO uv) {
+		SqlSession ss = DBService.getFactory().openSession(true);
+		ss.update("user.updateProfile", uv);
+		ss.close();
+	}
+	
+	
 	// LIKE 삭제
 	public static void deleteLike(String u_id) {
 		SqlSession ss = DBService.getFactory().openSession(true);

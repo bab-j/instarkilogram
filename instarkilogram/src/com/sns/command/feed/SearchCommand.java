@@ -15,6 +15,7 @@ public class SearchCommand implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		//파라미터 값 추출 (확인)
 		String keyword = request.getParameter("keyword");//mainfeed에서 가져온것
 		System.out.println("Command search : "+keyword);

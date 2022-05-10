@@ -37,8 +37,10 @@ table {
 }
 
 .sign_body {
+margin-left : auto;
+margin-right : auto;
 	width: 500px;
-	height: 700px;
+	height: 550px;
 }
 
 .update_flex {
@@ -47,7 +49,7 @@ table {
 	margin: 5px;
 	height: 30px;
 	font-size : 20px;
-	width : 120px;
+	width : 140px;
 }
 
 #f_input1 {
@@ -124,15 +126,21 @@ form input :: file-selector-button {
 	display: none;
 }
 
+.filebox {
+display: inline-flex;
+width : 480px;
+
+}
+
 .file1 {
-	
+	width: 300px;
 }
 
 
 </style>
 <script>
 	function edit() {
-		let firstForm = document.forms[0];
+		let firstForm = document.forms[1];
 		firstForm.submit();
 	}
 
@@ -176,40 +184,49 @@ form input :: file-selector-button {
 			enctype="multipart/form-data">
 
 			<div class="filebox">
-				<span class="update_flex">사진첨부</span>
+				<span class="update_flex">프로필 사진</span>
 				
 				<input class="file1 update_flex "
-					type="file" id="file1">
+					type="file" id="file1" name="userPic">
 			</div>
-		</form>
+		<!-- </form>
 		
 		<form action="usercontroller?type=updateUser" method="post">
-			<div class="text_left">
-				<span class="update_flex">비밀번호</span><span><input
-					class="update_flex" type="password" name=upwd id="uid"
-					placeholder="Password" onfocus="this.placeholder=''"
-					onblur="this.placeholder='Password'"></span>
+			  --><div class="text_left">
+				<span class="update_flex">비밀번호</span><span>
+					<input
+					class="update_flex" type="password" name=upwd id="uid1"
+					 placeholder="Password" onfocus="this.placeholder=''"
+					onblur="this.placeholder='Password'">
+				 </span>
 			</div>
 			<div class="text_left">
 				<span class="update_flex">비밀번호 확인</span><span><input
-					id="uid" class="update_flex" type="password" name=upwdOk
+					id="uid2" class="update_flex" type="password" name=upwdOk
 					placeholder="Confirm Password" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Confirm Password'"></span>
-			</div>
+			 </div>
 			<div class="text_left">
-				<span class="update_flex">이메일</span><span><input id="uid"
+				<span class="update_flex">이메일</span><span><input id="uid3"
 					class="update_flex" type="email" name="email"
 					placeholder="abc123@abc.com" onfocus="this.placeholder=''"
 					onblur="this.placeholder='abc123@abc.com'"></span>
 			</div>
 			
 			<div class="text_left">
-				<span class="update_flex">전화번호</span><span><input id="uid"
+				<span class="update_flex">전화번호</span><span><input id="uid4"
 					class="update_flex" type="text" name="phone"
 					placeholder="010-0000-0000" onfocus="this.placeholder=''"
 					onblur="this.placeholder='010-0000-0000'"></span>
 			</div>
 			
+			<div class="text_left">
+				<span class="update_flex">BIO</span><span><input id="uid5"
+					class="update_flex" type="text" name="bio"
+					placeholder="BIO" onfocus="this.placeholder=''"
+					onblur="this.placeholder='BIO'"></span>
+			</div>
+			<br>
 			
 				<a href="javascript:window.history.back();"><input type="button" id="butt1" value="취소"></a>
 			<input type="submit" id="subm1" value="수정" onclick="edit()">

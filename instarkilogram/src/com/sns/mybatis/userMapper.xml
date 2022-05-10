@@ -3,7 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="user">
-
+	
+	<!-- 회원정보 수정 -->
+	<update id="updateProfile" parameterType="UserVO">
+		UPDATE USER_INFO SET PWD = #{pwd} ,
+                    PHONE = #{phone} ,
+                    EMAIL = #{email} ,
+                    BIO = #{bio} ,
+                    U_PIC = '#{u_pic}
+		WHERE U_ID = #{u_id}
+	</update>
 
 	<!-- 좋아요 삭제 -->
 	<delete id="delLike" parameterType="string">

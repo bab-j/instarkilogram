@@ -5,6 +5,8 @@
   
 <mapper namespace="feed">
 
+	
+
 	<!-- 피드 내용 검색o -->
 	<select id="searchContent" parameterType="string" resultType="com.sns.feed.db.FeedVO">
 		SELECT * 

@@ -182,7 +182,7 @@ Paging p = new Paging();
 				<div class="float_table">
 					<div>
 						<b>${uv.getU_id() }</b>
-					</div>/
+					</div>
 					<div>${uv.getBio() }</div>
 				</div>
 				<div>

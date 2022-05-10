@@ -15,6 +15,23 @@ public class UserVO {
 		return "UserVO [u_idx=" + u_idx + ", u_id=" + u_id + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email
 				+ ", bio=" + bio + ", name=" + name + ", u_pic=" + u_pic + ", birth=" + birth + "]";
 	}
+	
+	
+	public UserVO() {
+		super();
+	}
+
+	public UserVO(String u_id, String pwd, String phone, String email, String bio, String u_pic) {
+		super();
+		this.u_id = u_id;
+		this.pwd = pwd;
+		this.phone = phone;
+		this.email = email;
+		this.bio = bio;
+		this.u_pic = u_pic;
+	}
+
+
 	/**
 	 * @return the u_idx
 	 */
