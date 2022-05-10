@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/view/searchContorller")
-public class userSearchcontrollercommand extends HttpServlet {
+public class UserSearchcontrollercommand extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 

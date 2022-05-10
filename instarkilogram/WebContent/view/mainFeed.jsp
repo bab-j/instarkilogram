@@ -271,18 +271,18 @@ font-weight: bold;
 							</tbody>
 							<tbody class="feed_body">
 								<tr class="feed_row">
-								<%FeedVO vo = new FeedVO();
-								vo.setF_idx((int)request.getAttribute("f_idx"));
-								vo.setU_id((String)session.getAttribute("u_id"));
-								int result = FeedDAO.likeOk(vo);
-								pageContext.setAttribute("result", result);
-								System.out.println("result : " + pageContext.getAttribute("result"));
-								System.out.println("u_id : " + session.getAttribute("u_id"));
-								int countLike = FeedDAO.countLike((int)request.getAttribute("f_idx"));
-								%>
+<%FeedVO vo = new FeedVO();
+vo.setF_idx((int)request.getAttribute("f_idx"));
+vo.setU_id((String)session.getAttribute("u_id"));
+int result = FeedDAO.likeOk(vo);//좋아요 상태 확인
+pageContext.setAttribute("result", result);//좋아요 상태 확인
+System.out.println("result : " + pageContext.getAttribute("result"));
+System.out.println("u_id : " + session.getAttribute("u_id"));
+int countLike = FeedDAO.countLike((int)request.getAttribute("f_idx"));//좋아요 개수
+%>
 								<c:choose>
 								<c:when test="${result == 0 }">
-									<td class="material-icons-outlined icon_space" id="like"><a href="feedcontroller?type=addLike&f_idx=${fv.f_idx }">favorite_border</a></td>
+									<td class="material-icons-outlined icon_space" id="like"><a href="feedcontroller?type=addLike&f_idx=${fv.f_idx }&cPage=${cPage}">favorite_border</a></td>
 									<td class="material-icons-outlined icon_space">mode_comment</td>
 								</c:when>
 								<c:otherwise>

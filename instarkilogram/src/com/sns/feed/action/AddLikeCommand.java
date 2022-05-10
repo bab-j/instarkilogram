@@ -17,11 +17,12 @@ public class AddLikeCommand implements Command {
 		FeedVO fvo = new FeedVO();
 		HttpSession session = request.getSession();
 		int fIdx = Integer.parseInt(request.getParameter("f_idx"));
+		String cPage = request.getParameter("cPage");
 		System.out.println("fIdx : " + fIdx);
 		fvo.setF_idx(fIdx);
 		fvo.setU_id((String)session.getAttribute("u_id"));
 		FeedDAO.addLike(fvo);
-		return "mainFeed.jsp?cPage=2";
+		return "mainFeed.jsp?cPage=" + cPage;
 	}
 
 }
