@@ -220,31 +220,8 @@ $("#file1").on('change',function(){
 				<input class="file1 update_flex "
 					type="file" id="file1">
 			</div>
-
-
-
 		</form>
-		<div class="text_left">
-			<span class="update_flex">아이디</span><span><input
-				class="update_flex" type="text" name="uid" id="uid"
-				placeholder="Username" onfocus="this.placeholder=''"
-				onblur="this.placeholder='Username'"></span> <input
-				class="update_left" type="button" id="button2" value="중복확인"
-				onclick="idChk()">
-		</div>
-
-
-
-		<c:choose>
-			<c:when test="${login == 1 }">
-				<p style="color: red">이미 사용 중인 아이디입니다.</p>
-				<input type="hidden" name="clickDu" value="N">
-			</c:when>
-			<c:when test="${login == 0 }">
-				<p style="color: blue">사용 가능한 아이디입니다.</p>
-				<input type="hidden" name="clickDu" value="Y">
-			</c:when>
-		</c:choose>
+		
 		<form action="usercontroller?type=UserSignUp" method="post">
 			<div class="text_left">
 				<span class="update_flex">비밀번호</span><span><input
@@ -254,7 +231,7 @@ $("#file1").on('change',function(){
 			</div>
 			<div class="text_left">
 				<span class="update_flex">비밀번호 확인</span><span><input
-					id="uid" class="update_flex" type="password" name=uPwdOk
+					id="uid" class="update_flex" type="password" name=upwdOk
 					placeholder="Confirm Password" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Confirm Password'"></span>
 			</div>
@@ -264,27 +241,17 @@ $("#file1").on('change',function(){
 					placeholder="abc123@abc.com" onfocus="this.placeholder=''"
 					onblur="this.placeholder='abc123@abc.com'"></span>
 			</div>
-			<div class="text_left">
-				<span class="update_flex">이름</span><span><input id="uid"
-					class="update_flex" type="text" name="name" placeholder="홍길동"
-					onfocus="this.placeholder=''" onblur="this.placeholder='홍길동'"></span>
-			</div>
+			
 			<div class="text_left">
 				<span class="update_flex">전화번호</span><span><input id="uid"
 					class="update_flex" type="text" name="phone"
 					placeholder="010-0000-0000" onfocus="this.placeholder=''"
 					onblur="this.placeholder='010-0000-0000'"></span>
 			</div>
-			<div class="text_left">
-				<span class="update_flex">생년월일</span><span><input id="uid"
-					class="update_flex" type="text" name="birth" placeholder="생년월일 6자리"
-					onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"></span>
-			</div>
-			<br>
-			<a
-				href="javascript:window.history.back();"><input type="button" id="butt1" value="취소"></a>
-			<input type="submit" id="subm1" value="수정" onclick="signUp()">
-			<input type="hidden" name="uID" value="${uid }">
+			
+			
+				<a href="javascript:window.history.back();"><input type="button" id="butt1" value="취소"></a>
+			<input type="submit" id="subm1" value="수정" onclick="edit()">
 		</form>
 	</div>
 </body>
