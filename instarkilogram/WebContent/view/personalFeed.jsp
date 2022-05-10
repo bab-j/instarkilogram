@@ -182,11 +182,11 @@ Paging p = new Paging();
 				<div class="float_table">
 					<div>
 						<b>${uv.getU_id() }</b>
-					</div>
+					</div>/
 					<div>${uv.getBio() }</div>
 				</div>
 				<div>
-					<img class="bigProfile_img" src="c:/upload/temp/${uv.getU_pic() }" />
+					<img class="bigProfile_img" src="/Users/babble/git/instarkilogram/instarkilogram/WebContent/temp/${uv.getU_pic() }" />
 				</div>
 			</div>
 		</div>

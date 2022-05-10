@@ -18,7 +18,7 @@ public class PostWriteCommand implements Command {
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		String path = "c:/upload/temp";
+		String path = "/Users/babble/git/instarkilogram/instarkilogram/WebContent/temp";
 		
 		HttpSession session = request.getSession();
 		 MultipartRequest mr = new MultipartRequest( request, path, (10*1024*1024),

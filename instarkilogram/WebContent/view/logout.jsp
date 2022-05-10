@@ -6,5 +6,5 @@
 	session.removeAttribute("u_idx");
 %>
 <script>
-	location.href="login.jsp";
+	location.href="index.jsp";
 </script>
