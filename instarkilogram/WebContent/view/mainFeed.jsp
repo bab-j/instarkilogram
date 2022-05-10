@@ -178,18 +178,6 @@ font-weight: bold;
 
 
 </style>
-<script>
-	$().ready(function(){
-			// 1. 게시물번호와 로그인계정의 아이디를 받아온다.
-			// 2. 테이블에 데이터가 존재하면 갯수는 1개 존재하지 않으면 0개
-			// 3. 1개일 경우 --> 빨간하트로 출력, 하트 클릭시 컬럼에 데이터 삭제
-			// 4. 0개일 경우 --> 빈 하트로 출력, 하트 클릭시 컬럼에 데이터 추가
-			
-			$("#like").click(function(){
-			});
-				
-	});
-</script>
 </head>
 
 <body>
@@ -203,7 +191,7 @@ font-weight: bold;
 			</h1>
 		</div>
 		<div class="container">
-			<form action="searchContorller?type=search" method="post" >
+			<form action="feedcontroller?type=search" method="post" >
 				<span> 
 					<input class="total_search" type="text" id="search"
 					name="keyword" placeholder="통합검색">&nbsp;

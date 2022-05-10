@@ -70,7 +70,7 @@ height:1000px;
 			</h1>
 		</div>
 		<div class="container">
-			<form action="searchContorller?type=search" method="post">
+			<form action="feedcontroller?type=search" method="post">
 				<span> <input class="total_search" type="text" id="search"
 					name="keyword" placeholder="통합검색">&nbsp; <input
 					class="search_btn" type="submit" value="검색">

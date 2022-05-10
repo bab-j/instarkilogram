@@ -49,9 +49,6 @@ th {
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
- 	<%-- $().ready(function(){		
-		$("#uid").val(<%=request.getParameter("uid")%>);
-	}); --%>
  	
 	function idChk() {
 		let firstForm = document.forms[0];
@@ -67,9 +64,6 @@ th {
 	window.onload = function () {
 		let asd = document.getElementById("uid");
 		asd.value = "${uid}";
-		/* if (document.getElementByName("clickDu").value == N) {
-			alert("아이디 중복체크를 해주세요!");
-		} */
 	}
 	
 </script>

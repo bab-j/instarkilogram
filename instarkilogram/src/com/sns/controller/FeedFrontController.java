@@ -1,4 +1,4 @@
-package com.sns.feed.action;
+package com.sns.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,8 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sns.feed.action.Command;
-import com.sns.feed.action.PostWriteCommand;
+import com.sns.command.feed.AddLikeCommand;
+import com.sns.command.feed.Command;
+import com.sns.command.feed.DelLikeCommand;
+import com.sns.command.feed.FollowCheckCommand;
+import com.sns.command.feed.IdvPostCommand;
+import com.sns.command.feed.MyHomeCommand;
+import com.sns.command.feed.PostWriteCommand;
+import com.sns.command.feed.SearchCommand;
+import com.sns.command.feed.SearchPostCommand;
+import com.sns.command.feed.WhoseFeedCommand;
+import com.sns.command.feed.WriteCommentCommand;
 
 @WebServlet("/view/feedcontroller")
 public class FeedFrontController extends HttpServlet {
@@ -38,8 +47,11 @@ public class FeedFrontController extends HttpServlet {
 		} else if("addLike".equals(type)) {
 			command = new AddLikeCommand(); // 좋아요 등록
 		} else if("searchPost".equals(type)) {
-			System.out.println("searchPost 실행");
 			command = new SearchPostCommand(); 
+		} else if ("writeComm".equals(type)) {
+			command = new WriteCommentCommand();
+		} else if("search".equals(type)) {
+			command = new SearchCommand();
 		}
 		 
 		

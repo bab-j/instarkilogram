@@ -1,4 +1,4 @@
-package com.sns.feed.action;
+package com.sns.command.feed;
 
 import java.io.IOException;
 

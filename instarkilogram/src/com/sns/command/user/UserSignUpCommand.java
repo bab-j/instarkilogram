@@ -1,4 +1,4 @@
-package com.sns.user.action;
+package com.sns.command.user;
 
 import java.io.IOException;
 

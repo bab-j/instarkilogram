@@ -1,4 +1,4 @@
-package com.sns.user.action;
+package com.sns.controller;
 
 import java.io.IOException;
 
@@ -7,6 +7,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.sns.command.user.Command;
+import com.sns.command.user.DeleteCommand;
+import com.sns.command.user.FindIdCommand;
+import com.sns.command.user.FindPwdCommand;
+import com.sns.command.user.GoSignUpCommand;
+import com.sns.command.user.UserIdChkCommand;
+import com.sns.command.user.UserLogInCommand;
+import com.sns.command.user.UserSignUpCommand;
+
+
 
 
 @WebServlet("/view/usercontroller")
@@ -27,6 +38,12 @@ public class UserFrontController extends HttpServlet {
 			command = new FindIdCommand();
 		} else if("FindPWD".equals(type)) {
 			command = new FindPwdCommand();
+		} else if("UserLogIn".equals(type)) {
+			command = new UserLogInCommand();
+		} else if ("GoSignUp".equals(type)) {
+			command = new GoSignUpCommand();
+		} else if ("delete".equals(type)) {
+			command = new DeleteCommand();
 		}
 		
 		String path = command.exec(request, response);

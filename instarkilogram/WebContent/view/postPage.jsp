@@ -143,7 +143,7 @@
 			</h1>
 		</div>
 		<div class="container">
-			<form action="searchContorller?type=search" method="post">
+			<form action="feedcontroller?type=search" method="post">
 				<span> <input class="total_search" type="text" id="search"
 					name="keyword" placeholder="통합검색">&nbsp; <input
 					class="search_btn1" type="submit" value="검색">
@@ -215,7 +215,7 @@
 						</c:forEach>
 					</div>
 					<!-- 임시로 AA컨트롤러 씀 -->
-					<form action="AAcontroller?type=writeComm" method="post">
+					<form action="feedcontroller?type=writeComm" method="post">
 						<div class="recommend_box">
 							<hr
 								style="border: 1px solid silver; margin-right: 15px; margin-left: 10px;"

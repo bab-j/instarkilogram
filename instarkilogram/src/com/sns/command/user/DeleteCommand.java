@@ -1,4 +1,4 @@
-package com.sns.feed.action;
+package com.sns.command.user;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.sns.user.db.userSearchDAO;
+import com.sns.user.db.UserDAO;
 
 public class DeleteCommand implements Command {
 
@@ -20,11 +20,11 @@ public class DeleteCommand implements Command {
 		String delkeyword=request.getParameter("delkeyword");
 		String  u_id = (String) session.getAttribute("u_id");
 		
-		userSearchDAO.delete(u_id, delkeyword);
-		userSearchDAO.deleteFollow(u_id);
-		userSearchDAO.deleteFeed(u_id);
-		userSearchDAO.deleteComment(u_id);
-		userSearchDAO.deleteLike(u_id);
+		UserDAO.delete(u_id, delkeyword);
+		UserDAO.deleteFollow(u_id);
+		UserDAO.deleteFeed(u_id);
+		UserDAO.deleteComment(u_id);
+		UserDAO.deleteLike(u_id);
 		  
 		 
 		return "login.jsp";

@@ -32,7 +32,6 @@
 			}
 		}
 		firstForm.submit();
-		console.log("sendPost() 완!!");
 	}
 </script>
 </head>

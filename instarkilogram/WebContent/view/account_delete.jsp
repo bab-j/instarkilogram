@@ -70,7 +70,7 @@
 
 <div class="write">
 	<h1>계정 삭제</h1><br>
-	<form action="searchContorller?type=delete" method="post" >
+	<form action="usercontroller?type=delete" method="post" >
 		<input type="text" placeholder="암호를 입력해주세요." name="delkeyword"
 		onfocus="this.placeholder=''" onblur="this.placeholder='암호를 입력해주세요.'">
 		<input type="submit" value="삭제" id="sbm">

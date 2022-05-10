@@ -1,4 +1,4 @@
-package com.sns.user.action;
+package com.sns.command.user;
 
 import java.io.IOException;
 
@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.PageContext;
 
 import com.sns.feed.db.FeedDAO;
+import com.sns.user.db.UserDAO;
 import com.sns.user.db.UserVO;
 
 public class UserLogInCommand implements Command{
@@ -22,7 +23,7 @@ public class UserLogInCommand implements Command{
 		System.out.println("u_id : " + u_id);
 		System.out.println("pwd : " + pwd);
 		
-		UserVO vo = FeedDAO.loginRight(u_id, pwd);
+		UserVO vo = UserDAO.loginRight(u_id, pwd);
 		System.out.println(vo);
 		
 		HttpSession session = request.getSession();

@@ -1,4 +1,4 @@
-package com.sns.comment.action;
+package com.sns.command.user;
 
 import java.io.IOException;
 
@@ -6,18 +6,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sns.feed.action.Command;
-
-public class CommentCommand implements Command{
+public class GoSignUpCommand implements Command {
 
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String comment = request.getParameter("comment");
-		
-		
-		
-		return null;
+		return "signUp.jsp";
 	}
-
+	
 }
