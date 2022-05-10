@@ -128,50 +128,13 @@ form input :: file-selector-button {
 	
 }
 
-.filebox .upload-name {
-	display: inline-flex;
-	height: 40px;
-	padding: 0 10px;
-	vertical-align: middle;
-	width: 170px;
-	color: #999999;
-}
 
-.filebox label {
-	display: inline-block;
-	padding: 5px;
-	padding-top: 10px;
-	text-align: center;
-	color: #fff;
-	background-color: #1E82FF;
-	cursor: pointer;
-	height: 30px;
-	width: 90px;
-	margin-top: 5px;
-	margin-left: 10px;
-	border-radius: 5px;
-}
-
-.filebox label:hover {
-	background-color: #a7aaad;
-
-}
-
-
-.filebox input[type="file"] {
-	position: absolute;
-	width: 0;
-	height: 0;
-	padding: 0;
-	overflow: hidden;
-	border: 0;
-}
 </style>
-<script type="text/javascript">
-$("#file1").on('change',function(){
-	  var fileName = $("#file1").val();
-	  $(".upload-name").val(fileName);
-	});
+<script>
+	function edit() {
+		let firstForm = document.forms[0];
+		firstForm.submit();
+	}
 
 </script>
 
@@ -209,20 +172,18 @@ $("#file1").on('change',function(){
 		<h1>
 			<i>instarkilogram</i>
 		</h1>
-		<form class="text_left" action="" method="post"
+		<form class="text_left" action="usercontroller?type=updateUser" method="post"
 			enctype="multipart/form-data">
 
 			<div class="filebox">
 				<span class="update_flex">사진첨부</span>
-				<input class="upload-name update_flex"
-					id="" placeholder="첨부파일" name="fPic">
-				<label for="file1">파일찾기</label>
+				
 				<input class="file1 update_flex "
 					type="file" id="file1">
 			</div>
 		</form>
 		
-		<form action="usercontroller?type=UserSignUp" method="post">
+		<form action="usercontroller?type=updateUser" method="post">
 			<div class="text_left">
 				<span class="update_flex">비밀번호</span><span><input
 					class="update_flex" type="password" name=upwd id="uid"

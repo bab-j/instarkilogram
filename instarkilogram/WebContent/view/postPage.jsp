@@ -1,19 +1,27 @@
+<%@page import="com.sns.feed.db.FeedVO"%>
+<%@page import="com.sns.feed.db.FeedDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet"
+	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+<link
+	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+	rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <!--브라우저 적당량  -->
 <title>post.page</title>
 
-<link
-	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<link rel="stylesheet" href="style.css">
+
 
 <style>
 .main_body1 {
@@ -191,16 +199,42 @@
 							<b> ${fvo.getU_id() } </b> ${fvo.getContent() }
 						</p>
 					</div>
-
+					<c:set var="f_idx" value="${fvo.getF_idx() }" />
+					<%
+					FeedVO vo = new FeedVO();
+					vo.setF_idx((int) pageContext.getAttribute("f_idx"));
+					vo.setU_id((String) session.getAttribute("u_id"));
+					int result = FeedDAO.likeOk(vo);//좋아요 상태 확인
+					pageContext.setAttribute("result", result);
+					int countLike = FeedDAO.countLike((int) pageContext.getAttribute("f_idx"));
+					%>
 					<div class="feed_icon">
 						<div class="feed_style">
-							<span class="material-icons-outlined"> favorite_border </span> <span
-								class="material-icons-outlined"> mode_comment </span>
+							<c:choose>
+								<c:when test="${result == 0 }">
+								<table>
+								<tr class="feed_row">
+									<td ><a class="material-symbols-outlined" href="feedcontroller?type=addLike&f_idx=${f_idx}">favorite</a></td>
+									<td class="material-symbols-outlined">mode_comment</td>
+								</tr>
+								</table>
+								</c:when>
+								<c:otherwise>
+								<table>
+								<tr class="feed_row">
+									<td class="material-icons-outlined" style="color: red;"><a
+										href="feedcontroller?type=delLike&f_idx=${f_idx}">favorite</a></td>
+									<td class="material-icons-outlined icon_space">mode_comment</td>
+								</tr>
+								</table>
+								</c:otherwise>
+							</c:choose>
 						</div>
 					</div>
 					<div class="feed_like">
 						<p class="feed_text">
-							<b>좋아요 ${fvo.getF_like() }개</b>
+							<b>좋아요 <%=countLike%>개
+							</b>
 						</p>
 					</div>
 

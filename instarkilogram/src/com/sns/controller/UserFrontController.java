@@ -13,6 +13,7 @@ import com.sns.command.user.DeleteCommand;
 import com.sns.command.user.FindIdCommand;
 import com.sns.command.user.FindPwdCommand;
 import com.sns.command.user.GoSignUpCommand;
+import com.sns.command.user.UpdateCommand;
 import com.sns.command.user.UserIdChkCommand;
 import com.sns.command.user.UserLogInCommand;
 import com.sns.command.user.UserSignUpCommand;
@@ -44,8 +45,9 @@ public class UserFrontController extends HttpServlet {
 			command = new GoSignUpCommand();
 		} else if ("delete".equals(type)) {
 			command = new DeleteCommand();
+		} else if ("updateUser".equals(type)) {
+			command = new UpdateCommand();
 		}
-		
 		String path = command.exec(request, response);
 		request.getRequestDispatcher(path).forward(request, response);
 	}
