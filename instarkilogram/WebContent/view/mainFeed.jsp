@@ -294,7 +294,7 @@ font-weight: bold;
 						</table>
 						<div class="u_comment">
 							<div class="like">
-								<span>좋아요 ${fv.f_like }개</span> <br> <br>
+								<span>좋아요 1개</span> <br> <br>
 							</div>
 							<div class="contain_box">
 							<span class="comment_width">

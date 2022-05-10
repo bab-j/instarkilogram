@@ -36,7 +36,6 @@ public class FeedFrontController extends HttpServlet {
 		} else if("delLike".equals(type)) {
 			command = new DelLikeCommand(); // 좋아요 해제
 		} else if("addLike".equals(type)) {
-			request.setAttribute("f_idx", (int)request.getAttribute("f_idx"));
 			command = new AddLikeCommand(); // 좋아요 등록
 		} else if("searchPost".equals(type)) {
 			System.out.println("searchPost 실행");

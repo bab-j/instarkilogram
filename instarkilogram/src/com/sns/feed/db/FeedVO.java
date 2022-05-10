@@ -6,7 +6,6 @@ public class FeedVO {
 	private String content;
 	private String u_id;
 	private String u_pic;
-	private int f_like;
 	private String f_pic;
 	/**
 	 * @return the f_idx
@@ -68,21 +67,6 @@ public class FeedVO {
 	public void setU_pic(String u_pic) {
 		this.u_pic = u_pic;
 	}
-	/**
-	 * @return the f_like
-	 */
-	public int getF_like() {
-		return f_like;
-	}
-	/**
-	 * @param f_like the f_like to set
-	 */
-	public void setF_like(int f_like) {
-		this.f_like = f_like;
-	}
-	/**
-	 * @return the f_pic
-	 */
 	public String getF_pic() {
 		return f_pic;
 	}
@@ -95,7 +79,7 @@ public class FeedVO {
 	@Override
 	public String toString() {
 		return "FeedVO [f_idx=" + f_idx + ", regdate=" + regdate + ", content=" + content + ", u_id=" + u_id
-				+ ", u_pic=" + u_pic + ", f_like=" + f_like + ", f_pic=" + f_pic + "]";
+				+ ", u_pic=" + u_pic + ", f_pic=" + f_pic + "]";
 	}
 	
 	

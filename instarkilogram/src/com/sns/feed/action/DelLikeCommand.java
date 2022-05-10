@@ -16,7 +16,7 @@ public class DelLikeCommand implements Command {
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FeedVO fvo = new FeedVO();
 		HttpSession session = request.getSession();
-		int fIdx = (int)request.getAttribute("f_idx");
+		int fIdx = Integer.parseInt(request.getParameter("f_idx"));
 		System.out.println("fIdx : " + fIdx);
 		fvo.setF_idx(fIdx);
 		fvo.setU_id((String)session.getAttribute("u_id"));
