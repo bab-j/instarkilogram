@@ -195,6 +195,13 @@ public class FeedDAO {
 		ss.delete("comment.delLike", fvo);
 		ss.close();
 	}
+	//좋아요 갯수 카운트해서 출력
+	public static int countLike(int f_idx) {
+		SqlSession ss = DBService.getFactory().openSession();
+		int result = ss.selectOne("comment.countLike", f_idx);
+		ss.close();
+		return result;
+	}
 }
 
 

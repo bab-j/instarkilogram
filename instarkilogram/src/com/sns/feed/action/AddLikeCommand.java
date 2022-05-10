@@ -21,7 +21,7 @@ public class AddLikeCommand implements Command {
 		fvo.setF_idx(fIdx);
 		fvo.setU_id((String)session.getAttribute("u_id"));
 		FeedDAO.addLike(fvo);
-		return "mainFeed.jsp";
+		return "mainFeed.jsp?cPage=2";
 	}
 
 }

@@ -278,6 +278,7 @@ font-weight: bold;
 								pageContext.setAttribute("result", result);
 								System.out.println("result : " + pageContext.getAttribute("result"));
 								System.out.println("u_id : " + session.getAttribute("u_id"));
+								int countLike = FeedDAO.countLike((int)request.getAttribute("f_idx"));
 								%>
 								<c:choose>
 								<c:when test="${result == 0 }">
@@ -294,7 +295,7 @@ font-weight: bold;
 						</table>
 						<div class="u_comment">
 							<div class="like">
-								<span>좋아요 1개</span> <br> <br>
+								<span>좋아요 <%=countLike %>개</span> <br> <br>
 							</div>
 							<div class="contain_box">
 							<span class="comment_width">

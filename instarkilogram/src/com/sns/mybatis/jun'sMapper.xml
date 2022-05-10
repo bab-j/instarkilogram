@@ -35,5 +35,15 @@
 		   AND U_ID = #{u_id}
 	</delete>
 	
+	<select id="countLike" parameterType="int" resultType="int">
+		SELECT COUNT(F_IDX)
+		  FROM LIKE_LIST
+         WHERE F_IDX = #{f_idx}
+	</select>
+	
+	
+	
+	
+	
 	
 </mapper>
