@@ -22,41 +22,51 @@
 
 <style>
 tr, td {
-	 border: 5px solid #FFFFFF;
-	 border-collapse: collapse;
-	 
+	border: 5px solid #FFFFFF;
+	border-collapse: collapse;
+}
+
+body {
+height: 880px;
 
 }
 
 .subject_center {
 	text-align: center;
 	font-size: 28px;
-	margin-left:auto;
-	margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 200px;
-	font-size : 40px;
-	
+	font-size: 40px;
 }
 
+.search_body {
+	padding: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px; 
+	background-color: white;
+	overflow-y:scroll;
+}
 
-
-
+.feed_img {
+	border: 5px solid white;
+	width: 293px;
+	height: 293px;
+}
 </style>
 <script>
 	function searching() {
-		document.getElementById("search").onclick = function () {
+		document.getElementById("search").onclick = function() {
 			location.href = "search.jsp"
-			
+
 		}
 
 	}
-	
-	
 </script>
 
-<%  
- Paging  p = new Paging();
-
+<%
+Paging p = new Paging();
 %>
 </head>
 <body>
@@ -64,13 +74,17 @@ tr, td {
 
 	<div class="bar">
 		<div class="home">
-			<h1><em> <a class="linkLine" href="mainFeed.jsp"> instarkilogram </a></em></h1>
+			<h1>
+				<em> <a class="linkLine" href="mainFeed.jsp">
+						instarkilogram </a></em>
+			</h1>
 		</div>
 		<div class="container">
-				<form action="search.jsp" method="get" enctype="multipart/form-data">
-			<span>
-					<input class="total_search"type="text" id= "search" name="keyword" placeholder="통합검색">&nbsp;</a><input class="search_btn" type="submit" value="검색" >
-			</span>
+			<form action="search.jsp" method="get" enctype="multipart/form-data">
+				<span> <input class="total_search" type="text" id="search"
+					name="keyword" placeholder="통합검색">&nbsp;</a><input
+					class="search_btn" type="submit" value="검색">
+				</span>
 			</form>
 		</div>
 		<div class="nav-icon">
@@ -82,37 +96,37 @@ tr, td {
 		</div>
 	</div>
 	<!-- upside bar -->
-	
+
 	<br>
 	<div class="search_body">
-	<h1 class="search_result">#'${postContent}' 검색 결과</h1>
-	<div class="search_grid">
-	
-	<c:choose>
-			<c:when test="${empty contentList }">
-				<div class="subject_center">
-				<h3>게시물이 존재하지 않습니다.</h3>
-				</div>
-			</c:when>
-			<c:otherwise>
-				<div class="search_grid">
+		<h1 class="search_result">#'${postContent}' 검색 결과</h1>
+		<hr style=" border: 1px solid silver; margin-top: 15px; margin-bottom : 30px;">
+		<div class="search_grid">
 
-					<div class="feed_table">
-					
-					<c:forEach var="feed" items="${contentList }">
-						<a href="feedcontroller?type=idvPage&f_idx=${feed.getF_idx() }">
-							<img class="feed_img"
-							src="c:/upload/temp/${feed.getF_pic()}" />
-						</a>
-					</c:forEach>
+			<c:choose>
+				<c:when test="${empty contentList }">
+					<div class="subject_center">
+						<h3>게시물이 존재하지 않습니다.</h3>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="">
+
+						<div class="feed_table">
+
+							<c:forEach var="feed" items="${contentList }">
+								<a href="feedcontroller?type=idvPage&f_idx=${feed.getF_idx() }">
+									<img class="feed_img" src="c:/upload/temp/${feed.getF_pic()}" />
+								</a>
+							</c:forEach>
+						</div>
+
 					</div>
 
-				</div>
+				</c:otherwise>
+			</c:choose>
 
-			</c:otherwise>
-		</c:choose>
-	
-		<%-- <table class="grid_table">
+			<%-- <table class="grid_table">
 			<tbody class="grid-body">
 
 				<%
@@ -129,7 +143,7 @@ tr, td {
 				%>
 			</tbody>
 		</table> --%>
+		</div>
 	</div>
-</div>
 </body>
 </html>
