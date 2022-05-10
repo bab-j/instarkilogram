@@ -36,8 +36,9 @@ table {
 	padding: 10px;
 }
 
-.sign_ {
-	
+.sign_body {
+	width: 500px;
+	height: 700px;
 }
 
 .update_flex {
@@ -45,6 +46,8 @@ table {
 	padding: 5px;
 	margin: 5px;
 	height: 30px;
+	font-size : 20px;
+	width : 120px;
 }
 
 #f_input1 {
@@ -77,28 +80,42 @@ table {
 
 .text_left {
 	text-align: left;
-	margin-left: 15px;
+	margin-left: 20px;
 	height: 60px;
 }
 
 #butt1 {
 	text-align: center;
-	width: 50px;
-	height: 40px;
+	width: 70px;
+	height: 50px;
+	font-size : 20px;
 }
+#butt1 :hover {
+	background-color: #a7aaad;
+
+}
+
 
 #subm1 {
 	margin-left: 15px;
 	padding: 5px;
 	text-align: center;
-	width: 150px;
+	width: 170px;
 	background-color: #1E82FF;
 	color: white;
-	height: 40px;
-	font-size: 17px;
+	height: 50px;
+	font-size: 20px;
+	border-style : none;
 	border-radius: 5px;
 	padding: 5px;
 }
+#subm1 :hover {
+	background-color: #a7aaad;
+
+}
+
+
+
 
 form input :: file-selector-button {
 	display: none;
@@ -109,28 +126,34 @@ form input :: file-selector-button {
 }
 
 .filebox .upload-name {
-	display: inline-block;
+	display: inline-flex;
 	height: 40px;
 	padding: 0 10px;
 	vertical-align: middle;
-	border: 1px solid #dddddd;
-	width: 78%;
+	width: 170px;
 	color: #999999;
 }
 
 .filebox label {
 	display: inline-block;
 	padding: 5px;
-	padding-top:10px;
+	padding-top: 10px;
 	text-align: center;
 	color: #fff;
-	background-color: #999999;
+	background-color: #1E82FF;
 	cursor: pointer;
 	height: 30px;
 	width: 90px;
-	margin-top : 5px;
+	margin-top: 5px;
 	margin-left: 10px;
+	border-radius: 5px;
 }
+
+.filebox label:hover {
+	background-color: #a7aaad;
+
+}
+
 
 .filebox input[type="file"] {
 	position: absolute;
@@ -141,7 +164,13 @@ form input :: file-selector-button {
 	border: 0;
 }
 </style>
+<script type="text/javascript">
+$("#file1").on('change',function(){
+	  var fileName = $("#file1").val();
+	  $(".upload-name").val(fileName);
+	});
 
+</script>
 
 </head>
 <body>
@@ -180,10 +209,12 @@ form input :: file-selector-button {
 		<form class="text_left" action="" method="post"
 			enctype="multipart/form-data">
 
-			<div class="filebox update_flex">
-				<span class="update_flex">사진첨부 </span> <input class="update_flex"
-					id="uid" value="첨부파일" placeholder="첨부파일" name="fPic" title="사진">
-				<label for="file">파일찾기</label> <input class="file1 update_flex "
+			<div class="filebox">
+				<span class="update_flex">사진첨부</span>
+				<input class="upload-name update_flex"
+					id="" placeholder="첨부파일" name="fPic">
+				<label for="file1">파일찾기</label>
+				<input class="file1 update_flex "
 					type="file" id="file1">
 			</div>
 
@@ -191,7 +222,7 @@ form input :: file-selector-button {
 
 		</form>
 		<div class="text_left">
-			<span class="update_flex">아이디</span> <span><input
+			<span class="update_flex">아이디</span><span><input
 				class="update_flex" type="text" name="uid" id="uid"
 				placeholder="Username" onfocus="this.placeholder=''"
 				onblur="this.placeholder='Username'"></span> <input
@@ -213,39 +244,40 @@ form input :: file-selector-button {
 		</c:choose>
 		<form action="usercontroller?type=UserSignUp" method="post">
 			<div class="text_left">
-				<span class="update_flex">비밀번호</span> <span class="update_flex"><input
+				<span class="update_flex">비밀번호</span><span><input
 					class="update_flex" type="password" name=upwd id="uid"
 					placeholder="Password" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Password'"></span>
 			</div>
 			<div class="text_left">
-				<span class="update_flex">비밀번호 확인</span> <span class="update_flex"><input
+				<span class="update_flex">비밀번호 확인</span><span><input
 					id="uid" class="update_flex" type="password" name=uPwdOk
 					placeholder="Confirm Password" onfocus="this.placeholder=''"
 					onblur="this.placeholder='Confirm Password'"></span>
 			</div>
 			<div class="text_left">
-				<span class="update_flex">이메일</span> <span><input id="uid"
+				<span class="update_flex">이메일</span><span><input id="uid"
 					class="update_flex" type="email" name="email"
 					placeholder="abc123@abc.com" onfocus="this.placeholder=''"
 					onblur="this.placeholder='abc123@abc.com'"></span>
 			</div>
 			<div class="text_left">
-				<span class="update_flex">이름</span> <span><input id="uid"
+				<span class="update_flex">이름</span><span><input id="uid"
 					class="update_flex" type="text" name="name" placeholder="홍길동"
 					onfocus="this.placeholder=''" onblur="this.placeholder='홍길동'"></span>
 			</div>
 			<div class="text_left">
-				<span class="update_flex">전화번호</span> <span><input id="uid"
+				<span class="update_flex">전화번호</span><span><input id="uid"
 					class="update_flex" type="text" name="phone"
 					placeholder="010-0000-0000" onfocus="this.placeholder=''"
 					onblur="this.placeholder='010-0000-0000'"></span>
 			</div>
 			<div class="text_left">
-				<span class="update_flex">생년월일</span> <span><input id="uid"
+				<span class="update_flex">생년월일</span><span><input id="uid"
 					class="update_flex" type="text" name="birth" placeholder="생년월일 6자리"
 					onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"></span>
 			</div>
+			<br>
 			<input type="button" id="butt1" value="취소" onclick="goLogIn()">
 			<input type="submit" id="subm1" value="수정" onclick="signUp()">
 			<input type="hidden" name="uID" value="${uid }">
