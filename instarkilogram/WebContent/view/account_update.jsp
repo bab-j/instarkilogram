@@ -69,13 +69,16 @@ table {
 }
 
 #button2 {
-	width: 60px;
-	height: 25px;
-	margin: 15px;
-	padding: 5px;
+	width: 70px;
+	height: 44px;
+	margin: 10px;
+	padding: 6px;
 	display: inline-flex;
 	text-align: center;
 	display: inline-flex;
+	vertical-align: middle;
+	font-size : 15px;
+	
 }
 
 .text_left {
@@ -278,7 +281,8 @@ $("#file1").on('change',function(){
 					onfocus="this.placeholder=''" onblur="this.placeholder='생년월일 6자리'"></span>
 			</div>
 			<br>
-			<input type="button" id="butt1" value="취소" onclick="goLogIn()">
+			<a
+				href="javascript:window.history.back();"><input type="button" id="butt1" value="취소"></a>
 			<input type="submit" id="subm1" value="수정" onclick="signUp()">
 			<input type="hidden" name="uID" value="${uid }">
 		</form>
