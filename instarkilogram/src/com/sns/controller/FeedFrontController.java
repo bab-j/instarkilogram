@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.sns.command.feed.AddLikeCommand;
+import com.sns.command.feed.AddPostLikeCommand;
 import com.sns.command.feed.Command;
 import com.sns.command.feed.DelLikeCommand;
+import com.sns.command.feed.DelPostLikeCommand;
 import com.sns.command.feed.FollowCheckCommand;
 import com.sns.command.feed.IdvPostCommand;
 import com.sns.command.feed.MyHomeCommand;
@@ -48,10 +50,14 @@ public class FeedFrontController extends HttpServlet {
 			command = new AddLikeCommand(); // 좋아요 등록
 		} else if("searchPost".equals(type)) {
 			command = new SearchPostCommand(); 
-		} else if ("writeComm".equals(type)) {
+		} else if("writeComm".equals(type)) {
 			command = new WriteCommentCommand();
 		} else if("search".equals(type)) {
 			command = new SearchCommand();
+		} else if("addPostLike".equals(type)) {
+			command = new DelPostLikeCommand(); // 포스트페이지 좋아요해제
+		} else if("delPostLike".equals(type)) {
+			command = new AddPostLikeCommand(); // 포스트페이지 좋아요등록
 		}
 		 
 		

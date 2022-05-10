@@ -159,7 +159,6 @@
 			</form>
 		</div>
 		<div class="nav-icon">
-
 			<span class="img_icon"></span> <span class="img_icon"></span> <a
 				href="javascript:window.history.back();"> <span
 				class="material-icons img_icon"> arrow_back_ios</span></a>
@@ -199,36 +198,33 @@
 							<b> ${fvo.getU_id() } </b> ${fvo.getContent() }
 						</p>
 					</div>
-					<c:set var="f_idx" value="${fvo.getF_idx() }" />
+					<c:set var="f_idx" value="${fvo.getF_idx() }" scope="request"/>
 					<%
 					FeedVO vo = new FeedVO();
-					vo.setF_idx((int) pageContext.getAttribute("f_idx"));
+					System.out.println("F_IDX: " + request.getAttribute("f_idx"));
+					vo.setF_idx((int) request.getAttribute("f_idx"));
 					vo.setU_id((String) session.getAttribute("u_id"));
 					int result = FeedDAO.likeOk(vo);//좋아요 상태 확인
+					System.out.println("result(post): " + result);
 					pageContext.setAttribute("result", result);
-					int countLike = FeedDAO.countLike((int) pageContext.getAttribute("f_idx"));
+					int countLike = FeedDAO.countLike((int)request.getAttribute("f_idx"));
 					%>
 					<div class="feed_icon">
 						<div class="feed_style">
+								<table>
+								<tr class="feed_row">
 							<c:choose>
 								<c:when test="${result == 0 }">
-								<table>
-								<tr class="feed_row">
-									<td ><a class="material-symbols-outlined" href="feedcontroller?type=addLike&f_idx=${f_idx}">favorite</a></td>
+									<td class="material-symbols-outlined">favorite</td>
 									<td class="material-symbols-outlined">mode_comment</td>
-								</tr>
-								</table>
 								</c:when>
 								<c:otherwise>
-								<table>
-								<tr class="feed_row">
-									<td class="material-icons-outlined" style="color: red;"><a
-										href="feedcontroller?type=delLike&f_idx=${f_idx}">favorite</a></td>
+									<td class="material-icons-outlined" style="color: red;">favorite</td>
 									<td class="material-icons-outlined icon_space">mode_comment</td>
-								</tr>
-								</table>
 								</c:otherwise>
 							</c:choose>
+								</tr>
+								</table>
 						</div>
 					</div>
 					<div class="feed_like">
@@ -237,7 +233,6 @@
 							</b>
 						</p>
 					</div>
-
 
 
 
