@@ -46,6 +46,7 @@
 </style>
 <script>
 	function account_del() {
+		
 		let cfmDel = confirm("정말로 삭제하시겠습니까?");
 		if(cfmDel){
 			console.log("yes");
@@ -53,6 +54,8 @@
 			console.log("내 계정 페이지로 가자");
 		}
 	}
+	
+
 </script>
 </head>
 <body>
@@ -67,10 +70,10 @@
 
 <div class="write">
 	<h1>계정 삭제</h1><br>
-	<form action="#" method="post" enctype="multipart/form-data">
-		<input type="text" placeholder="암호를 입력해주세요."
+	<form action="searchContorller?type=delete" method="post" >
+		<input type="text" placeholder="암호를 입력해주세요." name="delkeyword"
 		onfocus="this.placeholder=''" onblur="this.placeholder='암호를 입력해주세요.'">
-		<input type="button" value="삭제" id="sbm" onclick="account_del()">
+		<input type="submit" value="삭제" id="sbm">
 	</form>
 </div>
 </body>
