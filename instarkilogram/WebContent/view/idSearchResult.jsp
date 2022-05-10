@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ page import="java.net.URLEncoder" %>
 
 
 
@@ -16,8 +16,9 @@
 	rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
-
 <meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
 <title>instarkilogram : 검색 화면</title>
 
 <style>
@@ -60,8 +61,10 @@ height:1000px;
 </style>
 
 
-
 </head>
+<script>
+</script>
+
 <body>
 	<div class="bar">
 		<div class="home">
@@ -90,9 +93,18 @@ height:1000px;
 	<div class="search_body">
 	
 	<div class="profile_box" >
-		<a href="feedcontroller?type=searchPost&postContent=${keyword }">
-			<h3 style="margin-left : 15px;">'${keyword }' &nbsp; 검색 결과 게시물</h3>
+	
+<%
+		String bu = (String)request.getAttribute("keyword");
+%>		
+		<a href="feedcontroller?type=searchPost&postContent=<%= URLEncoder.encode(bu, "UTF-8")%>" >
+			'${keyword }' &nbsp; 검색 결과 게시물
 		</a>
+		
+		<%-- <a href="feedcontroller?type=searchPost&postContent=${keyword }" id="goPlz">
+			<h3 style="margin-left : 15px;">'${keyword }' &nbsp; 검색 결과 게시물</h3>
+		</a> --%>
+	
 	</div>
 	
 		<c:forEach var="search" items="${list}">

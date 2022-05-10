@@ -27,7 +27,7 @@ public class FeedFrontController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println(">> FrontController.doGet() 실행");
-		
+		request.setCharacterEncoding("utf-8");
 		String type = request.getParameter("type");
 		System.out.println("feedController type : " + type);
 		
