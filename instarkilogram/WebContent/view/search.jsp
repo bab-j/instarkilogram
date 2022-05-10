@@ -80,10 +80,11 @@ Paging p = new Paging();
 			</h1>
 		</div>
 		<div class="container">
-			<form action="search.jsp" method="get" enctype="multipart/form-data">
-				<span> <input class="total_search" type="text" id="search"
-					name="keyword" placeholder="통합검색">&nbsp;</a><input
-					class="search_btn" type="submit" value="검색">
+			<form action="feedcontroller?type=search" method="post" >
+				<span> 
+					<input class="total_search" type="text" id="search"
+					name="keyword" placeholder="통합검색">&nbsp;
+					<input class="search_btn" type="submit" value="검색">
 				</span>
 			</form>
 		</div>
@@ -126,23 +127,6 @@ Paging p = new Paging();
 				</c:otherwise>
 			</c:choose>
 
-			<%-- <table class="grid_table">
-			<tbody class="grid-body">
-
-				<%
-				int i;
-				for (int j = 1; j <= 20; j += 3) {
-				%>
-				<tr>
-					<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
-						<td><a href="../img/${i }.jpg"><img src="../img/${i }.jpg" width="293px" height="293px"  alt="${i }.jpg"></img></a></td>
-					</c:forEach>
-				</tr>
-				<%
-					}
-				%>
-			</tbody>
-		</table> --%>
 		</div>
 	</div>
 </body>

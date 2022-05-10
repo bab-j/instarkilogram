@@ -186,7 +186,7 @@ Paging p = new Paging();
 					<div>${uv.getBio() }</div>
 				</div>
 				<div>
-					<img class="bigProfile_img" src="c:/upload/temp/${uv.getU_pic() }" />
+					<img class="bigProfile_img" src="../imgs/${uv.getU_pic() }" />
 				</div>
 			</div>
 		</div>

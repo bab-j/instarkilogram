@@ -78,6 +78,9 @@ public class UserSignUpCommand implements Command {
 		vo.setPhone(phone);
 		vo.setBirth(birth);
 		
+		vo.setBio("bio를 설정해주세요");
+		vo.setU_pic("basic.png");
+		
 		int result = uDao.signUp(vo);
 		System.out.println("result : " + result);
 		request.setAttribute("check", check);

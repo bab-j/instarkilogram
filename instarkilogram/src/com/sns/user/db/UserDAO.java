@@ -15,9 +15,18 @@ public class UserDAO {
 	
 	
 	// 회원정보 수정
-	public static void updatePro(UserVO uv) {
+	public static void updatePro(String pwd, String phone, 
+			String email, String bio, String u_pic, String u_id) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("pwd", pwd);
+		map.put("phone", phone);
+		map.put("email", email);
+		map.put("bio", bio);
+		map.put("u_pic", u_pic);
+		map.put("u_id", u_id);
+		
 		SqlSession ss = DBService.getFactory().openSession(true);
-		ss.update("user.updateProfile", uv);
+		ss.update("user.updateProfile", map);
 		ss.close();
 	}
 	

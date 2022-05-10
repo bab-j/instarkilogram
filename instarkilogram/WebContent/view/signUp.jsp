@@ -54,9 +54,6 @@ th {
 		let firstForm = document.forms[0];
 		firstForm.submit();
 	}
-	function signUp() {
-	
-	}
 	function goLogIn() {
 		location.href = "login.jsp";
 	}
@@ -140,8 +137,8 @@ th {
 				</tr>
 			</table>
 			<input type="button" id="butt" value="취소" onclick="goLogIn()">
-			<input type="submit" id="subm" value="가입" onclick="signUp()">
-			<input type="hidden" name="uID" value="${uid }">
+			<input type="submit" id="subm" value="가입" >
+			 <input type="hidden" name="uID" value="${uid }">
 		</form>
 	</div>
 </body>

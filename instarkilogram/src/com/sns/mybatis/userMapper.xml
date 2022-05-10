@@ -5,12 +5,12 @@
 <mapper namespace="user">
 	
 	<!-- 회원정보 수정 -->
-	<update id="updateProfile" parameterType="UserVO">
-		UPDATE USER_INFO SET PWD = #{pwd} ,
-                    PHONE = #{phone} ,
-                    EMAIL = #{email} ,
-                    BIO = #{bio} ,
-                    U_PIC = '#{u_pic}
+	<update id="updateProfile" parameterType="map">
+		UPDATE USER_INFO SET PWD = #{pwd},
+                    PHONE = #{phone},
+                    EMAIL = #{email},
+                    BIO = #{bio},
+                    U_PIC = #{u_pic}
 		WHERE U_ID = #{u_id}
 	</update>
 
@@ -57,8 +57,12 @@
 	</select>
 	<!-- 회원가입디비 삽입 -->
 	<insert id="signUp" parameterType="UserVO">
-		INSERT INTO USER_INFO (U_IDX, U_ID, PWD, PHONE, EMAIL, BIRTH, NAME)
+		<!-- INSERT INTO USER_INFO (U_IDX, U_ID, PWD, PHONE, EMAIL, BIRTH, NAME)
 					   VALUES (USER_INFO_SEQ.NEXTVAL, #{u_id}, #{pwd}, #{phone}, #{email}, #{birth}, #{name})
+		 -->INSERT INTO USER_INFO (U_IDX, U_ID, PWD, PHONE, EMAIL,
+		 							 BIRTH, BIO, NAME, U_PIC)
+					   VALUES (USER_INFO_SEQ.NEXTVAL, #{u_id}, #{pwd}, #{phone}, #{email},
+					   		 #{birth}, #{bio}, #{name}, #{u_pic})
 	</insert>
 
 	<!-- 아이디찾기 -->

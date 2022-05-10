@@ -224,7 +224,7 @@ Paging p = new Paging();
 					<c:forEach var="feed" items="${feedList }">
 						<a href="feedcontroller?type=idvPage&f_idx=${feed.getF_idx() }">
 							<img class="feed_img"
-							src="c:/upload/temp/${feed.getF_pic()}" />
+							src="../imgs/${feed.getF_pic()}" />
 						</a>
 					</c:forEach>
 					
