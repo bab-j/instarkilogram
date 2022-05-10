@@ -8,11 +8,10 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="com.sns.user.db.UserVO" alias="UserVO"/>
-		<typeAlias type="com.sns.comment.db.CommentVO" alias="CommentVO"/>
-		<typeAlias type="com.sns.feed.db.FeedVO" alias="FeedVO"/>
-		
-	</typeAliases>
+      <typeAlias type="com.sns.user.db.UserVO" alias="UserVO"/>
+      <typeAlias type="com.sns.comment.db.CommentVO" alias="CommentVO"/>
+      <typeAlias type="com.sns.feed.db.FeedVO" alias="FeedVO"/>
+   </typeAliases>
 
   <environments default="development">
     <environment id="development">
@@ -27,13 +26,8 @@
   </environments>
   
   <mappers>
-    <mapper resource="com/sns/mybatis/mapper_post.xml"/>
+    <mapper resource="com/sns/mybatis/feedMapper.xml"/>
     <mapper resource="com/sns/mybatis/userMapper.xml"/>
-    <mapper resource="com/sns/mybatis/userSearchMapper.xml"/>
-    <mapper resource="com/sns/mybatis/jun'sMapper.xml"/>
-    
-    
-    
   </mappers>
   
 </configuration>
