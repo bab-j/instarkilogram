@@ -52,7 +52,6 @@
 	pageContext.setAttribute("pList", pList);
 	pageContext.setAttribute("pvo", p);
 	
-	
 %>
 
 <!DOCTYPE html>
@@ -267,14 +266,15 @@ pageContext.setAttribute("result", result);//좋아요 상태 확인
 System.out.println("result : " + pageContext.getAttribute("result"));
 System.out.println("u_id : " + session.getAttribute("u_id"));
 int countLike = FeedDAO.countLike((int)request.getAttribute("f_idx"));//좋아요 개수
+pageContext.setAttribute("cPage", cPage);
 %>
 								<c:choose>
 								<c:when test="${result == 0 }">
-									<td class="material-icons-outlined icon_space" id="like"><a href="feedcontroller?type=addLike&f_idx=${fv.f_idx }&cPage=<%=cPage %>">favorite_border</a></td>
+									<td class="material-icons-outlined icon_space" id="like"><a href="feedcontroller?type=addLike&f_idx=${fv.f_idx }&cPage=${cPage}">favorite_border</a></td>
 									<td class="material-icons-outlined icon_space">mode_comment</td>
 								</c:when>
 								<c:otherwise>
-									<td class="material-icons-outlined" style="color:red;" id=like><a href="feedcontroller?type=delLike&f_idx=${fv.f_idx }&cPage=<%=cPage %>">favorite</a></td>
+									<td class="material-icons-outlined" style="color:red;" id=like><a href="feedcontroller?type=delLike&f_idx=${fv.f_idx }&cPage=${cPage}">favorite</a></td>
 									<td class="material-icons-outlined icon_space">mode_comment</td>
 								</c:otherwise>
 								</c:choose>
