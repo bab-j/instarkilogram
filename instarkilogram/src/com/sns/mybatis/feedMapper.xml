@@ -103,8 +103,8 @@
 	
 	<!-- 게시글 등록 ok-->
 	<insert id="insert" parameterType="com.sns.feed.db.FeedVO">
-		INSERT INTO FEED (F_IDX, REGDATE, CONTENT, U_ID, U_PIC, F_LIKE, F_PIC) 
-                VALUES (FEED_SEQ.NEXTVAL,SYSDATE,#{content},#{u_id},#{u_pic},NULL,#{f_pic})
+		INSERT INTO FEED (F_IDX, REGDATE, CONTENT, U_ID, U_PIC, F_PIC) 
+                VALUES (FEED_SEQ.NEXTVAL,SYSDATE,#{content},#{u_id},#{u_pic},#{f_pic})
 	</insert>
 	
 	<!-- 로그인 ok-->

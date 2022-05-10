@@ -36,9 +36,6 @@ public class PostWriteCommand implements Command {
 		}
 		int result = FeedDAO.insert(fvo);
 		
-		
-		//------ 메인 피드 불러오기?
-
 		return "mainFeed.jsp";
 	}
 
