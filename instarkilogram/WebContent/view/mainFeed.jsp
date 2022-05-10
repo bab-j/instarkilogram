@@ -282,7 +282,7 @@ int countLike = FeedDAO.countLike((int)request.getAttribute("f_idx"));//좋아�
 %>
 								<c:choose>
 								<c:when test="${result == 0 }">
-									<td class="material-icons-outlined icon_space" id="like"><a href="feedcontroller?type=addLike&f_idx=${fv.f_idx }&cPage=${cPage}">favorite_border</a></td>
+									<td class="material-icons-outlined icon_space" id="like"><a href="feedcontroller?type=addLike&f_idx=${fv.f_idx }&cPage=<%=cPage %>">favorite_border</a></td>
 									<td class="material-icons-outlined icon_space">mode_comment</td>
 								</c:when>
 								<c:otherwise>
