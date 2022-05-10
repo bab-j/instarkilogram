@@ -28,6 +28,19 @@ tr, td {
 
 }
 
+.subject_center {
+	text-align: center;
+	font-size: 28px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 200px;
+	font-size : 40px;
+	
+}
+
+
+
+
 </style>
 <script>
 	function searching() {
@@ -77,7 +90,9 @@ tr, td {
 	
 	<c:choose>
 			<c:when test="${empty contentList }">
-				<h3 class="subject_center">게시물이 존재하지 않습니다.</h3>
+				<div class="subject_center">
+				<h3>게시물이 존재하지 않습니다.</h3>
+				</div>
 			</c:when>
 			<c:otherwise>
 				<div class="search_grid">

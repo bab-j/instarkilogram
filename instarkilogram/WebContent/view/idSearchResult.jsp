@@ -88,9 +88,9 @@ height:1000px;
 
 	<div class="search_body">
 	
-	<div>
+	<div class="profile_box" >
 		<a href="feedcontroller?type=searchPost&postContent=${keyword }">
-			<h3>'${keyword }' 검색 결과 게시물</h3>
+			<h3 style="margin-left : 15px;">'${keyword }' &nbsp; 검색 결과 게시물</h3>
 		</a>
 	</div>
 	
