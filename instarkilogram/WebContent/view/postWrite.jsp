@@ -17,6 +17,26 @@
 
 
 <style>
+
+
+.write {
+height : 550px;
+
+}
+
+
+#f_input {
+
+margin-left :72px;
+
+} 
+
+
+.file{
+}
+
+
+
 </style>
 <script>
 	function sendPost() {
@@ -71,9 +91,7 @@
 			<h1 style="font-style: inherit;">새 게시물</h1>
 			<div>
 				<div>
-					<div class="img_box">
-						<a href=""> <img src=" ">
-						</a>
+					
 					</div>
 				</div>
 			</div>
@@ -85,11 +103,9 @@
 				<textarea class="post_content" name="content" rows="9" cols="100"
 					placeholder="내용을 입력해주세요." onfocus="this.placeholder=''"
 					onblur="this.placeholder='내용을 입력해주세요.'"></textarea>
-				<br> <input type="button" value="등록" id="sbm"
+				<br> <br> <br> <input type="button" value="등록" id="sbm"
 					onclick="sendPost()">
 			</form>
-			<br> <br>
 		</div>
-	</div>
 </body>
 </html>
