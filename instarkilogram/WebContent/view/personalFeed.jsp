@@ -186,7 +186,7 @@ Paging p = new Paging();
 					<div>${uv.getBio() }</div>
 				</div>
 				<div>
-					<img class="bigProfile_img" src="/Users/babble/git/instarkilogram/instarkilogram/WebContent/temp/${uv.getU_pic() }" />
+					<img class="bigProfile_img" src="c:/upload/temp/${uv.getU_pic() }" />
 				</div>
 			</div>
 		</div>
@@ -206,23 +206,11 @@ Paging p = new Paging();
 					
 					<c:forEach var="feed" items="${feedList }">
 						<a href="feedcontroller?type=idvPage&f_idx=${feed.getF_idx() }">
-							<img class="feed_img"
-							src="c:/upload/temp/${feed.getF_pic()}" />
+							<img class="feed_img" src="../imgs/${feed.getF_pic()}" />
 						</a>
 					</c:forEach>
 					
 						
-						<%-- <%for (int j = 1; j <= 15; j += 3) {%>
-						<c:forEach var="i" begin="<%=j%>" end="<%=j + 2%>">
-							<a
-								href="feedcontroller?type=idvPage&f_idx=${feedList[i].getF_idx() }">
-								<img class="feed_img"
-								src="c:/upload/temp/${feedList[i].getF_pic()}" />
-							</a>
-						</c:forEach>
-						<%
-						}
-						%> --%>
 					</div>
 
 				</div>

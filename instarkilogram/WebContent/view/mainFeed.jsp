@@ -251,7 +251,7 @@ font-weight: bold;
 										<a href="feedcontroller?type=idvPage&f_idx=${fv.f_idx }">
 										<c:set var="f_idx" value="${fv.f_idx }" scope="request"/>
 										<%= request.getAttribute("f_idx")%>
-											<img class="feed_img" src="c:/upload/temp/${fv.f_pic} " id="feed_img" >
+											<img class="feed_img" src="../imgs/${fv.f_pic} " id="feed_img" >
 										</a>
 									</td>
 								</tr>
