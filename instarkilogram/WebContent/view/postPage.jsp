@@ -104,7 +104,7 @@
 }
 
 .profile_box1 {
-	height: 120px;
+	height: 100px;
 	overflow-y: scroll;
 }
 
