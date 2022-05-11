@@ -8,7 +8,8 @@
 <head>
 <link rel="stylesheet"
 	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<link rel="stylesheet"
+	href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 <link
 	href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
@@ -139,6 +140,12 @@
 	margin-top: 10px;
 	font-weight: bold;
 }
+
+.feed_img_cover {
+	height: 100%;
+	width: 100%;
+	object-fit: 100%;
+}
 </style>
 </head>
 <body>
@@ -175,7 +182,7 @@
 			<!--흰 컨텐츠 -->
 
 			<div class="feed_img1">
-				<img class="" src="../imgs/${fvo.getF_pic() }">
+				<img class="feed_img_cover" src="../imgs/${fvo.getF_pic() }">
 			</div>
 
 		</div>
@@ -186,12 +193,11 @@
 			<div class="right_float">
 				<div>
 					<div class="profile_height">
-					<a href="feedcontroller?type=otherUser&f_id=${fvo.getU_id() }">
-						<img class="profile_img" src="../imgs/${uv.u_pic }"></a>
-						<span class="feed_name1">
-							<a href="feedcontroller?type=otherUser&f_id=${fvo.getU_id() }">
-							${fvo.getU_id() }
-							</a>
+						<a href="feedcontroller?type=otherUser&f_id=${fvo.getU_id() }">
+							<img class="profile_img" src="../imgs/${uv.u_pic }">
+						</a> <span class="feed_name1"> <a
+							href="feedcontroller?type=otherUser&f_id=${fvo.getU_id() }">
+								${fvo.getU_id() } </a>
 						</span>
 					</div>
 				</div>
@@ -202,7 +208,7 @@
 							<b> ${fvo.getU_id() } </b> ${fvo.getContent() }
 						</p>
 					</div>
-					<c:set var="f_idx" value="${fvo.getF_idx() }" scope="request"/>
+					<c:set var="f_idx" value="${fvo.getF_idx() }" scope="request" />
 					<%
 					FeedVO vo = new FeedVO();
 					System.out.println("F_IDX: " + request.getAttribute("f_idx"));
@@ -211,24 +217,24 @@
 					int result = FeedDAO.likeOk(vo);//좋아요 상태 확인
 					System.out.println("result(post): " + result);
 					pageContext.setAttribute("result", result);
-					int countLike = FeedDAO.countLike((int)request.getAttribute("f_idx"));
+					int countLike = FeedDAO.countLike((int) request.getAttribute("f_idx"));
 					%>
 					<div class="feed_icon">
 						<div class="feed_style">
-								<table>
+							<table>
 								<tr class="feed_row">
-							<c:choose>
-								<c:when test="${result == 0 }">
-									<td class="material-symbols-outlined">favorite</td>
-									<td class="material-symbols-outlined">mode_comment</td>
-								</c:when>
-								<c:otherwise>
-									<td class="material-icons-outlined" style="color: red;">favorite</td>
-									<td class="material-icons-outlined icon_space">mode_comment</td>
-								</c:otherwise>
-							</c:choose>
+									<c:choose>
+										<c:when test="${result == 0 }">
+											<td class="material-symbols-outlined">favorite</td>
+											<td class="material-symbols-outlined">mode_comment</td>
+										</c:when>
+										<c:otherwise>
+											<td class="material-icons-outlined" style="color: red;">favorite</td>
+											<td class="material-icons-outlined icon_space">mode_comment</td>
+										</c:otherwise>
+									</c:choose>
 								</tr>
-								</table>
+							</table>
 						</div>
 					</div>
 					<div class="feed_like">
