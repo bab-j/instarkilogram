@@ -22,6 +22,7 @@ import com.sns.command.feed.SearchCommand;
 import com.sns.command.feed.SearchPostCommand;
 import com.sns.command.feed.WhoseFeedCommand;
 import com.sns.command.feed.WriteCommentCommand;
+import com.sns.command.feed.delPostCommand;
 
 @WebServlet("/view/feedcontroller")
 public class FeedFrontController extends HttpServlet {
@@ -58,6 +59,8 @@ public class FeedFrontController extends HttpServlet {
 			command = new DelPostLikeCommand(); // 포스트페이지 좋아요해제
 		} else if("delPostLike".equals(type)) {
 			command = new AddPostLikeCommand(); // 포스트페이지 좋아요등록
+		} else if("delPost".equals(type)) {
+			command = new delPostCommand(); // 
 		} 
 		 
 		

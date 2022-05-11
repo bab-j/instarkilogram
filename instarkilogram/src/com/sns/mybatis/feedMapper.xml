@@ -2,162 +2,207 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-<mapper namespace="feed">
 
-	
+<mapper namespace="feed">
+	<!-- 내 게시글인지 확인 하는 쿼리 -->
+	<select id="equalPost" parameterType="Map" resultType="com.sns.feed.db.FeedVO">
+		SELECT *
+		FROM FEED
+		WHERE F_IDX = #{f_id }
+		AND U_ID = #{u_id }
+	</select>
+
+
+	<!-- 게시물 삭제 -->
+	<delete id="deletePost" parameterType="Map">
+		DELETE
+		FROM FEED
+		WHERE F_IDX
+		= TO_NUMBER(#{f_idx })
+		AND U_ID = #{u_id }
+	</delete>
 
 	<!-- 피드 내용 검색o -->
-	<select id="searchContent" parameterType="string" resultType="com.sns.feed.db.FeedVO">
-		SELECT * 
+	<select id="searchContent" parameterType="string"
+		resultType="com.sns.feed.db.FeedVO">
+		SELECT *
 		FROM FEED
 		WHERE CONTENT LIKE '%'||#{content}||'%'
 		ORDER BY F_IDX DESC
 	</select>
 
 	<!-- comment 입력o -->
-	<insert id="wrtComment" parameterType="com.sns.comment.db.CommentVO">
+	<insert id="wrtComment"
+		parameterType="com.sns.comment.db.CommentVO">
 		INSERT INTO COMM (CO_IDX, U_ID, REGDATE, COMM, F_IDX)
-        VALUES (COMM_SEQ.NEXTVAL, #{u_id}, SYSDATE, #{comm}, TO_NUMBER(#{f_idx}))
+		VALUES (COMM_SEQ.NEXTVAL, #{u_id}, SYSDATE, #{comm},
+		TO_NUMBER(#{f_idx}))
 	</insert>
-	
+
 	<!-- f_idx로 comment 가져오기o -->
-	<select id="getComment" parameterType="int" resultType="com.sns.comment.db.CommentVO">
+	<select id="getComment" parameterType="int"
+		resultType="com.sns.comment.db.CommentVO">
 		SELECT * FROM COMM
 		WHERE F_IDX = #{f_idx}
 		ORDER BY CO_IDX
 	</select>
-	
-	
+
+
 	<!-- unfollow o -->
 	<delete id="unFollow" parameterType="map">
 		DELETE FROM FOLLOW
-		WHERE FROM_ID = #{u_id}
+		WHERE
+		FROM_ID = #{u_id}
 		AND TO_ID = #{f_id}
 	</delete>
-	
-	
-	<!-- follow  -->
+
+
+	<!-- follow -->
 	<insert id="followGo" parameterType="map">
-		INSERT INTO FOLLOW (FW_IDX, TO_ID, FROM_ID)
-				VALUES(FOLLOW_SEQ.NEXTVAL, #{f_id}, #{u_id})
+		INSERT INTO FOLLOW (FW_IDX,
+		TO_ID, FROM_ID)
+		VALUES(FOLLOW_SEQ.NEXTVAL, #{f_id}, #{u_id})
 	</insert>
-	
+
 	<!-- 나의 팔로우 여부 판단 ok -->
-	<select id="followCheck" parameterType="map" resultType="com.sns.follow.FollowVO">
-		SELECT * FROM FOLLOW 
+	<select id="followCheck" parameterType="map"
+		resultType="com.sns.follow.FollowVO">
+		SELECT * FROM FOLLOW
 		WHERE FROM_ID = #{u_id}
-		AND TO_ID = #{f_id}
+		AND TO_ID =
+		#{f_id}
 	</select>
-	
+
 	<!-- 나의 팔로잉들 -->
-	<select id="myFollowing" parameterType="string" resultType="com.sns.follow.FollowVO">
+	<select id="myFollowing" parameterType="string"
+		resultType="com.sns.follow.FollowVO">
 		SELECT * FROM FOLLOW WHERE FROM_ID = #{f_id}
 	</select>
-	
+
 	<!-- 나의 팔로워들 -->
-	<select id="myFollower" parameterType="string" resultType="com.sns.follow.FollowVO"> 
+	<select id="myFollower" parameterType="string"
+		resultType="com.sns.follow.FollowVO">
 		SELECT * FROM FOLLOW WHERE TO_ID = #{f_id}
 	</select>
-	
+
 	<!-- 작성자로 게시글 조회 -->
-	<select id="getPosts" parameterType="string" resultType="com.sns.feed.db.FeedVO">
+	<select id="getPosts" parameterType="string"
+		resultType="com.sns.feed.db.FeedVO">
 		SELECT * FROM FEED WHERE U_ID = #{f_id}
 	</select>
-	
+
 	<!-- feed u_id(f_id)로 개인정보 조회 -->
-	<select id="otherUser" parameterType="string" resultType="com.sns.user.db.UserVO">
+	<select id="otherUser" parameterType="string"
+		resultType="com.sns.user.db.UserVO">
 		SELECT * FROM USER_INFO WHERE U_ID = #{f_id}
 	</select>
 
-	<!-- f_idx로 개별 게시물 조회 ok-->
-	<select id="idvPost" parameterType="int" resultType="com.sns.feed.db.FeedVO">
+	<!-- f_idx로 개별 게시물 조회 ok -->
+	<select id="idvPost" parameterType="int"
+		resultType="com.sns.feed.db.FeedVO">
 		SELECT *
 		FROM FEED
 		WHERE F_IDX =#{f_idx}
 	</select>
-	
-	
-	<!-- 메인 피드 전체 게시글 수 ok-->
-	<select id="totalCountMain" parameterType="string" resultType="com.sns.feed.db.FeedVO">
-        SELECT * FROM FEED WHERE U_ID = #{u_id}
-	    UNION
-	    SELECT FEED.*
-	    FROM FEED, (SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id}) FW
-	    WHERE FEED.U_ID = FW.TO_ID
-        
+
+
+	<!-- 메인 피드 전체 게시글 수 ok -->
+	<select id="totalCountMain" parameterType="string"
+		resultType="com.sns.feed.db.FeedVO">
+		SELECT * FROM FEED WHERE U_ID = #{u_id}
+		UNION
+		SELECT FEED.*
+		FROM FEED, (SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id}) FW
+		WHERE
+		FEED.U_ID = FW.TO_ID
+
 	</select>
-	
+
 	<!-- 메인 피드 : 한 페이지에서 보이는 게시글 목록ok -->
-	<select id="mainFeed" parameterType="map" resultType="com.sns.feed.db.FeedVO">
+	<select id="mainFeed" parameterType="map"
+		resultType="com.sns.feed.db.FeedVO">
 		SELECT *
-        FROM (SELECT ROWNUM R_NUM, PP.*
-            FROM (SELECT *
-                 FROM (SELECT * FROM FEED WHERE U_ID = #{u_id}
-                    UNION
-                    SELECT FEED.*
-                    FROM FEED, (SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id}) FW
-                    WHERE FEED.U_ID = FW.TO_ID) TT
-                 ORDER BY TT.F_IDX DESC) PP)
-        WHERE R_NUM BETWEEN TO_NUMBER(#{begin}) AND TO_NUMBER(#{end})
-		
+		FROM (SELECT ROWNUM R_NUM, PP.*
+		FROM (SELECT *
+		FROM
+		(SELECT * FROM FEED WHERE U_ID = #{u_id}
+		UNION
+		SELECT FEED.*
+		FROM FEED,
+		(SELECT * FROM FOLLOW WHERE FROM_ID = #{u_id}) FW
+		WHERE FEED.U_ID =
+		FW.TO_ID) TT
+		ORDER BY TT.F_IDX DESC) PP)
+		WHERE R_NUM BETWEEN
+		TO_NUMBER(#{begin}) AND TO_NUMBER(#{end})
+
 	</select>
-	
-	<!-- 게시글 등록 ok-->
+
+	<!-- 게시글 등록 ok -->
 	<insert id="insert" parameterType="com.sns.feed.db.FeedVO">
-		INSERT INTO FEED (F_IDX, REGDATE, CONTENT, U_ID, U_PIC, F_PIC) 
-                VALUES (FEED_SEQ.NEXTVAL,SYSDATE,#{content},#{u_id},#{u_pic},#{f_pic})
+		INSERT INTO FEED (F_IDX,
+		REGDATE, CONTENT, U_ID, U_PIC, F_PIC)
+		VALUES
+		(FEED_SEQ.NEXTVAL,SYSDATE,#{content},#{u_id},#{u_pic},#{f_pic})
 	</insert>
-	
-	<!-- 로그인 ok-->
-	<select id="login" parameterType="map" resultType="com.sns.user.db.UserVO">
-		SELECT * 
+
+	<!-- 로그인 ok -->
+	<select id="login" parameterType="map"
+		resultType="com.sns.user.db.UserVO">
+		SELECT *
 		FROM USER_INFO
 		WHERE U_ID = #{u_id} AND PWD = #{pwd}
 	</select>
-	
+
 	<!-- 내용 검색 -->
 	<select id="search" resultType="feedVO">
 		SELECT F_PIC
 		FROM FEED
-		WHERE CONTENT in '% ${content } %'
+		WHERE
+		CONTENT in '% ${content } %'
 		ORDER BY F_IDX
 	</select>
 
 	<!-- 아이디검색 -->
-	<select id="select_id_bio" parameterType="string" resultType="com.sns.user.db.UserVO">
+	<select id="select_id_bio" parameterType="string"
+		resultType="com.sns.user.db.UserVO">
 		SELECT *
 		FROM USER_INFO
 		WHERE U_ID LIKE '%'||#{u_id}||'%'
-		OR BIO LIKE '%'||#{u_id}||'%'
-    </select>
-    
-    
-	<select id="likeOk" resultType="int" parameterType="FeedVO">
-		SELECT COUNT(L_IDX)
-		  FROM LIKE_LIST
-		 WHERE U_ID = #{u_id}
-		   AND F_IDX = #{f_idx}
+		OR
+		BIO LIKE '%'||#{u_id}||'%'
 	</select>
-	
+
+
+	<select id="likeOk" resultType="int" parameterType="FeedVO">
+		SELECT
+		COUNT(L_IDX)
+		FROM LIKE_LIST
+		WHERE U_ID = #{u_id}
+		AND F_IDX = #{f_idx}
+	</select>
+
 	<insert id="addLike" parameterType="FeedVO">
 		INSERT INTO LIKE_LIST
-					(L_IDX, F_IDX, U_ID)
-			VALUES (LIKE_SEQ.NEXTVAL, #{f_idx}, #{u_id})
+		(L_IDX,
+		F_IDX, U_ID)
+		VALUES (LIKE_SEQ.NEXTVAL, #{f_idx}, #{u_id})
 	</insert>
-	
+
 	<delete id="delLike" parameterType="FeedVO">
 		DELETE FROM LIKE_LIST
-		 WHERE F_IDX = #{f_idx}
-		   AND U_ID = #{u_id}
+		WHERE
+		F_IDX = #{f_idx}
+		AND U_ID = #{u_id}
 	</delete>
-	
+
 	<select id="countLike" parameterType="int" resultType="int">
-		SELECT COUNT(F_IDX)
-		  FROM LIKE_LIST
-         WHERE F_IDX = #{f_idx}
+		SELECT
+		COUNT(F_IDX)
+		FROM LIKE_LIST
+		WHERE F_IDX = #{f_idx}
 	</select>
-	
+
 </mapper>
 
 

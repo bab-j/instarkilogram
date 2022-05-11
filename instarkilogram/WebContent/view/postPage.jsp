@@ -212,7 +212,7 @@ background-color: black;
 							href="feedcontroller?type=otherUser&f_id=${fvo.getU_id() }">
 								${fvo.getU_id() } </a>
 						</span> 
-						<a href=""> <span style="float: right; height: 60px; width: 180px; text-align: right; padding-top: 10px; font-size : 32px;" class="material-symbols-outlined">menu
+						<a href="feedcontroller?type=delPost&f_idx=${fvo.getF_idx() } "> <span style="float: right; height: 60px; width: 180px; text-align: right; padding-top: 10px; font-size : 32px;" class="material-symbols-outlined">menu
 						</span> </a>
 					</div>
 				</div>
