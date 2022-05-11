@@ -95,6 +95,7 @@
 }
 
 .profile_box {
+width : 624px;
 	list-style-type: none;
 	float: left;
 	margin-left: 5px;
@@ -191,9 +192,9 @@ font-weight: bold;
 		<div class="container">
 			<form action="feedcontroller?type=search" method="post" >
 				<span> 
-					<input class="total_search" type="text" id="search"
-					name="keyword" placeholder="통합검색">&nbsp;
-					<input class="search_btn" type="submit" value="검색">
+					<input class="total_search" type="text" id="search" name="keyword"
+					placeholder="통합검색">&nbsp; <input class="search_btn" type="submit"
+					value="검색">
 				</span>
 			</form>
 		</div>
@@ -240,6 +241,7 @@ font-weight: bold;
 									<td class="profile_name" >
 										<a href="feedcontroller?type=otherUser&f_id=${fv.u_id }">${fv.u_id }</a>
 									</td>
+									
 									
 								</tr>
 							</thead>

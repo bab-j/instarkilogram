@@ -146,6 +146,19 @@
 	width: 100%;
 	object-fit: 100%;
 }
+
+.buttt {
+	height: 30px;
+	width: 60px;
+	border: 1px solid silver;
+}
+
+.buttt :hover {
+
+background-color: black;
+
+
+}
 </style>
 </head>
 <body>
@@ -198,7 +211,9 @@
 						</a> <span class="feed_name1"> <a
 							href="feedcontroller?type=otherUser&f_id=${fvo.getU_id() }">
 								${fvo.getU_id() } </a>
-						</span>
+						</span> 
+						<a href=""> <span style="float: right; height: 60px; width: 180px; text-align: right; padding-top: 10px; font-size : 32px;" class="material-symbols-outlined">menu
+						</span> </a>
 					</div>
 				</div>
 
