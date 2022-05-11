@@ -52,7 +52,7 @@
 	float: right;
 	margin: 8px;
 	height: 604px;
-	width: 368px;
+	width: 365px;
 	background-color: white;
 }
 
