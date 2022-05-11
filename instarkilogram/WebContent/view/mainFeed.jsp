@@ -184,7 +184,7 @@ font-weight: bold;
 	<div class="bar">
 		<div class="home">
 			<h1>
-				<em> <a class="linkLine" href="mainFeed.jsp">instarkilogram
+				<em> <a class="linkLine" href="feedcontroller?type=goMainFeed">instarkilogram
 				</a></em>
 			</h1>
 		</div>
@@ -232,10 +232,10 @@ font-weight: bold;
 						<table>
 							<thead class="profile_box">
 								<tr>  <!-- 프로필 사진 -->
-									<td>
+								<td>
 									<a href="feedcontroller?type=otherUser&f_id=${fv.u_id }">
-									 <img class="profile_img" src="../imgs/${fv.u_pic }">
-									 </a>
+										 <img class="profile_img" src="../imgs/${fv.u_pic }">
+										 </a>
 									</td>
 									<td class="profile_name" >
 										<a href="feedcontroller?type=otherUser&f_id=${fv.u_id }">${fv.u_id }</a>

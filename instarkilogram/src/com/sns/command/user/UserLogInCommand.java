@@ -26,10 +26,13 @@ public class UserLogInCommand implements Command{
 		UserVO vo = UserDAO.loginRight(u_id, pwd);
 		System.out.println(vo);
 		
+		
 		HttpSession session = request.getSession();
 		if(vo != null) { //-- 로그인 가능 : id와 u_idx를 저장 
 			session.setAttribute("u_id", vo.getU_id());
 			session.setAttribute("u_pic", vo.getU_pic());
+			UserVO uv = FeedDAO.getOtherUser(u_id);
+			request.setAttribute("uv", uv);
 			result = "mainFeed.jsp";
 		} else { 
 			result = "loginFail.jsp";

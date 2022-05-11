@@ -152,8 +152,8 @@ width : 480px;
 
 	<div class="bar">
 		<div class="home">
-			<h1>
-				<em> <a class="linkLine" href="mainFeed.jsp">instarkilogram
+			<h1><!-- 여기여기 -->
+				<em> <a class="linkLine" href="feedcontroller?type=goMainFeed">instarkilogram
 				</a></em>
 			</h1>
 		</div>

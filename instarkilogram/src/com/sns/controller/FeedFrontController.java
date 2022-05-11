@@ -58,7 +58,7 @@ public class FeedFrontController extends HttpServlet {
 			command = new DelPostLikeCommand(); // 포스트페이지 좋아요해제
 		} else if("delPostLike".equals(type)) {
 			command = new AddPostLikeCommand(); // 포스트페이지 좋아요등록
-		}
+		} 
 		 
 		
 		String path = command.exec(request, response);

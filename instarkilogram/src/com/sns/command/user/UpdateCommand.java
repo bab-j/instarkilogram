@@ -56,13 +56,10 @@ public class UpdateCommand implements Command {
 		
 		int udChk = 0;
 		if(upwd == null) {
-			System.out.println("빈칸");
 			udChk = 1;
 		} else if(upwdOk == null) {
-			System.out.println("빈칸");
 			udChk = 1;
 		} else if(!upwd.equals(upwdOk)) {
-			System.out.println("비번 안맞아");
 			udChk = 2;
 		} else if(upwd.equals(upwdOk)){
 			

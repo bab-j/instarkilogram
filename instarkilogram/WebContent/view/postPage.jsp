@@ -194,7 +194,7 @@
 				<div>
 					<div class="profile_height">
 						<a href="feedcontroller?type=otherUser&f_id=${fvo.getU_id() }">
-							<img class="profile_img" src="../imgs/${uv.u_pic }">
+							<img class="profile_img" src="../imgs/${fvo.u_pic }">
 						</a> <span class="feed_name1"> <a
 							href="feedcontroller?type=otherUser&f_id=${fvo.getU_id() }">
 								${fvo.getU_id() } </a>
