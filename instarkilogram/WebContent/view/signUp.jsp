@@ -29,12 +29,14 @@ form p {
 	margin-bottom: 1px;
 	margin-top: 0px;
 }
-
+.sign h1 {
+	padding : 0px;
+}
 
 table {
 	width: 400px;
 	border-collapse: collapse;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 }
 
 th {
