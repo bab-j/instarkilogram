@@ -212,8 +212,21 @@ background-color: black;
 							href="feedcontroller?type=otherUser&f_id=${fvo.getU_id() }">
 								${fvo.getU_id() } </a>
 						</span> 
-						<a href="feedcontroller?type=delPost&f_idx=${fvo.getF_idx() } "> <span style="float: right; height: 60px; width: 180px; text-align: right; padding-top: 10px; font-size : 32px;" class="material-symbols-outlined">menu
-						</span> </a>
+						<a href="feedcontroller?type=delPost&f_idx=${fvo.getF_idx() } "> 
+						<!-- 삭제 버튼 -->
+						<c:set var='ori' value='${u_id }'/>
+						<c:set var='fid' value='${fvo.getU_id() }'/>
+						<c:choose>
+						<c:when test="${ori eq fid }">
+							<span style="float: right; height: 60px; width: 180px; text-align: right;
+							 padding-top: 10px; font-size : 32px;" class="material-symbols-outlined">menu
+							</span> 
+						</c:when>
+						<c:otherwise>
+						
+						</c:otherwise>
+						</c:choose>
+						</a>
 					</div>
 				</div>
 
@@ -260,7 +273,7 @@ background-color: black;
 					</div>
 
 
-
+					
 					<div class="profile_box1">
 						<c:forEach var='comm' items='${commList }'>
 							<div class="">
