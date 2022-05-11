@@ -92,7 +92,7 @@ th {
 			</table>
 			<c:choose>
 				<c:when test="${login == 1 }">
-					<p style="color: red">이미 사용 중인 아이디입니다.</p>
+					<p style="color: red">사용 불가능한 아이디입니다.</p>
 					<input type="hidden" name="clickDu" value="N">
 				</c:when>
 				<c:when test="${login == 0 }">

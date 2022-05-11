@@ -14,8 +14,15 @@ public class UserIdChkCommand implements Command{
 	@Override
 	public String exec(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String uid = request.getParameter("uid");
 		int login = 43;
+		String uid = request.getParameter("uid").trim();
+		
+		if(uid.equals("")){
+			login = 1;
+			request.setAttribute("login", login);
+			return "signUp.jsp";
+			
+		}
 		if(udao.checkId(uid)) {
 			//System.out.println("아이디가 존재합니다");
 			login = 1;
@@ -23,7 +30,6 @@ public class UserIdChkCommand implements Command{
 			//System.out.println("사용 가능한 아이디입니다");
 			login = 0;
 		}
-		
 		request.setAttribute("login", login);
 		request.setAttribute("uid", uid);
 		return "signUp.jsp";
