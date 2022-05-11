@@ -185,7 +185,7 @@ font-weight: bold;
 	<div class="bar">
 		<div class="home">
 			<h1>
-				<em> <a class="linkLine" href="feedcontroller?type=goMainFeed">instarkilogram
+				<em> <a class="linkLine" href="mainFeed.jsp">instarkilogram
 				</a></em>
 			</h1>
 		</div>
