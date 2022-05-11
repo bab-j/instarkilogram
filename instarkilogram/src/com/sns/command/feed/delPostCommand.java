@@ -21,30 +21,22 @@ public class delPostCommand implements Command {
 
 		String u_id = (String) session.getAttribute("u_id");
 
-		
 		FeedVO fvo = FeedDAO.equalPost(u_id, f_idx);
 
-		
 		String result = "";
 		
 		System.out.println("fvo :" + fvo);
 		
+		int isItMine = 0;
 		if( fvo == null) {
 			FeedDAO.delPost(u_id, f_idx);
-			result = "mainFeed.jsp";
-			
+			isItMine = 1;
 		} else if (fvo != null) {
-			result = "delPost_fail.jsp";
+			isItMine = 2;
 		}
+		request.setAttribute("isItMine", isItMine);
 		
-		
-		
-		
-		
-		
-		
-		
-		return result;
+		return "delPost_fail.jsp";
 
 	}
 

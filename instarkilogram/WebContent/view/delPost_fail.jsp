@@ -8,8 +8,14 @@
 
 
 <script>
-alert("삭제 권한이 없습니다.");
-location.href="mainFeed.jsp";
+	console.log("isItMine : " + ${isItMine});
+	if (${isItMine} == '1'){
+		alert("[게시물이 삭제되었습니다.]");
+		location.href="mainFeed.jsp";
+	} else if(${isItMine} == '2'){
+		alert("삭제 권한이 없습니다.");
+		location.href="mainFeed.jsp";
+	}
 </script>
 
 </head>
